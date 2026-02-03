@@ -1,135 +1,83 @@
-# Turborepo starter
+# Keloola n8n Nodes
 
-This Turborepo starter is maintained by the Turborepo core team.
+This monorepo contains a collection of custom n8n nodes for integrating with Keloola's services. It is managed using [Turborepo](https://turbo.build/repo) and [Bun](https://bun.sh/).
 
-## Using this example
+## 📦 Packages
 
-Run the following command:
+| Package | Description | Version |
+| h | h | h |
+| `n8n-nodes-keloola-accounting` | Integration for Keloola Accounting API | 0.1.0 |
+| `@repo/support` | Shared utilities and build tools | 0.0.0 |
 
-```sh
-npx create-turbo@latest
+## 🛠 Prerequisites
+
+- **Bun**: v1.3.5 or higher
+- **Node.js**: v18 or higher
+- **n8n**: Installed locally for development testing
+
+## 🚀 Getting Started
+
+1. **Install Dependencies**
+
+   ```bash
+   bun install
+   ```
+
+2. **Generate Environment Files**
+   This step is crucial as it generates the necessary `env.ts` files for the nodes.
+
+   ```bash
+   bun run prebuild
+   ```
+
+3. **Build All Nodes**
+   ```bash
+   bun run build
+   ```
+
+## 👨‍💻 Development
+
+### Watch Mode
+
+To run the build in watch mode for development:
+
+```bash
+bun run dev
 ```
 
-## What's inside?
+### Linking to n8n
 
-This Turborepo includes the following packages/apps:
+To test these nodes in your local n8n instance:
 
-### Apps and Packages
+1. Go to the specific node directory:
+   ```bash
+   cd n8n-nodes-keloola-accounting
+   ```
+2. Link the package:
+   ```bash
+   bun link
+   ```
+3. In your n8n configuration directory (usually `~/.n8n/custom`):
+   ```bash
+   bun link n8n-nodes-keloola-accounting
+   ```
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Alternatively, you can use the provided script to link all nodes (verify path logic first):
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```bash
+bun run link:nodes
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+## 📜 Scripts
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+- `bun run prebuild`: Generate environment files for all workspaces.
+- `bun run build`: Build all packages.
+- `bun run dev`: Run build in watch mode.
+- `bun run lint`: Lint all packages.
+- `bun run format`: Format code with Prettier.
+- `bun run clean`: Clean build artifacts.
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+## 🤝 Contributing
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+1. Adhere to the code style (Prettier & ESLint).
+2. See [AGENTS.md](./AGENTS.md) for detailed development guidelines and conventions.

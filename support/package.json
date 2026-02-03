@@ -1,0 +1,21 @@
+{
+  "name": "@repo/support",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "generate-env": "./generate-env.ts"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.ts\" --ignore-path ../.prettierignore",
+    "format:check": "prettier --check \"**/*.ts\" --ignore-path ../.prettierignore",
+    "lint": "echo 'No lint configured for support package'"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "prettier": "^3.7.4"
+  }
+}

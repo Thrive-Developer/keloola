@@ -1,0 +1,62 @@
+{
+  "name": "n8n-nodes-keloola-accounting",
+  "version": "0.1.0",
+  "description": "n8n community node package for Keloola Accounting",
+  "license": "MIT",
+  "homepage": "",
+  "keywords": [
+    "n8n-community-node-package",
+    "accounting",
+    "api",
+    "n8n"
+  ],
+  "author": {
+    "name": "Benny Rahmat",
+    "email": "akunbeben@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thrive-Developer/keloola.git"
+  },
+  "scripts": {
+    "prebuild": "bun run node_modules/@repo/support/generate-env.ts",
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "format": "prettier --write \"**/*.ts\" --ignore-path ../.prettierignore",
+    "format:check": "prettier --check \"**/*.ts\" --ignore-path ../.prettierignore",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/KeloolaApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Accounting/KeloolaAccounting.node.js"
+    ]
+  },
+  "dependencies": {
+    "@repo/support": "workspace:*"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "@types/bun": "^1.3.8",
+    "@types/node": "^25.2.0",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

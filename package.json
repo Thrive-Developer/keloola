@@ -1,12 +1,16 @@
 {
-  "name": "keloola",
+  "name": "keloola-n8n-nodes-collection",
   "private": true,
   "scripts": {
+    "prebuild": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun run node_modules/@repo/support/generate-env.ts); done",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "link:nodes": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun link); done",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "check-types": "turbo run check-types",
+    "clean": "./cleanup.sh",
+    "clean:all": "./cleanup.sh --all"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
@@ -18,7 +22,7 @@
   },
   "packageManager": "bun@1.3.5",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "n8n-nodes-*",
+    "support"
   ]
 }
