@@ -15,11 +15,7 @@ import {
   userNode,
 } from './resources/user';
 
-import {
-  operations as unitOperations,
-  resources as unitResources,
-  unitNode,
-} from './resources/unit';
+import { resources as unitResources, router as unitRouter, unitNode } from './resources/unit';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -86,7 +82,7 @@ export class KeloolaAccounting implements INodeType {
     if (resource === userResources.user.value) {
       switch (operation) {
         case userOperations.currentUser.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/user`;
+          url = `${ENV.AUTH_BASE_URL}/user`;
           method = 'GET';
           break;
 
@@ -112,44 +108,10 @@ export class KeloolaAccounting implements INodeType {
     }
 
     if (resource === unitResources.unit.value) {
-      switch (operation) {
-        case unitOperations.getAll.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
-          method = 'GET';
-          break;
-
-        case unitOperations.create.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
-          method = 'POST';
-          body = {
-            name: this.getNodeParameter('name', 0) as string,
-          };
-          break;
-
-        case unitOperations.get.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit/${this.getNodeParameter('id', 0)}`;
-          method = 'GET';
-          break;
-
-        case unitOperations.update.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
-          method = 'PUT';
-          body = {
-            id: this.getNodeParameter('id', 0) as string,
-            name: this.getNodeParameter('name', 0) as string,
-          };
-          break;
-
-        case unitOperations.delete.value:
-          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit/delete/${this.getNodeParameter('id', 0)}`;
-          method = 'DELETE';
-          break;
-
-        default:
-          url = '';
-          method = 'GET';
-          break;
-      }
+      const routing = await unitRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
     }
 
     if (url === '') {
