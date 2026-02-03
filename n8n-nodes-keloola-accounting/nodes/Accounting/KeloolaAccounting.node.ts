@@ -3,6 +3,7 @@ import {
   IHttpRequestMethods,
   INodeExecutionData,
   NodeConnectionTypes,
+  NodeOperationError,
   type INodeType,
   type INodeTypeDescription,
 } from 'n8n-workflow';
@@ -16,6 +17,11 @@ import {
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
 import { credentials } from '../../shared/constants';
+import {
+  operations as organizationOperations,
+  resources as organizationResources,
+  organizationNode,
+} from './resources/organization';
 
 export class KeloolaAccounting implements INodeType {
   description: INodeTypeDescription = {
@@ -41,15 +47,20 @@ export class KeloolaAccounting implements INodeType {
       },
     },
     properties: [
+      // eslint-disable-next-line n8n-nodes-base/node-param-default-missing
       {
         displayName: 'Resource',
         name: 'resource',
         type: 'options',
         noDataExpression: true,
-        options: [...Object.values(userResources)],
+        options: [
+          ...Object.values(userResources),
+          ...Object.values(organizationResources),
+        ],
         default: userResources.user.value,
       },
       ...userNode,
+      ...organizationNode,
     ],
   };
 
@@ -74,6 +85,24 @@ export class KeloolaAccounting implements INodeType {
           method = 'GET';
           break;
       }
+    }
+
+    if (resource === organizationResources.organization.value) {
+      switch (operation) {
+        case organizationOperations.get.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/users/permission`;
+          method = 'POST';
+          break;
+
+        default:
+          url = '';
+          method = 'GET';
+          break;
+      }
+    }
+
+    if (url === '') {
+      throw new NodeOperationError(this.getNode(), `No operation found for ${resource}`);
     }
 
     const response = await this.helpers.httpRequest({

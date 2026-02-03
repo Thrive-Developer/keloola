@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "./prebuild.sh && turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "link:nodes": "./link-nodes.sh",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "turbo run format:check",

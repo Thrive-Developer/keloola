@@ -17,7 +17,8 @@
     "format": "prettier --write \"**/*.ts\" --ignore-path ../.prettierignore",
     "format:check": "prettier --check \"**/*.ts\" --ignore-path ../.prettierignore",
     "check-types": "tsc --noEmit",
-    "lint": "echo 'No lint configured for support package'"
+    "lint": "echo 'No lint configured for support package'",
+    "lint:fix": "echo 'No lint configured for support package'"
   },
   "peerDependencies": {
     "n8n-core": "*",

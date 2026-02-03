@@ -21,6 +21,7 @@ const showOnlyForUsers = {
 };
 
 export const userNode: INodeProperties[] = [
+  // eslint-disable-next-line n8n-nodes-base/node-param-default-missing
   {
     displayName: 'Operation',
     name: 'operation',
