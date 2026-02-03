@@ -4,6 +4,7 @@ import {
   INodeExecutionData,
   NodeConnectionTypes,
   NodeOperationError,
+  type IDataObject,
   type INodeType,
   type INodeTypeDescription,
 } from 'n8n-workflow';
@@ -13,6 +14,12 @@ import {
   resources as userResources,
   userNode,
 } from './resources/user';
+
+import {
+  operations as unitOperations,
+  resources as unitResources,
+  unitNode,
+} from './resources/unit';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -53,11 +60,16 @@ export class KeloolaAccounting implements INodeType {
         name: 'resource',
         type: 'options',
         noDataExpression: true,
-        options: [...Object.values(userResources), ...Object.values(organizationResources)],
+        options: [
+          ...Object.values(userResources),
+          ...Object.values(organizationResources),
+          ...Object.values(unitResources),
+        ],
         default: userResources.user.value,
       },
       ...userNode,
       ...organizationNode,
+      ...unitNode,
     ],
   };
 
@@ -69,6 +81,7 @@ export class KeloolaAccounting implements INodeType {
 
     let url = '';
     let method: IHttpRequestMethods = 'GET';
+    let body: IDataObject = {};
 
     if (resource === userResources.user.value) {
       switch (operation) {
@@ -98,6 +111,47 @@ export class KeloolaAccounting implements INodeType {
       }
     }
 
+    if (resource === unitResources.unit.value) {
+      switch (operation) {
+        case unitOperations.getAll.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
+          method = 'GET';
+          break;
+
+        case unitOperations.create.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
+          method = 'POST';
+          body = {
+            name: this.getNodeParameter('name', 0) as string,
+          };
+          break;
+
+        case unitOperations.get.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit/${this.getNodeParameter('id', 0)}`;
+          method = 'GET';
+          break;
+
+        case unitOperations.update.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit`;
+          method = 'PUT';
+          body = {
+            id: this.getNodeParameter('id', 0) as string,
+            name: this.getNodeParameter('name', 0) as string,
+          };
+          break;
+
+        case unitOperations.delete.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/accounting-setup/product-unit/delete/${this.getNodeParameter('id', 0)}`;
+          method = 'DELETE';
+          break;
+
+        default:
+          url = '';
+          method = 'GET';
+          break;
+      }
+    }
+
     if (url === '') {
       throw new NodeOperationError(this.getNode(), `No operation found for ${resource}`);
     }
@@ -105,6 +159,7 @@ export class KeloolaAccounting implements INodeType {
     const response = await this.helpers.httpRequest({
       method,
       url,
+      body,
       headers: { Authorization: `Bearer ${token}` },
     });
 
