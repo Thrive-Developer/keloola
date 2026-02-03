@@ -17,10 +17,10 @@ const C_YELLOW = '\x1b[33m';
 const C_BLUE = '\x1b[34m';
 
 const LOG = {
-  info: (msg: string) => console.log(`${C_GREEN}[INFO] ${C_RESET}: ${msg}`),
-  debug: (msg: string) => console.log(`${C_BLUE}[DEBUG]${C_RESET}: ${msg}`),
-  warn: (msg: string) => console.log(`${C_YELLOW}[WARN] ${C_RESET}: ${msg}`),
-  error: (msg: string) => console.error(`${C_RED}[ERROR]${C_RESET}: ${msg}`),
+  info: (msg: string) => console.log(`${C_GREEN}[INFO] ${C_RESET} ${msg}`),
+  debug: (msg: string) => console.log(`${C_BLUE}[DEBUG]${C_RESET} ${msg}`),
+  warn: (msg: string) => console.log(`${C_YELLOW}[WARN] ${C_RESET} ${msg}`),
+  error: (msg: string) => console.error(`${C_RED}[ERROR]${C_RESET} ${msg}`),
 };
 
 LOG.info(`Copying shared code...`);
