@@ -51,7 +51,7 @@ remove_dir "support/.turbo"
 echo ""
 echo "🔧 Cleaning generated files..."
 for dir in n8n-nodes-*/; do
-  remove_file "${dir}env.generated.ts"
+  remove_file "${dir}env.ts"
 done
 
 # Optional: Clean node_modules (with --all flag)

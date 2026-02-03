@@ -4,7 +4,7 @@ import { ENV } from '../env';
 export class KeloolaApi implements ICredentialType {
   name = 'keloolaApi';
   displayName = 'Keloola Authentication API';
-  icon: Icon = 'file:keloola.svg';
+  icon: Icon = 'file:../icons/keloola.svg';
   documentationUrl =
     'https://github.com/Thrive-Developer/keloola/tree/main/n8n-nodes-keloola-accounting#credentials';
 

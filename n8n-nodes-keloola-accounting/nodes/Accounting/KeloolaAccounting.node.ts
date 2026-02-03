@@ -36,7 +36,7 @@ export class KeloolaAccounting implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Keloola Accounting',
     name: 'keloolaAccounting',
-    icon: 'file:accounting.svg',
+    icon: 'file:../../icons/accounting.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
