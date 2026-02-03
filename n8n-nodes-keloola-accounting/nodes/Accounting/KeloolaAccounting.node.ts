@@ -14,17 +14,25 @@ import {
   resources as userResources,
   userNode,
 } from './resources/user';
-
-import { resources as unitResources, router as unitRouter, unitNode } from './resources/unit';
-
-import { ENV } from '../../env';
-import { getAccessToken } from '../../shared/authentication';
-import { credentials } from '../../shared/constants';
+import {
+  resources as unitResources,
+  router as unitRouter,
+  unitNode,
+} from './resources/unit';
+import {
+  categoryNode,
+  resources as categoryResources,
+  router as categoryRouter,
+} from './resources/category';
 import {
   operations as organizationOperations,
   resources as organizationResources,
   organizationNode,
 } from './resources/organization';
+
+import { ENV } from '../../env';
+import { getAccessToken } from '../../shared/authentication';
+import { credentials } from '../../shared/constants';
 
 export class KeloolaAccounting implements INodeType {
   description: INodeTypeDescription = {
@@ -60,12 +68,14 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(userResources),
           ...Object.values(organizationResources),
           ...Object.values(unitResources),
+          ...Object.values(categoryResources),
         ],
         default: userResources.user.value,
       },
       ...userNode,
       ...organizationNode,
       ...unitNode,
+      ...categoryNode,
     ],
   };
 
@@ -109,6 +119,13 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === unitResources.unit.value) {
       const routing = await unitRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === categoryResources.category.value) {
+      const routing = await categoryRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
