@@ -155,13 +155,26 @@ export class KeloolaAccounting implements INodeType {
       throw new NodeOperationError(this.getNode(), `No operation found for ${resource}`);
     }
 
-    const response = await this.helpers.httpRequest({
-      method,
-      url,
-      body,
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    try {
+      const response = await this.helpers.httpRequest({
+        method,
+        url,
+        body,
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-    return [this.helpers.returnJsonArray(response)];
+      return [this.helpers.returnJsonArray(response)];
+    } catch (error) {
+      if (error.response) {
+        throw new NodeOperationError(
+          this.getNode(),
+          `${JSON.stringify(error.response.data || error.message)}`,
+          {
+            description: `Status: ${error.response.status}\nURL: ${url}\nMethod: ${method}\nBody: ${JSON.stringify(body, null, 2)}`,
+          },
+        );
+      }
+      throw error;
+    }
   }
 }

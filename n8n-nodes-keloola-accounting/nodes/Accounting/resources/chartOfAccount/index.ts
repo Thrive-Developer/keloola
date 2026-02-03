@@ -150,18 +150,17 @@ export const chartOfAccountNode: INodeProperties[] = [
     displayName: 'Details',
     name: 'details',
     type: 'options',
-    required: true,
     options: [
+      {
+        name: 'None (Empty)',
+        value: '',
+      },
       {
         name: 'Sub Account',
         value: 'sub_account',
       },
-      {
-        name: 'Header',
-        value: 'header',
-      },
     ],
-    default: 'sub_account',
+    default: '',
     displayOptions: {
       show: {
         resource: [resources.chartOfAccount.value],

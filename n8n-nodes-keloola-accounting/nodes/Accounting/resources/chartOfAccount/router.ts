@@ -3,14 +3,14 @@ import { ENV } from '../../../../env';
 import { operations } from './index';
 
 function getOptionalFields(executeFunctions: IExecuteFunctions, body: IDataObject): IDataObject {
-  const tax = executeFunctions.getNodeParameter('tax', 0, '') as string;
-  if (tax) body.tax = tax;
-  const account = executeFunctions.getNodeParameter('account', 0, '') as string;
-  if (account) body.account = account;
-  const description = executeFunctions.getNodeParameter('description', 0, '') as string;
-  if (description) body.description = description;
+  body.tax = executeFunctions.getNodeParameter('tax', 0, '') as string;
+  body.account = executeFunctions.getNodeParameter('account', 0, '') as string;
+  body.description = executeFunctions.getNodeParameter('description', 0, '') as string;
+  body.details = executeFunctions.getNodeParameter('details', 0, '') as string;
+
   const currency = executeFunctions.getNodeParameter('currency', 0, '') as string;
   if (currency) body.currency = currency;
+
   return body;
 }
 
@@ -42,7 +42,6 @@ export async function router(
         name: executeFunctions.getNodeParameter('name', 0) as string,
         code: executeFunctions.getNodeParameter('code', 0) as number,
         type: executeFunctions.getNodeParameter('type', 0) as string,
-        details: executeFunctions.getNodeParameter('details', 0) as string,
       };
       body = getOptionalFields(executeFunctions, body);
       break;
@@ -59,7 +58,6 @@ export async function router(
         name: executeFunctions.getNodeParameter('name', 0) as string,
         code: executeFunctions.getNodeParameter('code', 0) as number,
         type: executeFunctions.getNodeParameter('type', 0) as string,
-        details: executeFunctions.getNodeParameter('details', 0) as string,
         is_enable: executeFunctions.getNodeParameter('isEnable', 0, true) as boolean,
       };
       body = getOptionalFields(executeFunctions, body);
