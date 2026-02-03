@@ -7,14 +7,14 @@
   },
   "homepage": "https://github.com/Thrive-Developer/keloola#readme",
   "scripts": {
-    "prebuild": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun run node_modules/@repo/support/generate-env.ts); done",
+    "prebuild": "./prebuild.sh",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "lint": "./prebuild.sh && turbo run lint",
     "link:nodes": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun link); done",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "turbo run format:check",
-    "check-types": "turbo run check-types",
+    "check-types": "./prebuild.sh && turbo run check-types",
     "clean": "./cleanup.sh",
     "clean:all": "./cleanup.sh --all"
   },
