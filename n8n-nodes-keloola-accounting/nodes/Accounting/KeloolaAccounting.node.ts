@@ -14,11 +14,7 @@ import {
   resources as userResources,
   userNode,
 } from './resources/user';
-import {
-  resources as unitResources,
-  router as unitRouter,
-  unitNode,
-} from './resources/unit';
+import { resources as unitResources, router as unitRouter, unitNode } from './resources/unit';
 import {
   categoryNode,
   resources as categoryResources,
