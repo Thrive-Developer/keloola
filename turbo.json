@@ -3,7 +3,7 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "lint", "format"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**"]
     },
@@ -13,8 +13,8 @@
     "format": {
       "cache": false
     },
-    "format": {
-      "dependsOn": ["^format"]
+    "format:check": {
+      "dependsOn": ["^format:check"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]

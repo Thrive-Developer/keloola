@@ -13,6 +13,7 @@
     "lint": "turbo run lint",
     "link:nodes": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun link); done",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "format:check": "turbo run format:check",
     "check-types": "turbo run check-types",
     "clean": "./cleanup.sh",
     "clean:all": "./cleanup.sh --all"
