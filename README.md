@@ -5,7 +5,6 @@ This monorepo contains a collection of custom n8n nodes for integrating with Kel
 ## 📦 Packages
 
 | Package | Description | Version |
-| h | h | h |
 | `n8n-nodes-keloola-accounting` | Integration for Keloola Accounting API | 0.1.0 |
 | `@repo/support` | Shared utilities and build tools | 0.0.0 |
 
