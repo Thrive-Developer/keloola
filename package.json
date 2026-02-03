@@ -1,6 +1,11 @@
 {
   "name": "keloola-n8n-nodes-collection",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thrive-Developer/keloola.git"
+  },
+  "homepage": "https://github.com/Thrive-Developer/keloola#readme",
   "scripts": {
     "prebuild": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun run node_modules/@repo/support/generate-env.ts); done",
     "build": "turbo run build",

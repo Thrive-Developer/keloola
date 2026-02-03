@@ -1,18 +1,17 @@
-# n8n-nodes-accounting
+# n8n-nodes-keloola-accounting
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you integrate [Keloola Accounting](https://keloola.xyz) services into your n8n workflows.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+Keloola Accounting is a comprehensive platform for managing business finances, and this node allows for programmatic access to its features.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
-[Installation](#installation)
-[Operations](#operations)
-[Credentials](#credentials)
-[Compatibility](#compatibility)
-[Usage](#usage)
+[Installation](#installation)  
+[Operations](#operations)  
+[Credentials](#credentials)  
+[Compatibility](#compatibility)  
+[Usage](#usage)  
 [Resources](#resources)
-[Version history](#version-history)
 
 ## Installation
 
@@ -20,27 +19,33 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-_List the operations supported by your node._
+**Resource: User**
+
+- **Current User**: Retrieve details of the currently authenticated user.
 
 ## Credentials
 
-_If users need to authenticate with the app/service, provide details here. You should include prerequisites (such as signing up with the service), available authentication methods, and how to set them up._
+To use this node, you need to authenticate with the Keloola Authentication API.
+
+1.  Create a **Keloola Authentication API** credential in n8n.
+2.  Provide your **Email** and **Password**.
+3.  The node will automatically handle the JWT generation and token management.
 
 ## Compatibility
 
-_State the minimum n8n version, as well as which versions you test against. You can also include any known version incompatibility issues._
+- **n8n version**: Tested on n8n v1.0+
+- **Node.js**: v18 or higher
 
 ## Usage
 
-_This is an optional section. Use it to help users with any difficult or confusing aspects of the node._
+This node simplifies interactions with the Keloola Accounting API. It handles authentication automatically using the provided credentials.
 
-_By the time users are looking for community nodes, they probably already know n8n basics. But if you expect new users, you can link to the [Try it out](https://docs.n8n.io/try-it-out/) documentation to help them get started._
+1.  Add the **Keloola Accounting** node to your workflow.
+2.  Select the desired **Resource** (e.g., User).
+3.  Select the **Operation** (e.g., Current User).
+4.  Execute the node to retrieve data.
 
 ## Resources
 
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-- _Link to app/service documentation._
-
-## Version history
-
-_This is another optional section. If your node has multiple versions, include a short description of available versions and what changed, as well as any compatibility impact._
+- [Keloola Website](https://keloola.xyz)

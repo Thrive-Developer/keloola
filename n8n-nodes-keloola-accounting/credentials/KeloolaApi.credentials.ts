@@ -5,7 +5,8 @@ export class KeloolaApi implements ICredentialType {
   name = 'keloolaApi';
   displayName = 'Keloola Authentication API';
   icon: Icon = 'file:keloola.svg';
-  documentationUrl = 'https://github.com/Thrive-Developer/keloola?tab=readme-ov-file#credentials';
+  documentationUrl =
+    'https://github.com/Thrive-Developer/keloola/tree/main/n8n-nodes-keloola-accounting#credentials';
 
   properties: INodeProperties[] = [
     {
