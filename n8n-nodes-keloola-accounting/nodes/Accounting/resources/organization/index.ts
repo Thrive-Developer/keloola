@@ -5,7 +5,7 @@ export const operations = {
     name: 'Get Organizations',
     value: 'get',
     action: 'Get user organizations',
-    description: 'Get the user\'s organizations',
+    description: "Get the user's organizations",
   },
 };
 

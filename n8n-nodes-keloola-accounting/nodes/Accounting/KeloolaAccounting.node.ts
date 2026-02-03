@@ -53,10 +53,7 @@ export class KeloolaAccounting implements INodeType {
         name: 'resource',
         type: 'options',
         noDataExpression: true,
-        options: [
-          ...Object.values(userResources),
-          ...Object.values(organizationResources),
-        ],
+        options: [...Object.values(userResources), ...Object.values(organizationResources)],
         default: userResources.user.value,
       },
       ...userNode,
