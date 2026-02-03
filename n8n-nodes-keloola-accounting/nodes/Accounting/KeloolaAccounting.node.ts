@@ -25,6 +25,7 @@ import {
   resources as chartOfAccountResources,
   router as chartOfAccountRouter,
 } from './resources/chartOfAccount';
+import { taxNode, resources as taxResources, router as taxRouter } from './resources/tax';
 import {
   operations as organizationOperations,
   resources as organizationResources,
@@ -71,6 +72,7 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(unitResources),
           ...Object.values(categoryResources),
           ...Object.values(chartOfAccountResources),
+          ...Object.values(taxResources),
         ],
         default: userResources.user.value,
       },
@@ -79,6 +81,7 @@ export class KeloolaAccounting implements INodeType {
       ...unitNode,
       ...categoryNode,
       ...chartOfAccountNode,
+      ...taxNode,
     ],
   };
 
@@ -136,6 +139,13 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === chartOfAccountResources.chartOfAccount.value) {
       const routing = await chartOfAccountRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === taxResources.tax.value) {
+      const routing = await taxRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
