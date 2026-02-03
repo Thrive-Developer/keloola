@@ -23,6 +23,43 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 - **Current User**: Retrieve details of the currently authenticated user.
 
+**Resource: Organization**
+
+- **Get**: Get the user's organizations.
+
+**Resource: Unit**
+
+- **Get Many**: Get all units.
+- **Get**: Get a unit by ID.
+- **Create**: Create a new unit.
+- **Update**: Update a unit.
+- **Delete**: Delete a unit.
+
+**Resource: Category**
+
+- **Get Many**: Get all product categories.
+- **Get**: Get a product category by ID.
+- **Create**: Create a new product category.
+- **Update**: Update a product category.
+- **Delete**: Delete a product category.
+
+**Resource: Chart of Account**
+
+- **Get Many**: Get all chart of accounts (paginated).
+- **Get Types**: Get all chart of account types.
+- **Get**: Get a chart of account by ID.
+- **Create**: Create a new chart of account.
+- **Update**: Update a chart of account.
+- **Delete**: Delete a chart of account.
+
+**Resource: Tax**
+
+- **Get Many**: Get all taxes.
+- **Get**: Get a tax by ID.
+- **Create**: Create a new tax.
+- **Update**: Update a tax.
+- **Delete**: Delete a tax.
+
 ## Credentials
 
 To use this node, you need to authenticate with the Keloola Authentication API.
