@@ -1,10 +1,26 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-const showOnlyForUsers = {
-  resource: ['user'],
+export const operations = {
+  currentUser: {
+    name: 'Get Current User',
+    value: 'currentUser',
+    action: 'Get current user',
+    description: 'Get the current user logged in',
+  },
 };
 
-export const userDescription: INodeProperties[] = [
+export const resources = {
+  user: {
+    name: 'User',
+    value: 'user',
+  },
+};
+
+const showOnlyForUsers = {
+  resource: [resources.user.value],
+};
+
+export const userNode: INodeProperties[] = [
   {
     displayName: 'Operation',
     name: 'operation',
@@ -13,14 +29,7 @@ export const userDescription: INodeProperties[] = [
     displayOptions: {
       show: showOnlyForUsers,
     },
-    options: [
-      {
-        name: 'Get Current User',
-        value: 'currentUser',
-        action: 'Get current user',
-        description: 'Get the current user logged in',
-      },
-    ],
-    default: 'currentUser',
+    options: [...Object.values(operations)],
+    default: operations.currentUser.value,
   },
 ];

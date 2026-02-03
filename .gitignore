@@ -40,3 +40,4 @@ yarn-error.log*
 .llms/
 
 n8n-nodes-*/env.ts
+n8n-nodes-*/shared

@@ -1,42 +1,27 @@
 import {
-  IDataObject,
   IExecuteFunctions,
   IHttpRequestMethods,
   INodeExecutionData,
   NodeConnectionTypes,
   type INodeType,
   type INodeTypeDescription,
-  NodeOperationError,
 } from 'n8n-workflow';
-import { userDescription } from './resources/user';
+
+import {
+  operations as userOperations,
+  resources as userResources,
+  userNode,
+} from './resources/user';
+
 import { ENV } from '../../env';
-
-interface TokenCache {
-  token: string;
-  expiresAt: number;
-}
-
-function decodeJwtPayload(token: string): { exp?: number } | null {
-  try {
-    const parts = token.split('.');
-    if (parts.length !== 3) {
-      return null;
-    }
-    const payload = parts[1];
-    const padded = payload.padEnd(payload.length + ((4 - (payload.length % 4)) % 4), '=');
-    const base64 = padded.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = Buffer.from(base64, 'base64').toString('utf-8');
-    return JSON.parse(jsonPayload);
-  } catch {
-    return null;
-  }
-}
+import { getAccessToken } from '../../shared/authentication';
+import { credentials } from '../../shared/constants';
 
 export class KeloolaAccounting implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Keloola Accounting',
     name: 'keloolaAccounting',
-    icon: 'file:../../icons/accounting.svg',
+    icon: 'file:accounting.svg',
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
@@ -47,7 +32,7 @@ export class KeloolaAccounting implements INodeType {
     usableAsTool: true,
     inputs: [NodeConnectionTypes.Main],
     outputs: [NodeConnectionTypes.Main],
-    credentials: [{ name: 'keloolaApi', required: true }],
+    credentials: [{ name: credentials.name, required: true }],
     requestDefaults: {
       baseURL: ENV.ACCOUNTING_BASE_URL,
       headers: {
@@ -61,15 +46,10 @@ export class KeloolaAccounting implements INodeType {
         name: 'resource',
         type: 'options',
         noDataExpression: true,
-        options: [
-          {
-            name: 'User',
-            value: 'user',
-          },
-        ],
-        default: 'user',
+        options: [...Object.values(userResources)],
+        default: userResources.user.value,
       },
-      ...userDescription,
+      ...userNode,
     ],
   };
 
@@ -77,52 +57,29 @@ export class KeloolaAccounting implements INodeType {
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
-    const creds = await this.getCredentials('keloolaApi');
-    const staticData = this.getWorkflowStaticData('global') as IDataObject;
-
-    let token = (staticData.tokenCache as TokenCache | undefined)?.token;
-    const tokenCache = staticData.tokenCache as TokenCache | undefined;
-
-    if (!token || (tokenCache && Date.now() >= tokenCache.expiresAt)) {
-      const tokenResponse = await this.helpers.httpRequest({
-        method: 'POST',
-        url: `${ENV.AUTH_BASE_URL}/jwt/generate-token`,
-        body: { email: creds.email, password: creds.password },
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      if (!tokenResponse?.access_token) {
-        throw new NodeOperationError(
-          this.getNode(),
-          'Failed to obtain access token from Keloola Auth API',
-        );
-      }
-
-      token = tokenResponse.access_token as string;
-      const decoded = decodeJwtPayload(token);
-
-      const expiresAt = decoded?.exp ? decoded.exp * 1000 - 60000 : Date.now() + (3600000 - 60000);
-
-      staticData.tokenCache = {
-        token,
-        expiresAt,
-      };
-    }
+    const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
 
     let url = '';
     let method: IHttpRequestMethods = 'GET';
 
-    if (resource === 'user' && operation === 'currentUser') {
-      url = `${ENV.ACCOUNTING_BASE_URL}/user`;
-      method = 'GET';
+    if (resource === userResources.user.value) {
+      switch (operation) {
+        case userOperations.currentUser.value:
+          url = `${ENV.ACCOUNTING_BASE_URL}/user`;
+          method = 'GET';
+          break;
+
+        default:
+          url = '';
+          method = 'GET';
+          break;
+      }
     }
 
     const response = await this.helpers.httpRequest({
       method,
       url,
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     return [this.helpers.returnJsonArray(response)];

@@ -12,6 +12,19 @@ const ROOT_DIR = join(basename(import.meta.url.replace(/^file:\/\//, '')), '../.
 const ENV_FILE = join(ROOT_DIR, '.env');
 const OUTPUT_FILE = join(CWD, 'env.ts');
 
+const C_RESET = '\x1b[0m';
+const C_RED = '\x1b[31m';
+const C_GREEN = '\x1b[32m';
+const C_YELLOW = '\x1b[33m';
+const C_BLUE = '\x1b[34m';
+
+const LOG = {
+  info: (msg: string) => console.log(`${C_GREEN}[INFO] ${C_RESET}: ${msg}`),
+  debug: (msg: string) => console.log(`${C_BLUE}[DEBUG]${C_RESET}: ${msg}`),
+  warn: (msg: string) => console.log(`${C_YELLOW}[WARN] ${C_RESET}: ${msg}`),
+  error: (msg: string) => console.error(`${C_RED}[ERROR]${C_RESET}: ${msg}`),
+};
+
 function parseEnvFile(content: string): Record<string, string> {
   const result: Record<string, string> = {};
 
@@ -40,7 +53,7 @@ function parseEnvFile(content: string): Record<string, string> {
 
 function main() {
   if (!existsSync(ENV_FILE)) {
-    console.error(`Error: .env file not found at ${ENV_FILE}`);
+    LOG.error(`.env file not found at ${ENV_FILE}`);
     process.exit(1);
   }
 
@@ -51,7 +64,7 @@ function main() {
 
   for (const key of required) {
     if (!envVars[key]) {
-      console.error(`Error: Missing required env var: ${key}`);
+      LOG.error(`Missing required env var: ${key}`);
       process.exit(1);
     }
   }
@@ -65,7 +78,7 @@ ${required.map((key) => `  ${key}: ${JSON.stringify(envVars[key])},`).join('\n')
 `;
 
   writeFileSync(OUTPUT_FILE, output);
-  console.log(`Generated ${OUTPUT_FILE}`);
+  LOG.info(`Generated ${OUTPUT_FILE}`);
 }
 
 main();

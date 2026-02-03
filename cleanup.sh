@@ -5,18 +5,23 @@
 
 set -e
 
-echo "🧹 Cleaning up build artifacts and caches..."
-
-# Colors for output
+# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
 
-# Function to remove directory if exists
+log_info() { echo -e "${GREEN}[INFO] ${NC} $1"; }
+log_debug() { echo -e "${BLUE}[DEBUG]${NC} $1"; }
+log_warn() { echo -e "${YELLOW}[WARN] ${NC} $1"; }
+log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+
+log_info "Cleaning up build artifacts and caches..."
+
 remove_dir() {
   if [ -d "$1" ]; then
-    echo -e "${YELLOW}Removing${NC} $1"
+    log_info "Removing $1"
     rm -rf "$1"
   fi
 }
@@ -24,20 +29,20 @@ remove_dir() {
 # Function to remove file if exists
 remove_file() {
   if [ -f "$1" ]; then
-    echo -e "${YELLOW}Removing${NC} $1"
+    log_info "Removing $1"
     rm -f "$1"
   fi
 }
 
 # Clean turbo cache
 echo ""
-echo "📦 Cleaning Turbo cache..."
+log_info "Cleaning Turbo cache..."
 remove_dir ".turbo"
 remove_dir "node_modules/.cache"
 
 # Clean dist folders in all packages
 echo ""
-echo "📁 Cleaning dist folders..."
+log_info "Cleaning dist folders..."
 for dir in n8n-nodes-*/; do
   remove_dir "${dir}dist"
   remove_dir "${dir}.turbo"
@@ -49,24 +54,25 @@ remove_dir "support/.turbo"
 
 # Clean generated files
 echo ""
-echo "🔧 Cleaning generated files..."
+log_info "Cleaning generated files..."
 for dir in n8n-nodes-*/; do
   remove_file "${dir}env.ts"
+  remove_dir "${dir}shared"
 done
 
 # Optional: Clean node_modules (with --all flag)
 if [ "$1" = "--all" ]; then
   echo ""
-  echo "📦 Cleaning all node_modules (--all flag)..."
+  log_info "Cleaning all node_modules (--all flag)..."
   remove_dir "node_modules"
   for dir in n8n-nodes-*/; do
     remove_dir "${dir}node_modules"
   done
   remove_dir "support/node_modules"
-  
+
   echo ""
-  echo -e "${YELLOW}Run 'bun install' to reinstall dependencies${NC}"
+  log_warn "Run 'bun install' to reinstall dependencies"
 fi
 
 echo ""
-echo -e "${GREEN}✅ Cleanup complete!${NC}"
+log_info "Cleanup complete!"

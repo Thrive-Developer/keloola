@@ -1,13 +1,17 @@
 {
   "name": "@repo/support",
   "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "prettier": "^3.7.4"
   },
   "bin": {
     "generate-env": "./generate-env.ts"
+  },
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "format": "prettier --write \"**/*.ts\" --ignore-path ../.prettierignore",
@@ -15,8 +19,8 @@
     "check-types": "tsc --noEmit",
     "lint": "echo 'No lint configured for support package'"
   },
-  "devDependencies": {
-    "@types/node": "^25.2.0",
-    "prettier": "^3.7.4"
+  "peerDependencies": {
+    "n8n-core": "*",
+    "n8n-workflow": "*"
   }
 }

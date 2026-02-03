@@ -11,7 +11,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "./prebuild.sh && turbo run lint",
-    "link:nodes": "for d in n8n-nodes-keloola-*; do (cd \"$d\" && bun link); done",
+    "link:nodes": "./link-nodes.sh",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "turbo run format:check",
     "check-types": "./prebuild.sh && turbo run check-types",

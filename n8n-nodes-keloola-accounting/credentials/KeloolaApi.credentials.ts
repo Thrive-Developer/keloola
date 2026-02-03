@@ -1,12 +1,12 @@
 import type { ICredentialTestRequest, Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
 import { ENV } from '../env';
+import { credentials } from '../shared/constants';
 
 export class KeloolaApi implements ICredentialType {
-  name = 'keloolaApi';
-  displayName = 'Keloola Authentication API';
-  icon: Icon = 'file:../icons/keloola.svg';
-  documentationUrl =
-    'https://github.com/Thrive-Developer/keloola/tree/main/n8n-nodes-keloola-accounting#credentials';
+  name = credentials.name;
+  displayName = credentials.displayName;
+  icon = credentials.icon as Icon;
+  documentationUrl = credentials.documentationUrl;
 
   properties: INodeProperties[] = [
     {
