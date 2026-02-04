@@ -1,0 +1,927 @@
+{
+  "name": "Keloola Accounting Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        11776,
+        112
+      ],
+      "id": "3e2f122e-4fe9-40f9-b2ed-bb029b09ffcb",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {},
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12000,
+        112
+      ],
+      "id": "b475ec35-3b2e-4c55-ae54-66f5e41dfb45",
+      "name": "Get current user",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organization"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12224,
+        112
+      ],
+      "id": "c5b86a61-2141-4b03-bd4d-eb8127e94841",
+      "name": "Get user organizations",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12448,
+        -80
+      ],
+      "id": "1ae6d146-d137-48b5-967e-5341dd12d8f9",
+      "name": "Get All Units",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "n8n-unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12672,
+        -80
+      ],
+      "id": "395e67a5-5210-4c28-8ee6-53cebfe5ec7a",
+      "name": "Create Unit",
+      "alwaysOutputData": false,
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12896,
+        -80
+      ],
+      "id": "9b1f4d45-533b-4ebb-aaf4-73348088927d",
+      "name": "Get Created Unit",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "name": "=update-{{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13120,
+        -80
+      ],
+      "id": "a397cc3c-94af-42bf-bb13-64f2d3be7e80",
+      "name": "Update Unit",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13344,
+        -80
+      ],
+      "id": "cfb457c4-492f-40c5-afe8-50bf17e6b172",
+      "name": "Delete Unit",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12896,
+        208
+      ],
+      "id": "cddee378-2ca2-4464-b69c-6e02e7b48232",
+      "name": "Get All COA",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "getTypes"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12448,
+        208
+      ],
+      "id": "9d62f374-4a53-4488-b1d6-037493021b7f",
+      "name": "Get COA Types",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "create",
+        "name": "=n8n-test-coa-{{ Math.floor(Math.random() * 100000) }}",
+        "code": "={{ Math.floor(Math.random() * 900000) + 100000 }}",
+        "type": "={{ $json.data[0].id }}",
+        "description": "Test COA from n8n"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12672,
+        208
+      ],
+      "id": "74ba513d-158c-4a72-8fe6-bb290ee241f2",
+      "name": "Create COA",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "get",
+        "id": "={{ $json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13120,
+        112
+      ],
+      "id": "b7139d0f-3171-42b3-be52-b3ed5a03584a",
+      "name": "Get Created COA",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "name": "=updated-{{ $json.data.name }}",
+        "code": "={{ $json.data.code }}",
+        "type": "={{ $json.data.type.id }}",
+        "account": "={{ $json.data.parent_account?.id || '' }}",
+        "description": "Updated from n8n"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13344,
+        112
+      ],
+      "id": "49db1152-662f-4b93-a556-19493ddc0070",
+      "name": "Update COA",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13568,
+        112
+      ],
+      "id": "87700d00-40a2-4c1f-8d73-d132d4c3e7a9",
+      "name": "Delete COA",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tax"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13344,
+        304
+      ],
+      "id": "512d01f0-941a-4389-acc7-86154f37e15e",
+      "name": "Get All Tax",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tax",
+        "operation": "create",
+        "name": "n8n-test-tax",
+        "rate": 10,
+        "saleAccount": "={{ $('Get All COA').item.json.data.result[0].id }}",
+        "purchaseAccount": "={{ $('Get All COA').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13120,
+        304
+      ],
+      "id": "cf28ec2b-86af-4822-8fb8-d5bfc797dbf0",
+      "name": "Create Tax",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tax",
+        "operation": "get",
+        "id": "={{ $json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13568,
+        304
+      ],
+      "id": "4d2cf8db-9a99-4280-ad51-cf78c501b145",
+      "name": "Get Created Tax",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tax",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "name": "=updated-{{ $json.data.name }}",
+        "rate": 15,
+        "saleAccount": "={{ $json.data.sale_account.id }}",
+        "purchaseAccount": "={{ $json.data.purchase_account.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13792,
+        304
+      ],
+      "id": "1b8072cb-3f60-4c6a-b8fe-d4f9cf749df8",
+      "name": "Update Tax",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tax",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        14016,
+        304
+      ],
+      "id": "102dd28e-84c2-4a71-95ea-177736fc0dc1",
+      "name": "Delete Tax",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "getAll"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12448,
+        500
+      ],
+      "id": "58138289-e60b-463b-8a57-76900c9992f8",
+      "name": "Get All Categories",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "getAll"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12672,
+        500
+      ],
+      "id": "21b16219-1d7a-49b0-b89b-ebdc5decca62",
+      "name": "Get All Units For Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "getAll",
+        "page": 1
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12896,
+        500
+      ],
+      "id": "ea45fbfa-aac2-4fcb-9540-27d4e4c64796",
+      "name": "Get All Products",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "SKU-{{ Math.floor(Math.random() * 100000) }}",
+        "category_id": "={{ $('Create Test Category').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA For Product').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA For Product').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13120,
+        500
+      ],
+      "id": "aaa8aee4-d678-4769-877e-335202dc1372",
+      "name": "Create Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13344,
+        500
+      ],
+      "id": "222bed55-99bf-4eaf-897c-ca3f5ce691e9",
+      "name": "Get Created Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "name": "updated-{{ $json.data.name }}",
+        "category_id": "={{ $json.data.category_id }}",
+        "unit_id": "={{ $json.data.unit_id }}",
+        "purchase_account": "={{ $json.data.purchase_account?.id || $('Get All COA').item.json.data.result[0].id }}",
+        "sale_account": "={{ $json.data.purchase_account?.id || $('Get All COA').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13568,
+        500
+      ],
+      "id": "c43cc4f9-736f-478f-a99f-742ff07a7c1b",
+      "name": "Update Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        13792,
+        500
+      ],
+      "id": "eb7011a4-eb67-4570-9e62-4d2fd4aae90e",
+      "name": "Delete Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "type": "product_service",
+        "color": "#ff0000"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12560,
+        500
+      ],
+      "id": "2f8227d6-894f-4ea5-928a-0ff92f8d59da",
+      "name": "Create Test Category",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "U-{{Math.floor(Math.random() * 1000)}}",
+        "symbol": "TU",
+        "type": "item"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12784,
+        500
+      ],
+      "id": "bdd449d0-7414-4a48-97ee-5e18319da7ef",
+      "name": "Create Test Unit",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount",
+        "operation": "getAll"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        12840,
+        500
+      ],
+      "id": "e50a8111-c5b3-47eb-b7ec-db61b6aaea56",
+      "name": "Get All COA For Product",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Get current user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get current user": {
+      "main": [
+        [
+          {
+            "node": "Get user organizations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get user organizations": {
+      "main": [
+        [
+          {
+            "node": "Get All Units",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get COA Types",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get All Categories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units": {
+      "main": [
+        [
+          {
+            "node": "Create Unit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Unit": {
+      "main": [
+        [
+          {
+            "node": "Get Created Unit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Unit": {
+      "main": [
+        [
+          {
+            "node": "Update Unit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Unit": {
+      "main": [
+        [
+          {
+            "node": "Delete Unit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA": {
+      "main": [
+        [
+          {
+            "node": "Get Created COA",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get COA Types": {
+      "main": [
+        [
+          {
+            "node": "Create COA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create COA": {
+      "main": [
+        [
+          {
+            "node": "Get All COA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created COA": {
+      "main": [
+        [
+          {
+            "node": "Update COA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update COA": {
+      "main": [
+        [
+          {
+            "node": "Delete COA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Tax": {
+      "main": [
+        [
+          {
+            "node": "Get Created Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tax": {
+      "main": [
+        [
+          {
+            "node": "Get All Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Tax": {
+      "main": [
+        [
+          {
+            "node": "Update Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Tax": {
+      "main": [
+        [
+          {
+            "node": "Delete Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products": {
+      "main": [
+        [
+          {
+            "node": "Create Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product": {
+      "main": [
+        [
+          {
+            "node": "Get Created Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Product": {
+      "main": [
+        [
+          {
+            "node": "Update Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Product": {
+      "main": [
+        [
+          {
+            "node": "Delete Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category": {
+      "main": [
+        [
+          {
+            "node": "Get All Units For Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units For Product": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit": {
+      "main": [
+        [
+          {
+            "node": "Get All COA For Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA For Product": {
+      "main": [
+        [
+          {
+            "node": "Get All Products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "c1aedb8b-32f7-4c1f-946f-04fc9a3b6969",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d0734ef49c6e31d3fe8e4f08b2f749b9a5f9bebb2abedda92821e4975833618c"
+  },
+  "id": "327eR3TC2cpo49WcSYrDH",
+  "tags": []
+}

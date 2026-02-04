@@ -31,6 +31,11 @@ import {
   resources as organizationResources,
   organizationNode,
 } from './resources/organization';
+import {
+  productNode,
+  resources as productResources,
+  router as productRouter,
+} from './resources/product';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -73,6 +78,7 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(categoryResources),
           ...Object.values(chartOfAccountResources),
           ...Object.values(taxResources),
+          ...Object.values(productResources),
         ],
         default: userResources.user.value,
       },
@@ -82,6 +88,7 @@ export class KeloolaAccounting implements INodeType {
       ...categoryNode,
       ...chartOfAccountNode,
       ...taxNode,
+      ...productNode,
     ],
   };
 
@@ -146,6 +153,13 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === taxResources.tax.value) {
       const routing = await taxRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === productResources.product.value) {
+      const routing = await productRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
