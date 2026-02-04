@@ -4,10 +4,10 @@ This monorepo contains a collection of custom n8n nodes for integrating with Kel
 
 ## 📦 Packages
 
-| Package | Description | Version |
-|---------|-------------|---------|
-| `n8n-nodes-keloola-accounting` | Integration for Keloola Accounting API | 0.1.0 |
-| `@repo/support` | Shared utilities and build tools | 0.0.0 |
+| Package                        | Description                            | Version |
+| ------------------------------ | -------------------------------------- | ------- |
+| `n8n-nodes-keloola-accounting` | Integration for Keloola Accounting API | 0.1.0   |
+| `@repo/support`                | Shared utilities and build tools       | 0.0.0   |
 
 ## 🛠 Prerequisites
 
@@ -24,7 +24,7 @@ This monorepo contains a collection of custom n8n nodes for integrating with Kel
    ```
 
 2. **Generate Environment Files**
-   This step is crucial as it generates the necessary `env.ts` files for the nodes.
+   This step is crucial as it generates the necessary `env.ts` files and copies shared code (`shared/`) for the nodes.
 
    ```bash
    bun run prebuild
@@ -76,6 +76,7 @@ bun run link:nodes
 - `bun run lint`: Lint all packages.
 - `bun run format`: Format code with Prettier.
 - `bun run clean`: Clean build artifacts.
+- `bun run clean:all`: Clean all build artifacts and node_modules (fresh start).
 
 ## 🤝 Contributing
 
