@@ -779,17 +779,6 @@
       "webhookId": "961a9f18-fc26-4ff8-abbb-57d9af5f9a95"
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -448,
-        480
-      ],
-      "id": "18e3b79d-3093-4884-8f01-95bc156bd609",
-      "name": "When clicking ‘Execute workflow’"
-    },
-    {
       "parameters": {
         "assignments": {
           "assignments": [
@@ -811,6 +800,17 @@
       ],
       "id": "84e52a2c-b091-4b37-b4e6-344852ffa848",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        480
+      ],
+      "id": "18e3b79d-3093-4884-8f01-95bc156bd609",
+      "name": "Manual"
     }
   ],
   "pinData": {},
@@ -1170,22 +1170,22 @@
         ]
       ]
     },
-    "When clicking ‘Execute workflow’": {
+    "Edit Fields": {
       "main": [
         [
           {
-            "node": "Get current user",
+            "node": "Create COA",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Edit Fields": {
+    "Manual": {
       "main": [
         [
           {
-            "node": "Create COA",
+            "node": "Get current user",
             "type": "main",
             "index": 0
           }
@@ -1202,7 +1202,7 @@
     "timezone": "Asia/Jakarta",
     "callerPolicy": "workflowsFromSameOwner"
   },
-  "versionId": "a3ca4474-7a0e-47dc-9d15-117744ab3dcb",
+  "versionId": "52bbd90a-30f1-4008-87e0-df940fc0f0ee",
   "meta": {
     "instanceId": "d0734ef49c6e31d3fe8e4f08b2f749b9a5f9bebb2abedda92821e4975833618c"
   },
