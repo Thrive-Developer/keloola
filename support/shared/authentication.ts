@@ -1,4 +1,9 @@
-import { IExecuteFunctions, IDataObject, NodeOperationError } from 'n8n-workflow';
+import {
+  IExecuteFunctions,
+  ILoadOptionsFunctions,
+  IDataObject,
+  NodeOperationError,
+} from 'n8n-workflow';
 import { credentials } from './constants';
 
 export interface TokenCache {
@@ -23,14 +28,18 @@ function decodeJwtPayload(token: string): { exp?: number } | null {
 }
 
 export async function getAccessToken(
-  executeFunctions: IExecuteFunctions,
+  executeFunctions: IExecuteFunctions | ILoadOptionsFunctions,
   authBaseUrl: string,
 ): Promise<string> {
   const creds = await executeFunctions.getCredentials(credentials.name);
-  const staticData = executeFunctions.getWorkflowStaticData('global') as IDataObject;
+  let staticData: IDataObject | undefined;
 
-  let token = (staticData.tokenCache as TokenCache | undefined)?.token;
-  const tokenCache = staticData.tokenCache as TokenCache | undefined;
+  if ('getWorkflowStaticData' in executeFunctions) {
+    staticData = executeFunctions.getWorkflowStaticData('global') as IDataObject;
+  }
+
+  let token = (staticData?.tokenCache as TokenCache | undefined)?.token;
+  const tokenCache = staticData?.tokenCache as TokenCache | undefined;
 
   if (!token || (tokenCache && Date.now() >= tokenCache.expiresAt)) {
     const tokenResponse = await executeFunctions.helpers.httpRequest({
@@ -41,10 +50,11 @@ export async function getAccessToken(
     });
 
     if (!tokenResponse?.access_token) {
-      throw new NodeOperationError(
-        executeFunctions.getNode(),
-        'Failed to obtain access token from Keloola Auth API',
-      );
+      const errorMessage = 'Failed to obtain access token from Keloola Auth API';
+      if ('getNode' in executeFunctions) {
+        throw new NodeOperationError(executeFunctions.getNode(), errorMessage);
+      }
+      throw new Error(errorMessage);
     }
 
     token = tokenResponse.access_token as string;
@@ -52,11 +62,13 @@ export async function getAccessToken(
 
     const expiresAt = decoded?.exp ? decoded.exp * 1000 - 60000 : Date.now() + (3600000 - 60000);
 
-    staticData.tokenCache = {
-      token,
-      expiresAt,
-    };
+    if (staticData) {
+      staticData.tokenCache = {
+        token,
+        expiresAt,
+      };
+    }
   }
 
-  return token;
+  return token as string;
 }
