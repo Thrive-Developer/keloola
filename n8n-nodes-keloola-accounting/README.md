@@ -23,6 +23,18 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 - **Current User**: Retrieve details of the currently authenticated user.
 
+**Resource: Exchange Currency**
+
+- **Get Many**: Get all available currencies.
+
+**Resource: Journal**
+
+- **Get Many**: Get all journal entries.
+- **Get**: Get a journal entry by ID.
+- **Create**: Create a new journal entry.
+- **Update**: Update a journal entry.
+- **Delete**: Delete a journal entry.
+
 **Resource: Organization**
 
 - **Get**: Get the user's organizations.
@@ -51,6 +63,14 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Create**: Create a new chart of account.
 - **Update**: Update a chart of account.
 - **Delete**: Delete a chart of account.
+
+**Resource: Product**
+
+- **Get Many**: Get all products.
+- **Get**: Get a product by ID.
+- **Create**: Create a new product.
+- **Update**: Update a product.
+- **Delete**: Delete a product.
 
 **Resource: Tax**
 
