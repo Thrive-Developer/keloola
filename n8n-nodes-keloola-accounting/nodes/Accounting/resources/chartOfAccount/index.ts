@@ -78,6 +78,19 @@ export const chartOfAccountNode: INodeProperties[] = [
     description: 'The page number for pagination',
   },
   {
+    displayName: 'Search',
+    name: 'search',
+    type: 'string',
+    default: '',
+    displayOptions: {
+      show: {
+        resource: [resources.chartOfAccount.value],
+        operation: [operations.getAll.value],
+      },
+    },
+    description: 'Search Chart of Account',
+  },
+  {
     displayName: 'ID',
     name: 'id',
     type: 'string',
