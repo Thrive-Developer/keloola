@@ -3,24 +3,13 @@
   "nodes": [
     {
       "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        11776,
-        112
-      ],
-      "id": "3e2f122e-4fe9-40f9-b2ed-bb029b09ffcb",
-      "name": "When clicking 'Execute workflow'"
-    },
-    {
-      "parameters": {},
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12000,
-        112
+        -224,
+        384
       ],
-      "id": "b475ec35-3b2e-4c55-ae54-66f5e41dfb45",
+      "id": "f5ba9e88-2a23-4f6f-977e-a45b63623546",
       "name": "Get current user",
       "credentials": {
         "keloolaApi": {
@@ -36,10 +25,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12224,
-        112
+        0,
+        384
       ],
-      "id": "c5b86a61-2141-4b03-bd4d-eb8127e94841",
+      "id": "3cc5c048-6fb8-4d79-afbf-4aaa6622bedb",
       "name": "Get user organizations",
       "credentials": {
         "keloolaApi": {
@@ -55,10 +44,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12448,
-        -80
+        224,
+        0
       ],
-      "id": "1ae6d146-d137-48b5-967e-5341dd12d8f9",
+      "id": "d872bf02-a762-4cf1-a5b5-12956c5d42f3",
       "name": "Get All Units",
       "credentials": {
         "keloolaApi": {
@@ -76,10 +65,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12672,
-        -80
+        448,
+        0
       ],
-      "id": "395e67a5-5210-4c28-8ee6-53cebfe5ec7a",
+      "id": "44437707-9166-4b53-b624-e49208247a90",
       "name": "Create Unit",
       "alwaysOutputData": false,
       "credentials": {
@@ -98,10 +87,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12896,
-        -80
+        672,
+        0
       ],
-      "id": "9b1f4d45-533b-4ebb-aaf4-73348088927d",
+      "id": "2aacca4e-b3bd-4098-929a-426d88b34f48",
       "name": "Get Created Unit",
       "credentials": {
         "keloolaApi": {
@@ -120,10 +109,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13120,
-        -80
+        896,
+        0
       ],
-      "id": "a397cc3c-94af-42bf-bb13-64f2d3be7e80",
+      "id": "7d4092a9-f75e-4d7f-90be-f1bc8d0ea75e",
       "name": "Update Unit",
       "credentials": {
         "keloolaApi": {
@@ -141,10 +130,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13344,
-        -80
+        1120,
+        0
       ],
-      "id": "cfb457c4-492f-40c5-afe8-50bf17e6b172",
+      "id": "f5fc2d27-6ffb-4382-a03e-1c1d39ed2ab4",
       "name": "Delete Unit",
       "credentials": {
         "keloolaApi": {
@@ -155,15 +144,16 @@
     },
     {
       "parameters": {
-        "resource": "chartOfAccount"
+        "resource": "chartOfAccount",
+        "search": "={{ $('Edit Fields').item.json.coa_name }}"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12896,
-        208
+        896,
+        384
       ],
-      "id": "cddee378-2ca2-4464-b69c-6e02e7b48232",
+      "id": "b039215a-d34d-4a19-bb12-da3fd0ef297c",
       "name": "Get All COA",
       "credentials": {
         "keloolaApi": {
@@ -180,10 +170,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12448,
-        208
+        224,
+        384
       ],
-      "id": "9d62f374-4a53-4488-b1d6-037493021b7f",
+      "id": "ebdf546a-542b-47b2-8e9d-2af422395545",
       "name": "Get COA Types",
       "credentials": {
         "keloolaApi": {
@@ -196,18 +186,18 @@
       "parameters": {
         "resource": "chartOfAccount",
         "operation": "create",
-        "name": "=n8n-test-coa-{{ Math.floor(Math.random() * 100000) }}",
+        "name": "={{ $json.coa_name }}",
         "code": "={{ Math.floor(Math.random() * 900000) + 100000 }}",
-        "type": "={{ $json.data[0].id }}",
+        "type": "={{ $('Get COA Types').item.json.data[0].id }}",
         "description": "Test COA from n8n"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12672,
-        208
+        672,
+        384
       ],
-      "id": "74ba513d-158c-4a72-8fe6-bb290ee241f2",
+      "id": "0f1a3089-dc3d-4d52-b613-0e220020bafe",
       "name": "Create COA",
       "credentials": {
         "keloolaApi": {
@@ -225,10 +215,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13120,
-        112
+        1120,
+        192
       ],
-      "id": "b7139d0f-3171-42b3-be52-b3ed5a03584a",
+      "id": "d8136576-50a0-498c-8898-bebc5750a620",
       "name": "Get Created COA",
       "credentials": {
         "keloolaApi": {
@@ -251,10 +241,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13344,
-        112
+        1344,
+        192
       ],
-      "id": "49db1152-662f-4b93-a556-19493ddc0070",
+      "id": "d45d425d-604f-4e31-81a9-5cba741c66b9",
       "name": "Update COA",
       "credentials": {
         "keloolaApi": {
@@ -272,10 +262,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13568,
-        112
+        1568,
+        192
       ],
-      "id": "87700d00-40a2-4c1f-8d73-d132d4c3e7a9",
+      "id": "405ffe93-f824-485c-9d73-a00e31114219",
       "name": "Delete COA",
       "credentials": {
         "keloolaApi": {
@@ -291,10 +281,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13344,
-        304
+        1344,
+        384
       ],
-      "id": "512d01f0-941a-4389-acc7-86154f37e15e",
+      "id": "ee8dfe64-bb74-4176-9857-f6fc00e06d01",
       "name": "Get All Tax",
       "credentials": {
         "keloolaApi": {
@@ -315,10 +305,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13120,
-        304
+        1120,
+        384
       ],
-      "id": "cf28ec2b-86af-4822-8fb8-d5bfc797dbf0",
+      "id": "cda26dc6-d78f-4c21-957a-e4fcec5ad0e6",
       "name": "Create Tax",
       "credentials": {
         "keloolaApi": {
@@ -336,10 +326,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13568,
-        304
+        1568,
+        384
       ],
-      "id": "4d2cf8db-9a99-4280-ad51-cf78c501b145",
+      "id": "82736446-c9c6-4049-a1ea-d3788766f277",
       "name": "Get Created Tax",
       "credentials": {
         "keloolaApi": {
@@ -361,10 +351,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13792,
-        304
+        1792,
+        384
       ],
-      "id": "1b8072cb-3f60-4c6a-b8fe-d4f9cf749df8",
+      "id": "c4dab917-38b4-4806-8721-e198c11a8d98",
       "name": "Update Tax",
       "credentials": {
         "keloolaApi": {
@@ -382,10 +372,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        14016,
-        304
+        2016,
+        384
       ],
-      "id": "102dd28e-84c2-4a71-95ea-177736fc0dc1",
+      "id": "84f91099-6c81-43a5-9b98-50b41c4be590",
       "name": "Delete Tax",
       "credentials": {
         "keloolaApi": {
@@ -396,16 +386,15 @@
     },
     {
       "parameters": {
-        "resource": "category",
-        "operation": "getAll"
+        "resource": "category"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12448,
-        500
+        224,
+        768
       ],
-      "id": "58138289-e60b-463b-8a57-76900c9992f8",
+      "id": "21e46d44-43ff-4514-9c48-611a4d303764",
       "name": "Get All Categories",
       "credentials": {
         "keloolaApi": {
@@ -416,16 +405,15 @@
     },
     {
       "parameters": {
-        "resource": "unit",
-        "operation": "getAll"
+        "resource": "unit"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12672,
-        500
+        672,
+        768
       ],
-      "id": "21b16219-1d7a-49b0-b89b-ebdc5decca62",
+      "id": "73149879-f4b1-49ed-91db-b70f8168c50a",
       "name": "Get All Units For Product",
       "credentials": {
         "keloolaApi": {
@@ -436,17 +424,15 @@
     },
     {
       "parameters": {
-        "resource": "product",
-        "operation": "getAll",
-        "page": 1
+        "resource": "product"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12896,
-        500
+        1568,
+        768
       ],
-      "id": "ea45fbfa-aac2-4fcb-9540-27d4e4c64796",
+      "id": "3ea72a07-73e0-4ad3-a7df-0346e2d36e72",
       "name": "Get All Products",
       "credentials": {
         "keloolaApi": {
@@ -459,8 +445,8 @@
       "parameters": {
         "resource": "product",
         "operation": "create",
-        "name": "n8n-product-{{ Math.floor(Math.random() * 100000) }}",
-        "sku": "SKU-{{ Math.floor(Math.random() * 100000) }}",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
         "category_id": "={{ $('Create Test Category').item.json.data.id }}",
         "unit_id": "={{ $('Create Test Unit').item.json.data.id }}",
         "sale_price": 1000,
@@ -471,10 +457,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13120,
-        500
+        1344,
+        768
       ],
-      "id": "aaa8aee4-d678-4769-877e-335202dc1372",
+      "id": "d4208dad-303d-420f-9e3d-789b881b1947",
       "name": "Create Product",
       "credentials": {
         "keloolaApi": {
@@ -487,15 +473,15 @@
       "parameters": {
         "resource": "product",
         "operation": "get",
-        "id": "={{ $json.data.id }}"
+        "id": "={{ $json.data.result[0].id }}"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13344,
-        500
+        1792,
+        768
       ],
-      "id": "222bed55-99bf-4eaf-897c-ca3f5ce691e9",
+      "id": "97d1c844-4b0d-47be-9a63-881f94936b06",
       "name": "Get Created Product",
       "credentials": {
         "keloolaApi": {
@@ -509,19 +495,23 @@
         "resource": "product",
         "operation": "update",
         "id": "={{ $json.data.id }}",
-        "name": "updated-{{ $json.data.name }}",
-        "category_id": "={{ $json.data.category_id }}",
-        "unit_id": "={{ $json.data.unit_id }}",
+        "name": "=updated-{{ $json.data.name }}",
+        "sku": "={{ $json.data.sku }}",
+        "category_id": "={{ $json.data.category.id }}",
+        "unit_id": "={{ $json.data.unit.id }}",
+        "description": "={{ $json.data.description }}",
+        "sale_price": "={{ $json.data.sale_price.number }}",
+        "purchase_price": "={{ $json.data.purchase_price.number }}",
         "purchase_account": "={{ $json.data.purchase_account?.id || $('Get All COA').item.json.data.result[0].id }}",
         "sale_account": "={{ $json.data.purchase_account?.id || $('Get All COA').item.json.data.result[0].id }}"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13568,
-        500
+        2016,
+        768
       ],
-      "id": "c43cc4f9-736f-478f-a99f-742ff07a7c1b",
+      "id": "375d1c19-2e75-4a77-bfad-32c3ddffe472",
       "name": "Update Product",
       "credentials": {
         "keloolaApi": {
@@ -534,15 +524,15 @@
       "parameters": {
         "resource": "product",
         "operation": "delete",
-        "id": "={{ $json.data.id }}"
+        "id": "={{ $('Get Created Product').item.json.data.id }}"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        13792,
-        500
+        2240,
+        768
       ],
-      "id": "eb7011a4-eb67-4570-9e62-4d2fd4aae90e",
+      "id": "c608b632-756b-47fa-a04f-dc533ec630eb",
       "name": "Delete Product",
       "credentials": {
         "keloolaApi": {
@@ -555,17 +545,16 @@
       "parameters": {
         "resource": "category",
         "operation": "create",
-        "name": "n8n-cat-{{Math.floor(Math.random() * 1000)}}",
-        "type": "product_service",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
         "color": "#ff0000"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12560,
-        500
+        448,
+        768
       ],
-      "id": "2f8227d6-894f-4ea5-928a-0ff92f8d59da",
+      "id": "d04960d8-b354-45fe-a52b-6669d4ddf330",
       "name": "Create Test Category",
       "credentials": {
         "keloolaApi": {
@@ -578,17 +567,15 @@
       "parameters": {
         "resource": "unit",
         "operation": "create",
-        "name": "U-{{Math.floor(Math.random() * 1000)}}",
-        "symbol": "TU",
-        "type": "item"
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12784,
-        500
+        896,
+        768
       ],
-      "id": "bdd449d0-7414-4a48-97ee-5e18319da7ef",
+      "id": "a8b77be4-ee60-4b0d-88c1-6bfd3916fcc4",
       "name": "Create Test Unit",
       "credentials": {
         "keloolaApi": {
@@ -599,16 +586,15 @@
     },
     {
       "parameters": {
-        "resource": "chartOfAccount",
-        "operation": "getAll"
+        "resource": "chartOfAccount"
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        12840,
-        500
+        1120,
+        768
       ],
-      "id": "e50a8111-c5b3-47eb-b7ec-db61b6aaea56",
+      "id": "33a41361-b77f-4237-8440-22419a9fec49",
       "name": "Get All COA For Product",
       "credentials": {
         "keloolaApi": {
@@ -616,21 +602,219 @@
           "name": "Keloola Authentication account"
         }
       }
+    },
+    {
+      "parameters": {
+        "resource": "journal",
+        "per_page": 10
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        576
+      ],
+      "id": "9d0a30cf-9b4e-4de6-82eb-342a6769f2fd",
+      "name": "Get All Journals",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "journal",
+        "operation": "create",
+        "transaction_number": "=TRX-{{ Math.floor(Math.random() * 100000) }}",
+        "date": "={{ new Date().toISOString() }}",
+        "reference": "=REF-{{ Math.floor(Math.random() * 1000) }}",
+        "force_posting": true,
+        "description": "Journal Entry from n8n",
+        "details": {
+          "detail_item": [
+            {
+              "account_id": "={{ $('Get All COA').item.json.data.result.last().id }}",
+              "description": "Debit Entry",
+              "debit": 1000
+            },
+            {
+              "account_id": "={{ $('Get All COA').item.json.data.result.last().id }}",
+              "description": "Credit Entry",
+              "credit": 1000
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        576
+      ],
+      "id": "61039d41-9310-41b7-b806-d4ee17451a11",
+      "name": "Create Journal",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "journal",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        576
+      ],
+      "id": "8fd390df-6e1f-4d12-a310-f358ae523966",
+      "name": "Get Created Journal",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "journal",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_number": "={{ $json.data.transaction_number }}",
+        "date": "={{ $json.data.date }}",
+        "force_posting": true,
+        "description": "Updated Journal Description",
+        "details": {
+          "detail_item": [
+            {
+              "account_id": "={{ $json.data.details[0].account.id }}",
+              "description": "Updated Debit Entry",
+              "debit": 1500
+            },
+            {
+              "account_id": "={{ $json.data.details[1].account.id }}",
+              "description": "Updated Credit Entry",
+              "credit": 1500
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2016,
+        576
+      ],
+      "id": "48e5c76e-2a37-4c71-bf64-19f3f5b1597d",
+      "name": "Update Journal",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "journal",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        576
+      ],
+      "id": "83aa83e4-535e-48f9-b527-e6d71c292d55",
+      "name": "Delete Journal",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "exchange"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        576
+      ],
+      "id": "02b55f25-1938-4730-90dd-2ca97ec1118d",
+      "name": "Get All Currencies",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dev-workflow",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        288
+      ],
+      "id": "776c5392-2044-4db1-915d-d67ac5cfb3be",
+      "name": "Webhook",
+      "webhookId": "961a9f18-fc26-4ff8-abbb-57d9af5f9a95"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        480
+      ],
+      "id": "18e3b79d-3093-4884-8f01-95bc156bd609",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3f7e2eee-1d45-4e51-a0f8-835b1fc97b40",
+              "name": "coa_name",
+              "value": "=n8n-test-coa-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        384
+      ],
+      "id": "84e52a2c-b091-4b37-b4e6-344852ffa848",
+      "name": "Edit Fields"
     }
   ],
   "pinData": {},
   "connections": {
-    "When clicking 'Execute workflow'": {
-      "main": [
-        [
-          {
-            "node": "Get current user",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get current user": {
       "main": [
         [
@@ -719,6 +903,11 @@
             "node": "Create Tax",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Get All Currencies",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -727,7 +916,7 @@
       "main": [
         [
           {
-            "node": "Create COA",
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -815,7 +1004,7 @@
       "main": [
         [
           {
-            "node": "Create Product",
+            "node": "Get Created Product",
             "type": "main",
             "index": 0
           }
@@ -826,7 +1015,7 @@
       "main": [
         [
           {
-            "node": "Get Created Product",
+            "node": "Get All Products",
             "type": "main",
             "index": 0
           }
@@ -903,7 +1092,100 @@
       "main": [
         [
           {
-            "node": "Get All Products",
+            "node": "Create Product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Product": {
+      "main": [
+        []
+      ]
+    },
+    "Get All Journals": {
+      "main": [
+        [
+          {
+            "node": "Create Journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Journal": {
+      "main": [
+        [
+          {
+            "node": "Get Created Journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Journal": {
+      "main": [
+        [
+          {
+            "node": "Update Journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Journal": {
+      "main": [
+        [
+          {
+            "node": "Delete Journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Currencies": {
+      "main": [
+        [
+          {
+            "node": "Get All Journals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get current user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get current user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Create COA",
             "type": "main",
             "index": 0
           }
@@ -911,17 +1193,19 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate",
-    "availableInMCP": false
+    "availableInMCP": true,
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Jakarta",
+    "callerPolicy": "workflowsFromSameOwner"
   },
-  "versionId": "c1aedb8b-32f7-4c1f-946f-04fc9a3b6969",
+  "versionId": "a3ca4474-7a0e-47dc-9d15-117744ab3dcb",
   "meta": {
-    "templateCredsSetupCompleted": true,
     "instanceId": "d0734ef49c6e31d3fe8e4f08b2f749b9a5f9bebb2abedda92821e4975833618c"
   },
-  "id": "327eR3TC2cpo49WcSYrDH",
+  "id": "TbAZXjD_7jppym2hteRWc",
   "tags": []
 }
