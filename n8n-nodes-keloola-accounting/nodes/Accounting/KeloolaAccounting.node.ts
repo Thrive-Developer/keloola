@@ -1,5 +1,7 @@
 import {
   IExecuteFunctions,
+  ILoadOptionsFunctions,
+  INodePropertyOptions,
   IHttpRequestMethods,
   INodeExecutionData,
   NodeConnectionTypes,
@@ -15,6 +17,11 @@ import {
   userNode,
 } from './resources/user';
 import { resources as unitResources, router as unitRouter, unitNode } from './resources/unit';
+import {
+  exchangeNode,
+  resources as exchangeResources,
+  router as exchangeRouter,
+} from './resources/exchange';
 import {
   categoryNode,
   resources as categoryResources,
@@ -36,6 +43,11 @@ import {
   resources as productResources,
   router as productRouter,
 } from './resources/product';
+import {
+  journalNode,
+  resources as journalResources,
+  router as journalRouter,
+} from './resources/journal';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -79,6 +91,8 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(chartOfAccountResources),
           ...Object.values(taxResources),
           ...Object.values(productResources),
+          ...Object.values(journalResources),
+          ...Object.values(exchangeResources),
         ],
         default: userResources.user.value,
       },
@@ -89,7 +103,34 @@ export class KeloolaAccounting implements INodeType {
       ...chartOfAccountNode,
       ...taxNode,
       ...productNode,
+      ...journalNode,
+      ...exchangeNode,
     ],
+  };
+
+  methods = {
+    loadOptions: {
+      async getCurrencies(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+        const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
+
+        const response = await this.helpers.httpRequest({
+          method: 'GET',
+          url: `${ENV.ACCOUNTING_BASE_URL}/exchange`,
+          headers: { Authorization: `Bearer ${token}` },
+          json: true,
+        });
+
+        if (!Array.isArray(response)) {
+          return [];
+        }
+
+        // Assuming response has code, name, uuid
+        return response.map((currency: IDataObject) => ({
+          name: `${currency.code} - ${currency.name}`,
+          value: currency.uuid as string,
+        }));
+      },
+    },
   };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
@@ -160,6 +201,20 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === productResources.product.value) {
       const routing = await productRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === journalResources.journal.value) {
+      const routing = await journalRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === exchangeResources.exchange.value) {
+      const routing = await exchangeRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
