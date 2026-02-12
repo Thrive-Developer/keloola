@@ -16,6 +16,31 @@ import {
   resources as userResources,
   userNode,
 } from './resources/user';
+import {
+  purchaseQuoteNode,
+  resources as purchaseQuoteResources,
+  router as purchaseQuoteRouter,
+} from './resources/purchaseQuote';
+import {
+  purchaseOrderNode,
+  resources as purchaseOrderResources,
+  router as purchaseOrderRouter,
+} from './resources/purchaseOrder';
+import {
+  purchaseDeliveryNode,
+  resources as purchaseDeliveryResources,
+  router as purchaseDeliveryRouter,
+} from './resources/purchaseDelivery';
+import {
+  purchaseGoodReceiveNoteNode,
+  resources as purchaseGoodReceiveNoteResources,
+  router as purchaseGoodReceiveNoteRouter,
+} from './resources/purchaseGoodReceiveNote';
+import {
+  contactNode,
+  resources as contactResources,
+  router as contactRouter,
+} from './resources/contact';
 import { resources as unitResources, router as unitRouter, unitNode } from './resources/unit';
 import {
   exchangeNode,
@@ -93,6 +118,11 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(productResources),
           ...Object.values(journalResources),
           ...Object.values(exchangeResources),
+          ...Object.values(purchaseQuoteResources),
+          ...Object.values(purchaseOrderResources),
+          ...Object.values(purchaseDeliveryResources),
+          ...Object.values(purchaseGoodReceiveNoteResources),
+          ...Object.values(contactResources),
         ],
         default: userResources.user.value,
       },
@@ -105,6 +135,11 @@ export class KeloolaAccounting implements INodeType {
       ...productNode,
       ...journalNode,
       ...exchangeNode,
+      ...purchaseQuoteNode,
+      ...purchaseOrderNode,
+      ...purchaseDeliveryNode,
+      ...purchaseGoodReceiveNoteNode,
+      ...contactNode,
     ],
   };
 
@@ -215,6 +250,41 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === exchangeResources.exchange.value) {
       const routing = await exchangeRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === purchaseQuoteResources.purchaseQuote.value) {
+      const routing = await purchaseQuoteRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === purchaseOrderResources.purchaseOrder.value) {
+      const routing = await purchaseOrderRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === purchaseDeliveryResources.purchaseDelivery.value) {
+      const routing = await purchaseDeliveryRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === purchaseGoodReceiveNoteResources.purchaseGoodReceiveNote.value) {
+      const routing = await purchaseGoodReceiveNoteRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === contactResources.contact.value) {
+      const routing = await contactRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;

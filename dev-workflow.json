@@ -811,6 +811,342 @@
       ],
       "id": "18e3b79d-3093-4884-8f01-95bc156bd609",
       "name": "Manual"
+    },
+    {
+      "name": "Create Purchase Quote",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        224,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseQuote",
+        "operation": "create",
+        "transaction_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "vendor": "={{ $json.vendor_id || \"00000000-0000-0000-0000-000000000000\" }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "qty": 1,
+              "price": 100
+            }
+          ]
+        }
+      },
+      "id": "tzwdpsw4jejjrgtnc0qw98"
+    },
+    {
+      "name": "Get Created Purchase Quote",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        448,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseQuote",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "id": "376fmdus70d3nlkv5qb3ii"
+    },
+    {
+      "name": "Update Purchase Quote",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        672,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseQuote",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "vendor": "={{ $json.data.vendor_id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "qty": 2,
+              "price": 100
+            }
+          ]
+        }
+      },
+      "id": "v4oew3b3f3n4iwsus7lpc"
+    },
+    {
+      "name": "Delete Purchase Quote",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        896,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseQuote",
+        "operation": "delete",
+        "id": "={{ $json.data.id }}"
+      },
+      "id": "xz6qh2fva0mwn6eqm9eiw"
+    },
+    {
+      "name": "Create Purchase Order",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "create",
+        "transaction_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "vendor": "={{ \"00000000-0000-0000-0000-000000000000\" }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "qty": 5,
+              "price": 50
+            }
+          ]
+        }
+      },
+      "id": "9vg1u8kvj5ddnqajddrx5t"
+    },
+    {
+      "name": "Get Created Purchase Order",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1344,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "id": "rvb4jhipjroiaf2ouxn77"
+    },
+    {
+      "name": "Update Purchase Order",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "vendor": "={{ $json.data.vendor_id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "qty": 10,
+              "price": 50
+            }
+          ]
+        }
+      },
+      "id": "ar4dalp20ztwdjhphssjki"
+    },
+    {
+      "name": "List Purchase Deliveries",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseDelivery",
+        "operation": "getAll",
+        "per_page": 5
+      },
+      "id": "ahqnj273nip106itk3kh5zl"
+    },
+    {
+      "name": "Create Manual GRN",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2016,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseDelivery",
+        "operation": "createGrn",
+        "received_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "vendor": "={{ \"00000000-0000-0000-0000-000000000000\" }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "received_qty": 1
+            }
+          ]
+        }
+      },
+      "id": "komp7z7xtyxutj11tmvn"
+    },
+    {
+      "name": "Create GRN from PO",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseGoodReceiveNote",
+        "operation": "create",
+        "purchase_id": "={{ $(\"Create Purchase Order\").item.json.data.id }}",
+        "received_date": "={{ new Date().toISOString().split(\"T\")[0] }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get Created Product\").item.json.data.id }}",
+              "received_qty": 5
+            }
+          ]
+        }
+      },
+      "id": "r8ym164wjblbfkg2z23fm"
+    },
+    {
+      "name": "Get Created GRN",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2464,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseGoodReceiveNote",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "id": "zabb4y1nxogk35vwboiojp"
+    },
+    {
+      "name": "Handle Discrepancy",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2688,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseGoodReceiveNote",
+        "operation": "handleDiscrepancy",
+        "id": "={{ $json.data.id }}",
+        "purchase_id": "={{ $(\"Create Purchase Order\").item.json.data.id }}",
+        "reason": "Damaged goods",
+        "action": "return"
+      },
+      "id": "d6g5qx6mz4bndg2226g68l"
+    },
+    {
+      "name": "Delete Purchase Order",
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        2912,
+        1152
+      ],
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      },
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "delete",
+        "id": "={{ $(\"Create Purchase Order\").item.json.data.id }}"
+      },
+      "id": "2muvu6ymg4uz75nwg7oype"
     }
   ],
   "pinData": {},
@@ -1190,6 +1526,154 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Delete Journal": {
+      "main": [
+        [
+          {
+            "node": "Create Purchase Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Purchase Quote": {
+      "main": [
+        [
+          {
+            "node": "Get Created Purchase Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Purchase Quote": {
+      "main": [
+        [
+          {
+            "node": "Update Purchase Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Purchase Quote": {
+      "main": [
+        [
+          {
+            "node": "Delete Purchase Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Purchase Quote": {
+      "main": [
+        [
+          {
+            "node": "Create Purchase Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Purchase Order": {
+      "main": [
+        [
+          {
+            "node": "Get Created Purchase Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created Purchase Order": {
+      "main": [
+        [
+          {
+            "node": "Update Purchase Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Purchase Order": {
+      "main": [
+        [
+          {
+            "node": "List Purchase Deliveries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Purchase Deliveries": {
+      "main": [
+        [
+          {
+            "node": "Create Manual GRN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Manual GRN": {
+      "main": [
+        [
+          {
+            "node": "Create GRN from PO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create GRN from PO": {
+      "main": [
+        [
+          {
+            "node": "Get Created GRN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created GRN": {
+      "main": [
+        [
+          {
+            "node": "Handle Discrepancy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Discrepancy": {
+      "main": [
+        [
+          {
+            "node": "Delete Purchase Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Purchase Order": {
+      "main": [
+        []
       ]
     }
   },
