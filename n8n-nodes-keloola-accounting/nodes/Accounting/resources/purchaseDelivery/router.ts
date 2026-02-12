@@ -11,7 +11,7 @@ export async function router(
   let body: IDataObject = {};
 
   switch (operation) {
-    case operations.getAll.value:
+    case operations.getAll.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery`;
       method = 'GET';
       const page = executeFunctions.getNodeParameter('page', 0) as number;
@@ -27,13 +27,14 @@ export async function router(
         url += `&status=${status}`;
       }
       break;
+    }
 
     case operations.get.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'GET';
       break;
 
-    case operations.createGrn.value:
+    case operations.createGrn.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/create-grn`;
       method = 'POST';
 
@@ -52,6 +53,7 @@ export async function router(
         ...additionalFields,
       };
       break;
+    }
 
     default:
       url = '';

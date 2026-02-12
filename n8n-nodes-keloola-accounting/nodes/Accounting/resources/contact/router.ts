@@ -11,7 +11,7 @@ export async function router(
   let body: IDataObject = {};
 
   switch (operation) {
-    case operations.getAll.value:
+    case operations.getAll.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/contact`;
       method = 'GET';
       const page = executeFunctions.getNodeParameter('page', 0) as number;
@@ -24,8 +24,9 @@ export async function router(
         url += `&search=${search}`;
       }
       break;
+    }
 
-    case operations.get.value:
+    case operations.get.value: {
       const id = executeFunctions.getNodeParameter('id', 0) as string;
       url = `${ENV.ACCOUNTING_BASE_URL}/contact/${id}`;
       // API spec shows contact_type is required in query for show operation?
@@ -54,9 +55,10 @@ export async function router(
       // I'll stick to standard CRUD first.
       method = 'GET';
       break;
+    }
 
     case operations.create.value:
-    case operations.update.value:
+    case operations.update.value: {
       const recordId =
         operation === operations.update.value ? executeFunctions.getNodeParameter('id', 0) : '';
       url =
@@ -77,6 +79,7 @@ export async function router(
         ...additionalFields,
       };
       break;
+    }
 
     case operations.delete.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/contact/delete/${executeFunctions.getNodeParameter('id', 0)}`;

@@ -11,7 +11,7 @@ export async function router(
   let body: IDataObject = {};
 
   switch (operation) {
-    case operations.getAll.value:
+    case operations.getAll.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-quote`;
       method = 'GET';
       const page = executeFunctions.getNodeParameter('page', 0) as number;
@@ -23,6 +23,7 @@ export async function router(
         url += `&search=${search}`;
       }
       break;
+    }
 
     case operations.get.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-quote/${executeFunctions.getNodeParameter('id', 0)}`;
@@ -34,7 +35,7 @@ export async function router(
       method = 'DELETE';
       break;
 
-    case operations.send.value:
+    case operations.send.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-quote/send/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'POST';
       const to = executeFunctions.getNodeParameter('to', 0) as string;
@@ -46,6 +47,7 @@ export async function router(
         message,
       };
       break;
+    }
 
     case operations.print.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-quote/print/${executeFunctions.getNodeParameter('id', 0)}`;
@@ -57,7 +59,7 @@ export async function router(
       break;
 
     case operations.create.value:
-    case operations.update.value:
+    case operations.update.value: {
       const id =
         operation === operations.update.value ? executeFunctions.getNodeParameter('id', 0) : '';
       url =
@@ -89,6 +91,7 @@ export async function router(
         ...additionalFields,
       };
       break;
+    }
 
     default:
       url = '';

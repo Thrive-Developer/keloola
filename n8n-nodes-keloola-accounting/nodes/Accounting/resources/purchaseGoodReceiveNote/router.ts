@@ -11,7 +11,7 @@ export async function router(
   let body: IDataObject = {};
 
   switch (operation) {
-    case operations.getAll.value:
+    case operations.getAll.value: {
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/good-receive-notes`;
       method = 'GET';
       const page = executeFunctions.getNodeParameter('page', 0) as number;
@@ -27,13 +27,14 @@ export async function router(
         url += `&purchase_id=${purchaseId}`;
       }
       break;
+    }
 
     case operations.get.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/good-receive-notes/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'GET';
       break;
 
-    case operations.create.value:
+    case operations.create.value: {
       const pId = executeFunctions.getNodeParameter('purchase_id', 0) as string;
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/${pId}/good-receive-notes`;
       method = 'POST';
@@ -47,8 +48,9 @@ export async function router(
         products,
       };
       break;
+    }
 
-    case operations.handleDiscrepancy.value:
+    case operations.handleDiscrepancy.value: {
       const purchase = executeFunctions.getNodeParameter('purchase_id', 0) as string;
       const grnId = executeFunctions.getNodeParameter('id', 0) as string;
       url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/${purchase}/good-receive-notes/${grnId}/handle-discrepancy`;
@@ -58,6 +60,7 @@ export async function router(
         action: executeFunctions.getNodeParameter('action', 0) as string,
       };
       break;
+    }
 
     default:
       url = '';
