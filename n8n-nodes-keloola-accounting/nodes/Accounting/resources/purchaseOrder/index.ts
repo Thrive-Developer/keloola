@@ -256,7 +256,6 @@ export const purchaseOrderNode: INodeProperties[] = [
             name: 'tax_id',
             type: 'string',
             default: '',
-            required: false,
             description: 'Tax ID (Separate multiple taxes with comma i.e:	1,2,3)',
           },
           {
