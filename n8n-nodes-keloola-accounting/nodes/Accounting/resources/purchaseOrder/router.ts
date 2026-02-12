@@ -73,7 +73,7 @@ export async function router(
       const products = (productsCollection.item as IDataObject[]) || [];
 
       for (const product of products) {
-        const taxId = product.tax_id as string ?? "";
+        const taxId = (product.tax_id as string) ?? '';
         if (taxId) {
           product.tax_id = taxId.split(',').map((id) => id.trim());
         }
