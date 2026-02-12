@@ -152,6 +152,20 @@ export const purchaseOrderNode: INodeProperties[] = [
     description: 'Transaction Date (Format: YYYY-MM-DD)',
   },
   {
+    displayName: 'Expiry Date',
+    name: 'expiry_date',
+    type: 'dateTime',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseOrder,
+        operation: [operations.create.value, operations.update.value],
+      },
+    },
+    description: 'Expiry Date (Format: YYYY-MM-DD)',
+  },
+  {
     displayName: 'Vendor ID',
     name: 'vendor',
     type: 'string',
@@ -235,6 +249,21 @@ export const purchaseOrderNode: INodeProperties[] = [
             name: 'qty',
             type: 'number',
             default: 1,
+            required: true,
+          },
+          {
+            displayName: 'Tax ID',
+            name: 'tax_id',
+            type: 'string',
+            default: '',
+            required: false,
+            description: 'Tax ID (Separate multiple taxes with comma i.e:	1,2,3)',
+          },
+          {
+            displayName: 'Unit ID',
+            name: 'unit_id',
+            type: 'string',
+            default: '',
             required: true,
           },
         ],

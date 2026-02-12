@@ -72,6 +72,13 @@ export async function router(
       const productsCollection = executeFunctions.getNodeParameter('products', 0) as IDataObject;
       const products = (productsCollection.item as IDataObject[]) || [];
 
+      for (const product of products) {
+        const taxId = product.tax_id as string ?? "";
+        if (taxId) {
+          product.tax_id = taxId.split(',').map((id) => id.trim());
+        }
+      }
+
       const additionalFields = executeFunctions.getNodeParameter(
         'additionalFields',
         0,
@@ -80,9 +87,10 @@ export async function router(
 
       body = {
         transaction_date: executeFunctions.getNodeParameter('transaction_date', 0),
+        expiry_date: executeFunctions.getNodeParameter('expiry_date', 0),
         vendor: executeFunctions.getNodeParameter('vendor', 0),
         draft,
-        products,
+        products: JSON.stringify(products),
         ...additionalFields,
       };
       break;

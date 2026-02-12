@@ -243,7 +243,7 @@ export const purchaseQuoteNode: INodeProperties[] = [
             name: 'tax_id',
             type: 'string',
             default: '',
-            required: true,
+            required: false,
             description: 'Tax ID (Separate multiple taxes with comma i.e:	1,2,3)',
           },
           {

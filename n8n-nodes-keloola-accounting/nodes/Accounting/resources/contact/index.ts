@@ -99,7 +99,7 @@ export const contactNode: INodeProperties[] = [
     displayOptions: {
       show: {
         ...showOnlyForContact,
-        operation: [operations.getAll.value],
+        operation: [operations.getAll.value, operations.delete.value],
       },
     },
     description: 'Filter by contact type',
