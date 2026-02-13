@@ -30,8 +30,8 @@ jobs:
       - name: Create dummy .env file
         # Required for prebuild/generate-env.ts script
         run: |
-          echo "ACCOUNTING_BASE_URL=https://dummy.api" >> .env
-          echo "AUTH_BASE_URL=https://dummy.auth" >> .env
+          echo "ACCOUNTING_BASE_URL=https://api-accounting.keloola.co" >> .env
+          echo "AUTH_BASE_URL=https://accounts.keloola.co" >> .env
 
       - name: Build
         run: bun run build
