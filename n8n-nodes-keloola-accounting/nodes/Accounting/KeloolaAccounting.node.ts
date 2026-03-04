@@ -37,6 +37,11 @@ import {
   router as purchaseGoodReceiveNoteRouter,
 } from './resources/purchaseGoodReceiveNote';
 import {
+  purchaseInvoiceNode,
+  resources as purchaseInvoiceResources,
+  router as purchaseInvoiceRouter,
+} from './resources/purchaseInvoice';
+import {
   contactNode,
   resources as contactResources,
   router as contactRouter,
@@ -73,6 +78,16 @@ import {
   resources as journalResources,
   router as journalRouter,
 } from './resources/journal';
+import {
+  salesQuoteNode,
+  resources as salesQuoteResources,
+  router as salesQuoteRouter,
+} from './resources/salesQuote';
+import {
+  salesOrderNode,
+  resources as salesOrderResources,
+  router as salesOrderRouter,
+} from './resources/salesOrder';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -122,7 +137,10 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(purchaseOrderResources),
           ...Object.values(purchaseDeliveryResources),
           ...Object.values(purchaseGoodReceiveNoteResources),
+          ...Object.values(purchaseInvoiceResources),
           ...Object.values(contactResources),
+          ...Object.values(salesQuoteResources),
+          ...Object.values(salesOrderResources),
         ],
         default: userResources.user.value,
       },
@@ -139,7 +157,10 @@ export class KeloolaAccounting implements INodeType {
       ...purchaseOrderNode,
       ...purchaseDeliveryNode,
       ...purchaseGoodReceiveNoteNode,
+      ...purchaseInvoiceNode,
       ...contactNode,
+      ...salesQuoteNode,
+      ...salesOrderNode,
     ],
   };
 
@@ -283,8 +304,29 @@ export class KeloolaAccounting implements INodeType {
       body = routing.body;
     }
 
+    if (resource === purchaseInvoiceResources.purchaseInvoice.value) {
+      const routing = await purchaseInvoiceRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
     if (resource === contactResources.contact.value) {
       const routing = await contactRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === salesQuoteResources.salesQuote.value) {
+      const routing = await salesQuoteRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === salesOrderResources.salesOrder.value) {
+      const routing = await salesOrderRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
