@@ -88,6 +88,11 @@ import {
   resources as salesOrderResources,
   router as salesOrderRouter,
 } from './resources/salesOrder';
+import {
+  salesDeliveryNode,
+  resources as salesDeliveryResources,
+  router as salesDeliveryRouter,
+} from './resources/salesDelivery';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -141,6 +146,7 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(contactResources),
           ...Object.values(salesQuoteResources),
           ...Object.values(salesOrderResources),
+          ...Object.values(salesDeliveryResources),
         ],
         default: userResources.user.value,
       },
@@ -161,6 +167,7 @@ export class KeloolaAccounting implements INodeType {
       ...contactNode,
       ...salesQuoteNode,
       ...salesOrderNode,
+      ...salesDeliveryNode,
     ],
   };
 
@@ -327,6 +334,13 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === salesOrderResources.salesOrder.value) {
       const routing = await salesOrderRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === salesDeliveryResources.salesDelivery.value) {
+      const routing = await salesDeliveryRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
