@@ -85,7 +85,9 @@ export async function router(
 
       body = {
         transaction_date: executeFunctions.getNodeParameter('transaction_date', 0),
+        expiry_date: executeFunctions.getNodeParameter('expiry_date', 0),
         due_date: executeFunctions.getNodeParameter('due_date', 0),
+        invoice_mode: executeFunctions.getNodeParameter('invoice_mode', 0),
         vendor: executeFunctions.getNodeParameter('vendor', 0),
         products: JSON.stringify(products),
         ...additionalFields,

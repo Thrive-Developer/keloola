@@ -20,7 +20,8 @@
     "clean:all": "./cleanup.sh --all",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "bun run build && changeset publish"
+    "release": "bun run build && changeset publish",
+    "full-build": "bun run format && bun run lint && bun run build && bun run link:nodes && n8n"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",

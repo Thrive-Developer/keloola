@@ -34,8 +34,8 @@ export async function router(
       method = 'GET';
       break;
 
-    case operations.createGrn.value: {
-      url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/create-grn`;
+    case operations.create.value: {
+      url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery`;
       method = 'POST';
 
       const productsCollection = executeFunctions.getNodeParameter('products', 0) as IDataObject;
@@ -47,10 +47,32 @@ export async function router(
       ) as IDataObject;
 
       body = {
+        order_id: executeFunctions.getNodeParameter('order_id', 0),
+        vendor: executeFunctions.getNodeParameter('vendor', 0),
+        shipping_date: executeFunctions.getNodeParameter('shipping_date', 0),
+        arrival_date: executeFunctions.getNodeParameter('arrival_date', 0),
+        shipping_via: executeFunctions.getNodeParameter('shipping_via', 0),
+        tracking_number: executeFunctions.getNodeParameter('tracking_number', 0),
+        products: JSON.stringify(products),
+        ...additionalFields,
+      };
+      break;
+    }
+
+    case operations.createGrn.value: {
+      url = `${ENV.ACCOUNTING_BASE_URL}/purchase-delivery/create-grn`;
+      method = 'POST';
+
+      const grnProductsCollection = executeFunctions.getNodeParameter(
+        'grn_products',
+        0,
+      ) as IDataObject;
+      const grnProducts = (grnProductsCollection.item as IDataObject[]) || [];
+
+      body = {
         received_date: executeFunctions.getNodeParameter('received_date', 0),
         vendor: executeFunctions.getNodeParameter('vendor', 0),
-        products,
-        ...additionalFields,
+        products: grnProducts,
       };
       break;
     }

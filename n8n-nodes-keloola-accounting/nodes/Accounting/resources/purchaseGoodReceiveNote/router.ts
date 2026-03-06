@@ -45,7 +45,7 @@ export async function router(
       body = {
         stock_officer_id: executeFunctions.getNodeParameter('stock_officer_id', 0),
         received_date: executeFunctions.getNodeParameter('received_date', 0),
-        products,
+        products: JSON.stringify(products),
       };
       break;
     }

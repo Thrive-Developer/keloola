@@ -127,7 +127,7 @@ export const purchaseGoodReceiveNoteNode: INodeProperties[] = [
   //         create, handleDiscrepancy
   // ----------------------------------
   {
-    displayName: 'Purchase ID',
+    displayName: 'Purchase Delivery ID',
     name: 'purchase_id',
     type: 'string',
     required: true,
@@ -138,7 +138,7 @@ export const purchaseGoodReceiveNoteNode: INodeProperties[] = [
         operation: [operations.create.value, operations.handleDiscrepancy.value],
       },
     },
-    description: 'The ID of the Purchase (Order)',
+    description: 'The ID of the Purchase Delivery',
   },
   // ----------------------------------
   //         create

@@ -12,7 +12,7 @@ export async function router(
 
   switch (operation) {
     case operations.getAll.value: {
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery`;
+      url = `${ENV.ACCOUNTING_BASE_URL}/sale-invoice`;
       method = 'GET';
       const page = executeFunctions.getNodeParameter('page', 0) as number;
       const perPage = executeFunctions.getNodeParameter('per_page', 0) as number;
@@ -26,28 +26,36 @@ export async function router(
     }
 
     case operations.get.value:
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/${executeFunctions.getNodeParameter('id', 0)}`;
+      url = `${ENV.ACCOUNTING_BASE_URL}/sale-invoice/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'GET';
       break;
 
     case operations.delete.value:
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/delete/${executeFunctions.getNodeParameter('id', 0)}`;
+      url = `${ENV.ACCOUNTING_BASE_URL}/sale-invoice/delete/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'DELETE';
       break;
 
-    case operations.release.value:
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/release/${executeFunctions.getNodeParameter('id', 0)}`;
+    case operations.send.value: {
+      url = `${ENV.ACCOUNTING_BASE_URL}/sale-invoice/send/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'POST';
+      const to = executeFunctions.getNodeParameter('to', 0) as string;
+      const cc = executeFunctions.getNodeParameter('cc', 0) as string;
+      const message = executeFunctions.getNodeParameter('message', 0) as string;
+      body = {
+        to: to.split(',').map((email) => email.trim()),
+        cc: cc ? cc.split(',').map((email) => email.trim()) : undefined,
+        message,
+      };
       break;
+    }
 
-    case operations.markArrived.value:
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/arrived/${executeFunctions.getNodeParameter('id', 0)}`;
+    case operations.print.value:
+      url = `${ENV.ACCOUNTING_BASE_URL}/sale-invoice/print/${executeFunctions.getNodeParameter('id', 0)}`;
       method = 'POST';
-      break;
-
-    case operations.startDelivery.value:
-      url = `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/start/${executeFunctions.getNodeParameter('id', 0)}`;
-      method = 'PUT';
+      body = {
+        template: executeFunctions.getNodeParameter('template', 0) as string,
+        preview_type: executeFunctions.getNodeParameter('preview_type', 0) as string,
+      };
       break;
 
     case operations.create.value:
@@ -56,8 +64,8 @@ export async function router(
         operation === operations.update.value ? executeFunctions.getNodeParameter('id', 0) : '';
       url =
         operation === operations.create.value
-          ? `${ENV.ACCOUNTING_BASE_URL}/sale-delivery`
-          : `${ENV.ACCOUNTING_BASE_URL}/sale-delivery/${id}`;
+          ? `${ENV.ACCOUNTING_BASE_URL}/sale-invoice`
+          : `${ENV.ACCOUNTING_BASE_URL}/sale-invoice/${id}`;
       method = operation === operations.create.value ? 'POST' : 'PUT';
 
       const productsCollection = executeFunctions.getNodeParameter('products', 0) as IDataObject;
@@ -74,15 +82,13 @@ export async function router(
         'additionalFields',
         0,
       ) as IDataObject;
-      const draft = executeFunctions.getNodeParameter('draft', 0) as boolean;
 
       body = {
         transaction_date: executeFunctions.getNodeParameter('transaction_date', 0),
-        shipping_date: executeFunctions.getNodeParameter('shipping_date', 0),
         expiry_date: executeFunctions.getNodeParameter('expiry_date', 0),
-        order_id: executeFunctions.getNodeParameter('order_id', 0),
+        due_date: executeFunctions.getNodeParameter('due_date', 0),
+        invoice_mode: executeFunctions.getNodeParameter('invoice_mode', 0),
         customer: executeFunctions.getNodeParameter('customer', 0),
-        draft,
         products: JSON.stringify(products),
         ...additionalFields,
       };

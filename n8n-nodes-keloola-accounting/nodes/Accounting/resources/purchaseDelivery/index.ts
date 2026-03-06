@@ -20,6 +20,12 @@ export const operations = {
     action: 'Get a purchase delivery',
     description: 'Get a purchase delivery by ID',
   },
+  create: {
+    name: 'Create',
+    value: 'create',
+    action: 'Create purchase delivery',
+    description: 'Create purchase delivery from Purchase Order',
+  },
   createGrn: {
     name: 'Create Manual GRN',
     value: 'createGrn',
@@ -126,7 +132,201 @@ export const purchaseDeliveryNode: INodeProperties[] = [
     description: 'The ID of the purchase delivery',
   },
   // ----------------------------------
-  //         createGrn
+  //         create
+  // ----------------------------------
+  {
+    displayName: 'Purchase Order ID',
+    name: 'order_id',
+    type: 'string',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    description: 'The ID of the Purchase Order',
+  },
+  {
+    displayName: 'Vendor ID',
+    name: 'vendor',
+    type: 'string',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value, operations.createGrn.value],
+      },
+    },
+  },
+  {
+    displayName: 'Shipping Date',
+    name: 'shipping_date',
+    type: 'dateTime',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    description: 'Shipping Date (Format: YYYY-MM-DD)',
+  },
+  {
+    displayName: 'Arrival Date',
+    name: 'arrival_date',
+    type: 'dateTime',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    description: 'Estimated Time of Arrival (Format: YYYY-MM-DD)',
+  },
+  {
+    displayName: 'Shipping Via',
+    name: 'shipping_via',
+    type: 'options',
+    options: [
+      { name: 'AnterAja', value: 'anteraja' },
+      { name: 'J&T', value: 'jnt' },
+      { name: 'JNE', value: 'jne' },
+      { name: 'Lion Parcel', value: 'lion_parcel' },
+      { name: 'Other', value: 'other' },
+      { name: 'Paxel', value: 'paxel' },
+      { name: 'Pos Indonesia', value: 'pos_indonesia' },
+      { name: 'Sicepat', value: 'sicepat' },
+      { name: 'Tiki', value: 'tiki' },
+    ],
+    required: true,
+    default: 'jnt',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    description: 'Shipping carrier or method',
+  },
+  {
+    displayName: 'Tracking Number',
+    name: 'tracking_number',
+    type: 'string',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    description: 'Shipment tracking number',
+  },
+  {
+    displayName: 'Products',
+    name: 'products',
+    type: 'fixedCollection',
+    typeOptions: {
+      multipleValues: true,
+    },
+    default: {},
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    options: [
+      {
+        displayName: 'Item',
+        name: 'item',
+        values: [
+          {
+            displayName: 'Purchase Item ID',
+            name: 'purchase_item_id',
+            type: 'string',
+            default: '',
+            required: true,
+            description: 'The ID of the purchase order line item',
+          },
+          {
+            displayName: 'Product ID',
+            name: 'product_id',
+            type: 'string',
+            default: '',
+            required: true,
+          },
+          {
+            displayName: 'Quantity',
+            name: 'qty',
+            type: 'number',
+            default: 1,
+            required: true,
+          },
+          {
+            displayName: 'Description',
+            name: 'description',
+            type: 'string',
+            default: '',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    displayName: 'Additional Fields',
+    name: 'additionalFields',
+    type: 'collection',
+    placeholder: 'Add Field',
+    default: {},
+    displayOptions: {
+      show: {
+        ...showOnlyForPurchaseDelivery,
+        operation: [operations.create.value],
+      },
+    },
+    options: [
+      {
+        displayName: 'Email',
+        name: 'email',
+        type: 'string',
+        placeholder: 'name@email.com',
+        default: '',
+      },
+      {
+        displayName: 'Memo',
+        name: 'memo',
+        type: 'string',
+        default: '',
+      },
+      {
+        displayName: 'Message',
+        name: 'message',
+        type: 'string',
+        default: '',
+      },
+      {
+        displayName: 'Reference No',
+        name: 'reference_no',
+        type: 'string',
+        default: '',
+      },
+      {
+        displayName: 'Transaction No',
+        name: 'transaction_no',
+        type: 'string',
+        default: '',
+      },
+    ],
+  },
+  // ----------------------------------
+  //         createGrn (manual, without PO)
   // ----------------------------------
   {
     displayName: 'Received Date',
@@ -143,21 +343,8 @@ export const purchaseDeliveryNode: INodeProperties[] = [
     description: 'Date goods were received (Format: YYYY-MM-DD)',
   },
   {
-    displayName: 'Vendor ID',
-    name: 'vendor',
-    type: 'string',
-    required: true,
-    default: '',
-    displayOptions: {
-      show: {
-        ...showOnlyForPurchaseDelivery,
-        operation: [operations.createGrn.value],
-      },
-    },
-  },
-  {
     displayName: 'Products',
-    name: 'products',
+    name: 'grn_products',
     type: 'fixedCollection',
     typeOptions: {
       multipleValues: true,

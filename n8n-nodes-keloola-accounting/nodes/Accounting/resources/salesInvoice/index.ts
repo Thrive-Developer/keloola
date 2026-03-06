@@ -1,9 +1,9 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const resources = {
-  purchaseInvoice: {
-    name: 'Purchase Invoice',
-    value: 'purchaseInvoice',
+  salesInvoice: {
+    name: 'Sales Invoice',
+    value: 'salesInvoice',
   },
 };
 
@@ -11,52 +11,52 @@ export const operations = {
   getAll: {
     name: 'Get Many',
     value: 'getAll',
-    action: 'Get many purchase invoices',
-    description: 'Get all purchase invoices',
+    action: 'Get many sales invoices',
+    description: 'Get all sales invoices',
   },
   create: {
     name: 'Create',
     value: 'create',
-    action: 'Create a purchase invoice',
-    description: 'Create a new purchase invoice',
+    action: 'Create a sales invoice',
+    description: 'Create a new sales invoice',
   },
   get: {
     name: 'Get',
     value: 'get',
-    action: 'Get a purchase invoice',
-    description: 'Get a purchase invoice by ID',
+    action: 'Get a sales invoice',
+    description: 'Get a sales invoice by ID',
   },
   update: {
     name: 'Update',
     value: 'update',
-    action: 'Update a purchase invoice',
-    description: 'Update a purchase invoice',
+    action: 'Update a sales invoice',
+    description: 'Update a sales invoice',
   },
   delete: {
     name: 'Delete',
     value: 'delete',
-    action: 'Delete a purchase invoice',
-    description: 'Delete a purchase invoice',
+    action: 'Delete a sales invoice',
+    description: 'Delete a sales invoice',
   },
   send: {
     name: 'Send',
     value: 'send',
-    action: 'Send purchase invoice',
-    description: 'Send purchase invoice via email',
+    action: 'Send sales invoice',
+    description: 'Send sales invoice via email',
   },
   print: {
     name: 'Print',
     value: 'print',
-    action: 'Print purchase invoice',
-    description: 'Print purchase invoice',
+    action: 'Print sales invoice',
+    description: 'Print sales invoice',
   },
 };
 
-const showOnlyForPurchaseInvoice = {
-  resource: [resources.purchaseInvoice.value],
+const showOnlyForSalesInvoice = {
+  resource: [resources.salesInvoice.value],
 };
 
-export const purchaseInvoiceNode: INodeProperties[] = [
+export const salesInvoiceNode: INodeProperties[] = [
   // eslint-disable-next-line n8n-nodes-base/node-param-default-missing
   {
     displayName: 'Operation',
@@ -64,7 +64,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     type: 'options',
     noDataExpression: true,
     displayOptions: {
-      show: showOnlyForPurchaseInvoice,
+      show: showOnlyForSalesInvoice,
     },
     options: [...Object.values(operations)],
     default: operations.getAll.value,
@@ -79,7 +79,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: 1,
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.getAll.value],
       },
     },
@@ -92,7 +92,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: 15,
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.getAll.value],
       },
     },
@@ -105,7 +105,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.getAll.value],
       },
     },
@@ -122,7 +122,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [
           operations.get.value,
           operations.update.value,
@@ -132,7 +132,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
         ],
       },
     },
-    description: 'The ID of the purchase invoice',
+    description: 'The ID of the sales invoice',
   },
   // ----------------------------------
   //         create, update
@@ -145,7 +145,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -159,7 +159,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -173,7 +173,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -185,27 +185,27 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     type: 'options',
     options: [
       { name: 'Manual', value: 'manual' },
-      { name: 'From Purchase Order', value: 'from_purchase_order' },
+      { name: 'From Sales Order', value: 'from_sales_order' },
     ],
     required: true,
     default: 'manual',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
     description: 'Invoice creation mode',
   },
   {
-    displayName: 'Vendor ID',
-    name: 'vendor',
+    displayName: 'Customer ID',
+    name: 'customer',
     type: 'string',
     required: true,
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -220,7 +220,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: {},
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -296,7 +296,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: {},
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.create.value, operations.update.value],
       },
     },
@@ -306,7 +306,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
         name: 'bill_address',
         type: 'string',
         default: '',
-        description: 'Vendor billing address',
+        description: 'Customer billing address',
       },
       {
         displayName: 'Category ID',
@@ -326,7 +326,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
         type: 'string',
         default: '',
         placeholder: 'name@email.com',
-        description: 'Vendor email',
+        description: 'Customer email',
       },
       {
         displayName: 'Memo',
@@ -373,7 +373,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.send.value],
       },
     },
@@ -386,7 +386,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.send.value],
       },
     },
@@ -399,7 +399,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.send.value],
       },
     },
@@ -419,7 +419,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: 'template-1',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.print.value],
       },
     },
@@ -436,7 +436,7 @@ export const purchaseInvoiceNode: INodeProperties[] = [
     default: 'pdf',
     displayOptions: {
       show: {
-        ...showOnlyForPurchaseInvoice,
+        ...showOnlyForSalesInvoice,
         operation: [operations.print.value],
       },
     },

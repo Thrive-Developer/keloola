@@ -159,6 +159,20 @@ export const salesDeliveryNode: INodeProperties[] = [
     description: 'Transaction Date (Format: YYYY-MM-DD)',
   },
   {
+    displayName: 'Shipping Date',
+    name: 'shipping_date',
+    type: 'dateTime',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForSalesDelivery,
+        operation: [operations.create.value, operations.update.value],
+      },
+    },
+    description: 'Shipping Date (Format: YYYY-MM-DD)',
+  },
+  {
     displayName: 'Expiry Date',
     name: 'expiry_date',
     type: 'dateTime',
@@ -171,6 +185,20 @@ export const salesDeliveryNode: INodeProperties[] = [
       },
     },
     description: 'Expiry Date (Format: YYYY-MM-DD)',
+  },
+  {
+    displayName: 'Sales Order ID',
+    name: 'order_id',
+    type: 'string',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        ...showOnlyForSalesDelivery,
+        operation: [operations.create.value, operations.update.value],
+      },
+    },
+    description: 'The ID of the Sales Order to create a delivery from',
   },
   {
     displayName: 'Customer ID',
@@ -257,6 +285,14 @@ export const salesDeliveryNode: INodeProperties[] = [
             type: 'number',
             default: 1,
             required: true,
+          },
+          {
+            displayName: 'Sale Item ID',
+            name: 'sale_item_id',
+            type: 'string',
+            default: '',
+            required: true,
+            description: 'The ID of the sale order line item',
           },
           {
             displayName: 'Tax ID',

@@ -6,10 +6,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -640,
-        768
+        -8432,
+        1680
       ],
-      "id": "fd1787ac-c747-4a02-811c-1af85bc79166",
+      "id": "a89c637f-51b6-4894-8a70-b3d574bde424",
       "name": "Get current user",
       "credentials": {
         "keloolaApi": {
@@ -25,10 +25,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -416,
-        768
+        -8208,
+        1680
       ],
-      "id": "c78cd662-11fe-4af6-8d85-3d9fac7b2bef",
+      "id": "f29bc730-6195-4035-b9c9-d67e865adc02",
       "name": "Get user organizations",
       "credentials": {
         "keloolaApi": {
@@ -44,10 +44,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        0
+        -7984,
+        336
       ],
-      "id": "5f206e7e-aeba-47fd-b541-5f0303e0179f",
+      "id": "df98594b-f90b-4668-865d-dacad3de0333",
       "name": "Get All Units",
       "credentials": {
         "keloolaApi": {
@@ -65,10 +65,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        32,
-        0
+        -7760,
+        336
       ],
-      "id": "aecf2818-925c-43f4-b799-e16344c29031",
+      "id": "0af09b51-a222-462a-9a4a-5b3d0a77b30f",
       "name": "Create Unit",
       "alwaysOutputData": false,
       "credentials": {
@@ -87,10 +87,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        0
+        -7536,
+        336
       ],
-      "id": "1833fa1a-ee89-4bc5-96d4-43ed05b58fe4",
+      "id": "655e806e-600c-429a-b3dd-f8fb5f6b1ac9",
       "name": "Get Created Unit",
       "credentials": {
         "keloolaApi": {
@@ -109,10 +109,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        0
+        -7312,
+        336
       ],
-      "id": "37ec6d15-7322-4434-941e-8206f1c5bf69",
+      "id": "ec555934-4ba7-43f5-811a-4e5de41685b6",
       "name": "Update Unit",
       "credentials": {
         "keloolaApi": {
@@ -130,10 +130,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        0
+        -7088,
+        336
       ],
-      "id": "2b7f3954-04d8-4ef1-8dac-d5769999da4a",
+      "id": "cd379bf5-6564-4e81-b41e-826309e2cd56",
       "name": "Delete Unit",
       "credentials": {
         "keloolaApi": {
@@ -150,10 +150,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        384
+        -7312,
+        720
       ],
-      "id": "ce206268-7541-4f82-ba0b-af926ddaa76b",
+      "id": "7e1b2967-8b7d-48a0-b6fa-312bc516665c",
       "name": "Get All COA",
       "credentials": {
         "keloolaApi": {
@@ -170,10 +170,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        384
+        -7984,
+        720
       ],
-      "id": "1cd44d65-7254-49df-9d57-5ba52dfe718a",
+      "id": "8e810983-21b8-4b3d-9dfe-8272774a9bc0",
       "name": "Get COA Types",
       "credentials": {
         "keloolaApi": {
@@ -194,10 +194,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        384
+        -7536,
+        720
       ],
-      "id": "bbd86456-17d8-4fc0-8354-15406d3f0649",
+      "id": "40c37245-c137-4e4f-8e77-7536d2bf0371",
       "name": "Create COA",
       "credentials": {
         "keloolaApi": {
@@ -215,10 +215,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        192
+        -7088,
+        528
       ],
-      "id": "730facf7-2baf-412b-9e1b-6951202688ba",
+      "id": "dca6b2e9-53e9-4636-a3f6-380098b12b8e",
       "name": "Get Created COA",
       "credentials": {
         "keloolaApi": {
@@ -241,10 +241,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        192
+        -6864,
+        528
       ],
-      "id": "260bd6a0-b3cb-4088-84f0-b96b3b535d5a",
+      "id": "0a5b69ef-a82d-4d80-b105-01d076a80793",
       "name": "Update COA",
       "credentials": {
         "keloolaApi": {
@@ -262,10 +262,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        192
+        -6640,
+        528
       ],
-      "id": "7bf2e3d0-66e6-445f-80fd-cfef3d74e9d0",
+      "id": "359a6d5e-a0ab-4700-8246-f313986d0203",
       "name": "Delete COA",
       "credentials": {
         "keloolaApi": {
@@ -281,10 +281,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        384
+        -6864,
+        720
       ],
-      "id": "527ff5be-2cc2-4f9d-8861-0fadf5806c3d",
+      "id": "91f49ca9-78fc-42df-82fa-042d29cf8204",
       "name": "Get All Tax",
       "credentials": {
         "keloolaApi": {
@@ -305,10 +305,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        384
+        -7088,
+        720
       ],
-      "id": "c7051e73-65bc-4b7c-9992-fed317961492",
+      "id": "a41bfe50-9a88-406c-8662-09479c35310d",
       "name": "Create Tax",
       "credentials": {
         "keloolaApi": {
@@ -326,10 +326,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        384
+        -6640,
+        720
       ],
-      "id": "1e9c28db-d0c8-4954-8581-edbfea7b7421",
+      "id": "5bd8e72b-33da-4e08-857e-c4861540a7b0",
       "name": "Get Created Tax",
       "credentials": {
         "keloolaApi": {
@@ -351,10 +351,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1376,
-        384
+        -6416,
+        720
       ],
-      "id": "aafa7679-d7b9-48e0-9541-d724051a1676",
+      "id": "68eec03a-b6a9-413d-bc6b-39205f07ccac",
       "name": "Update Tax",
       "credentials": {
         "keloolaApi": {
@@ -372,10 +372,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        384
+        -6192,
+        720
       ],
-      "id": "a20baaae-2bbb-4949-8e30-0247397a29b4",
+      "id": "efa3c5e7-ee64-48c7-a58e-175b21fec980",
       "name": "Delete Tax",
       "credentials": {
         "keloolaApi": {
@@ -391,10 +391,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        960
+        -7984,
+        1296
       ],
-      "id": "f85022d0-d53b-4f47-b33d-c152bde81363",
+      "id": "93d4bb4a-bdab-4c43-9685-adff19773d24",
       "name": "Get All Categories",
       "credentials": {
         "keloolaApi": {
@@ -410,10 +410,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        960
+        -7536,
+        1296
       ],
-      "id": "7c88be7b-064e-44c2-8d99-c2d7f1bc00db",
+      "id": "193e97e7-5ba8-476b-903f-c996159e2025",
       "name": "Get All Units For Product",
       "credentials": {
         "keloolaApi": {
@@ -430,10 +430,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1376,
-        960
+        -6416,
+        1296
       ],
-      "id": "53dfa59d-50c4-4487-8c01-82551a758647",
+      "id": "957d9131-9d6a-46d6-a45d-15821e08a0e4",
       "name": "Get All Products",
       "credentials": {
         "keloolaApi": {
@@ -458,10 +458,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        960
+        -6640,
+        1296
       ],
-      "id": "63fafa91-7737-4dc5-a255-d974c43ea881",
+      "id": "6e57da79-ab70-43b1-9867-0416c75eb152",
       "name": "Create Product",
       "credentials": {
         "keloolaApi": {
@@ -479,10 +479,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        960
+        -6192,
+        1296
       ],
-      "id": "b7267ca6-2227-4591-8fa8-91dfdbb93f80",
+      "id": "a3f1ab68-ca70-4f40-a919-025d26c8278a",
       "name": "Get Created Product",
       "credentials": {
         "keloolaApi": {
@@ -509,10 +509,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1824,
-        960
+        -5968,
+        1296
       ],
-      "id": "cb61ed33-4f3f-46a3-805b-4adf7f919545",
+      "id": "95199535-f828-4552-a409-d895e11440b7",
       "name": "Update Product",
       "credentials": {
         "keloolaApi": {
@@ -530,10 +530,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2048,
-        960
+        -5744,
+        1296
       ],
-      "id": "66180803-0d7d-4922-9db3-f30ebb6ccf57",
+      "id": "9685d8d9-01ac-41e5-b518-ad17bf773cc5",
       "name": "Delete Product",
       "credentials": {
         "keloolaApi": {
@@ -552,10 +552,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        32,
-        960
+        -7760,
+        1296
       ],
-      "id": "7ae1940e-61bb-4976-8d94-1fcd210212f4",
+      "id": "79dfd825-851c-4e52-a5f9-769616155c17",
       "name": "Create Test Category",
       "credentials": {
         "keloolaApi": {
@@ -573,10 +573,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        960
+        -7312,
+        1296
       ],
-      "id": "0804ea96-0d4a-4335-bb84-c43c23546f50",
+      "id": "0a876d2c-9f30-4cd4-9adc-6ce62a82c99a",
       "name": "Create Test Unit",
       "credentials": {
         "keloolaApi": {
@@ -592,10 +592,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        960
+        -7088,
+        1296
       ],
-      "id": "9b111aa5-da6a-43ee-9bb5-547d420f5ff2",
+      "id": "16f1b6c7-9a6e-443c-93f3-9a77e425065b",
       "name": "Get All COA For Product",
       "credentials": {
         "keloolaApi": {
@@ -612,10 +612,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        576
+        -6864,
+        912
       ],
-      "id": "35936a8f-78d6-43d4-9dd8-56b58cc6dddd",
+      "id": "4706c2ca-79a0-48fe-b1b4-7f830f9dd6e2",
       "name": "Get All Journals",
       "credentials": {
         "keloolaApi": {
@@ -651,10 +651,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        576
+        -6640,
+        912
       ],
-      "id": "82d2b301-9175-42d5-ae79-95c885b6be69",
+      "id": "63fe3502-826b-4bcd-98a6-0e5b03fc28ff",
       "name": "Create Journal",
       "credentials": {
         "keloolaApi": {
@@ -672,10 +672,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1376,
-        576
+        -6416,
+        912
       ],
-      "id": "bcb1529d-b182-44a1-b436-db4d414d160d",
+      "id": "4dfc7535-f4b9-4e74-9b03-6e578fad57c2",
       "name": "Get Created Journal",
       "credentials": {
         "keloolaApi": {
@@ -711,10 +711,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        576
+        -6192,
+        912
       ],
-      "id": "5f655ab4-2767-4486-b3c1-2974301e0ab9",
+      "id": "7969c1fe-0e26-4975-8d05-bf868e93d036",
       "name": "Update Journal",
       "credentials": {
         "keloolaApi": {
@@ -732,10 +732,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1824,
-        576
+        -5968,
+        912
       ],
-      "id": "19d3ffff-663c-4f8b-ab51-a37d1b092b75",
+      "id": "6c513487-ccd9-4879-b733-5bd7010214d7",
       "name": "Delete Journal",
       "credentials": {
         "keloolaApi": {
@@ -751,10 +751,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        576
+        -7088,
+        912
       ],
-      "id": "da25e069-9695-4cf5-97e6-e1f1d24633b4",
+      "id": "84e3edab-3419-4f0d-ac80-aee22cae67c9",
       "name": "Get All Currencies",
       "credentials": {
         "keloolaApi": {
@@ -780,10 +780,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        32,
-        384
+        -7760,
+        720
       ],
-      "id": "0ed0a5be-292c-4993-8db9-4838511bfc62",
+      "id": "1cf5c4c9-b051-4856-9393-990c0c0a7faa",
       "name": "Edit Fields"
     },
     {
@@ -791,10 +791,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -864,
-        768
+        -8656,
+        1680
       ],
-      "id": "ebc1653a-18cd-4a84-b593-abd127ed1a13",
+      "id": "baa1e451-d5a0-40cc-9982-127ec11ed3b6",
       "name": "Manual"
     },
     {
@@ -820,10 +820,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2048,
-        768
+        -5744,
+        1104
       ],
-      "id": "07766bb2-fb6e-4fc5-a65d-a9dd34c5299e",
+      "id": "93e64ae2-e26b-4b94-a277-55de399e1abf",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -841,10 +841,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2272,
-        768
+        -5520,
+        1104
       ],
-      "id": "c4bf760e-5717-4341-a88b-95b17b22dfac",
+      "id": "e853d61e-f366-4184-9052-8571c2bfc1ee",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -877,10 +877,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2496,
-        768
+        -5296,
+        1104
       ],
-      "id": "9ba8ad03-6fad-48be-bfae-162996bee373",
+      "id": "52bda58d-768f-45de-a062-ded3f60b73a8",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -898,10 +898,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2944,
-        768
+        -4848,
+        1104
       ],
-      "id": "d28a3f6d-f4d7-42eb-bebd-fe72c21086c6",
+      "id": "061e2d0e-f102-4456-88c4-b65032a44a5e",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -916,10 +916,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        32,
-        768
+        -7760,
+        1104
       ],
-      "id": "3953f1cd-e99d-4ec7-b0d5-af5e831ca679",
+      "id": "fd4f8eae-1077-45ea-b716-c0ac839fc6b8",
       "name": "Get All Products1",
       "credentials": {
         "keloolaApi": {
@@ -940,10 +940,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        768
+        -7984,
+        1104
       ],
-      "id": "8fd96aa9-eb48-4bb4-b7a4-219c795f6a81",
+      "id": "a9f83d33-ed47-4114-acf0-3f965921b6cf",
       "name": "Create a contact",
       "credentials": {
         "keloolaApi": {
@@ -959,10 +959,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        768
+        -7536,
+        1104
       ],
-      "id": "599fc27a-b229-4166-b113-ac840eb7299b",
+      "id": "d95a0ec0-183e-4b7b-be6e-8d7db086a497",
       "name": "Get All Categories1",
       "credentials": {
         "keloolaApi": {
@@ -978,10 +978,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        768
+        -7088,
+        1104
       ],
-      "id": "42dddcb0-6e26-4634-b681-499ee180df30",
+      "id": "c12cdceb-f8c7-4159-b226-83cf8f4d16ef",
       "name": "Get All Units For Product1",
       "credentials": {
         "keloolaApi": {
@@ -998,10 +998,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1824,
-        768
+        -5968,
+        1104
       ],
-      "id": "92c4b6a9-7638-4a66-8c75-655aabec64d8",
+      "id": "ad9d6f7c-4c8e-4f8c-bf94-a833c5a5f462",
       "name": "Get All Products2",
       "credentials": {
         "keloolaApi": {
@@ -1026,10 +1026,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        768
+        -6192,
+        1104
       ],
-      "id": "1d8e141a-dc92-49a9-ae4c-87a9cbb3db6a",
+      "id": "2145b9a3-a76d-43c5-9bb8-bd4a75b2d34f",
       "name": "Create Product1",
       "credentials": {
         "keloolaApi": {
@@ -1048,10 +1048,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        768
+        -7312,
+        1104
       ],
-      "id": "64c4e252-0927-4aa1-ad1f-5c69a3dca7e8",
+      "id": "3120f9e2-5095-4e4c-8063-3f96e81059c6",
       "name": "Create Test Category1",
       "credentials": {
         "keloolaApi": {
@@ -1069,10 +1069,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        768
+        -6864,
+        1104
       ],
-      "id": "79a8913c-ae9c-4282-b2a2-6b356d222bea",
+      "id": "5505edfb-846c-4f10-b393-cf2a516e2aba",
       "name": "Create Test Unit1",
       "credentials": {
         "keloolaApi": {
@@ -1088,10 +1088,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        768
+        -6640,
+        1104
       ],
-      "id": "fefef653-b7bf-493b-9fbd-f6ef82b2df32",
+      "id": "0c6f7466-4493-4dca-aff0-f378537644b0",
       "name": "Get All COA For Product1",
       "credentials": {
         "keloolaApi": {
@@ -1109,10 +1109,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2720,
-        768
+        -5072,
+        1104
       ],
-      "id": "0fe588e9-c832-4007-8f64-1597606836ac",
+      "id": "92467107-cb8c-44e5-8f22-c6ed0b1ae9ac",
       "name": "Print purchase quote",
       "credentials": {
         "keloolaApi": {
@@ -1130,10 +1130,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3168,
-        768
+        -4624,
+        1104
       ],
-      "id": "ba473075-67f5-432d-9fe3-2322cb65b212",
+      "id": "fe082eec-3fe6-40a7-848e-2d97fb291947",
       "name": "Delete a product",
       "credentials": {
         "keloolaApi": {
@@ -1151,10 +1151,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3392,
-        768
+        -4400,
+        1104
       ],
-      "id": "0eea266e-b1fe-4d62-bacd-dfcf5c7847e0",
+      "id": "e02e03e6-2f2a-49c4-bf48-8f545dadeac0",
       "name": "Delete a unit",
       "credentials": {
         "keloolaApi": {
@@ -1172,10 +1172,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3616,
-        768
+        -4176,
+        1104
       ],
-      "id": "09198482-245c-4f61-b5c1-37d72c87a0ff",
+      "id": "fb50ed25-6de4-4ed3-860d-0142b7d43a4b",
       "name": "Delete a category",
       "credentials": {
         "keloolaApi": {
@@ -1194,10 +1194,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3840,
-        768
+        -3952,
+        1104
       ],
-      "id": "3120b315-50a4-4a4a-baff-8dc7642c5010",
+      "id": "066eb643-e7f9-47d3-9341-e7aeb1f4732c",
       "name": "Delete a contact",
       "credentials": {
         "keloolaApi": {
@@ -1213,10 +1213,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        32,
-        1152
+        -7760,
+        1488
       ],
-      "id": "39874ea0-2084-4d60-bbb6-4e69c987d3e9",
+      "id": "f420c168-6490-45a0-a328-9c1540fb6821",
       "name": "Get All Products3",
       "credentials": {
         "keloolaApi": {
@@ -1237,10 +1237,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        1152
+        -7984,
+        1488
       ],
-      "id": "81d4bd65-c3e5-4eab-b8bf-68f4f33b9be9",
+      "id": "48b553f7-82ba-4165-a059-9c6569f7d47e",
       "name": "Create a contact1",
       "credentials": {
         "keloolaApi": {
@@ -1256,10 +1256,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        1152
+        -7536,
+        1488
       ],
-      "id": "e0dfca5d-b9bf-4fd4-96d6-08adfb3f10ef",
+      "id": "46b08f28-3e4f-420a-b9f8-e5913f8d9551",
       "name": "Get All Categories2",
       "credentials": {
         "keloolaApi": {
@@ -1275,10 +1275,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        1152
+        -7088,
+        1488
       ],
-      "id": "521dcd01-dc70-439e-938b-dcc5a586ab77",
+      "id": "77b4d05d-6519-4392-af72-c0516ebb2c4c",
       "name": "Get All Units For Product2",
       "credentials": {
         "keloolaApi": {
@@ -1295,10 +1295,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1824,
-        1152
+        -5968,
+        1488
       ],
-      "id": "4f297091-99fa-45d6-bd70-085b967f0b9c",
+      "id": "8e507eea-388e-4c61-97f9-404f970d6d98",
       "name": "Get All Products4",
       "credentials": {
         "keloolaApi": {
@@ -1323,10 +1323,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        1152
+        -6192,
+        1488
       ],
-      "id": "72df82ac-7600-49c2-9da8-d71b6955682d",
+      "id": "9733cd91-4113-4669-890f-2e1b78c00cbb",
       "name": "Create Product2",
       "credentials": {
         "keloolaApi": {
@@ -1345,10 +1345,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        1152
+        -7312,
+        1488
       ],
-      "id": "021960c4-bb04-4e78-93f0-d79b8cc78d4d",
+      "id": "65224f45-6d51-4c10-acd0-6fe745e7c68d",
       "name": "Create Test Category2",
       "credentials": {
         "keloolaApi": {
@@ -1366,10 +1366,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        1152
+        -6864,
+        1488
       ],
-      "id": "be97d106-f718-475f-b136-de27db6f8d65",
+      "id": "65055823-ba83-488c-b175-df3c8ce32929",
       "name": "Create Test Unit2",
       "credentials": {
         "keloolaApi": {
@@ -1385,106 +1385,11 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        1152
+        -6640,
+        1488
       ],
-      "id": "b5701d8d-243f-45ec-a399-4ea333c8d583",
+      "id": "9b82707d-ec7a-4157-9478-8e3a907783c6",
       "name": "Get All COA For Product2",
-      "credentials": {
-        "keloolaApi": {
-          "id": "coOAMn7jzue8fRQX",
-          "name": "Keloola Authentication account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "purchaseDelivery"
-      },
-      "name": "List Purchase Deliveries",
-      "type": "CUSTOM.keloolaAccounting",
-      "typeVersion": 1,
-      "position": [
-        -864,
-        1376
-      ],
-      "id": "352c51b4-b3bf-4c03-9cb8-0f899ae3a2f7",
-      "credentials": {
-        "keloolaApi": {
-          "id": "coOAMn7jzue8fRQX",
-          "name": "Keloola Authentication account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "purchaseDelivery"
-      },
-      "name": "Create Manual GRN",
-      "type": "CUSTOM.keloolaAccounting",
-      "typeVersion": 1,
-      "position": [
-        -640,
-        1376
-      ],
-      "id": "a6770d20-8e8d-4481-9be7-d57992248a1f",
-      "credentials": {
-        "keloolaApi": {
-          "id": "coOAMn7jzue8fRQX",
-          "name": "Keloola Authentication account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "purchaseGoodReceiveNote"
-      },
-      "name": "Create GRN from PO",
-      "type": "CUSTOM.keloolaAccounting",
-      "typeVersion": 1,
-      "position": [
-        -416,
-        1376
-      ],
-      "id": "781ed0a6-b35a-4a3a-b59b-7d907a69f911",
-      "credentials": {
-        "keloolaApi": {
-          "id": "coOAMn7jzue8fRQX",
-          "name": "Keloola Authentication account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "purchaseGoodReceiveNote"
-      },
-      "name": "Get Created GRN",
-      "type": "CUSTOM.keloolaAccounting",
-      "typeVersion": 1,
-      "position": [
-        -192,
-        1376
-      ],
-      "id": "117bc3ab-49f7-4ca7-aaec-dc6fd8b946b5",
-      "credentials": {
-        "keloolaApi": {
-          "id": "coOAMn7jzue8fRQX",
-          "name": "Keloola Authentication account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "purchaseGoodReceiveNote"
-      },
-      "name": "Handle Discrepancy",
-      "type": "CUSTOM.keloolaAccounting",
-      "typeVersion": 1,
-      "position": [
-        32,
-        1376
-      ],
-      "id": "955e9889-da04-4c70-9039-28dc239018cf",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -1501,10 +1406,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2720,
-        1152
+        -5072,
+        1488
       ],
-      "id": "c7297ed4-fc02-41ad-a48e-7d93e4aff331",
+      "id": "14b0d35e-8338-4325-98ad-915ebedc9c96",
       "name": "Print purchase order",
       "credentials": {
         "keloolaApi": {
@@ -1534,10 +1439,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2048,
-        1152
+        -5744,
+        1488
       ],
-      "id": "8371bb57-cad3-426d-90da-1bb4be0723b9",
+      "id": "8b187c60-f572-4a45-a30b-47dcbe6da8cd",
       "name": "Create a purchase order",
       "credentials": {
         "keloolaApi": {
@@ -1555,10 +1460,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2272,
-        1152
+        -5520,
+        1488
       ],
-      "id": "e51cedfa-e281-47f0-84dd-3849219b66ed",
+      "id": "98449fdc-5503-40e6-b6d1-cdd467b444ee",
       "name": "Get a purchase order",
       "credentials": {
         "keloolaApi": {
@@ -1588,10 +1493,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2496,
-        1152
+        -5296,
+        1488
       ],
-      "id": "595f49b5-fa9b-4117-8550-39ca513d1ccb",
+      "id": "024153f8-a9cb-4ca1-b448-e27e106b6c82",
       "name": "Update a purchase order",
       "credentials": {
         "keloolaApi": {
@@ -1609,10 +1514,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2944,
-        1152
+        -4848,
+        1488
       ],
-      "id": "ee145924-a3da-4d04-8169-1af37e0a53c7",
+      "id": "2a67576c-f978-4ebb-9e78-8d05b0a68c0e",
       "name": "Delete a purchase order",
       "credentials": {
         "keloolaApi": {
@@ -1638,10 +1543,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1376,
-        768
+        -6416,
+        1104
       ],
-      "id": "8277fd91-f553-42d7-9090-34db282a7de8",
+      "id": "a576d8b4-a174-4370-bf34-0063a97aebfb",
       "name": "Edit Fields1"
     },
     {
@@ -1661,10 +1566,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        928,
-        960
+        -6864,
+        1296
       ],
-      "id": "0decb4d2-eb52-4892-9b2b-8d958277c967",
+      "id": "76ded9bc-9580-4ed3-bf00-7c1712acdf45",
       "name": "Edit Fields2"
     },
     {
@@ -1684,10 +1589,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1376,
-        1152
+        -6416,
+        1488
       ],
-      "id": "bf6f9524-4e01-4d07-8e44-142666e31d77",
+      "id": "cb875894-f7f4-4912-a3fe-c58f1f0d4ff1",
       "name": "Edit Fields3"
     },
     {
@@ -1699,10 +1604,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3168,
-        1152
+        -4624,
+        1488
       ],
-      "id": "fd59014f-9e89-45fe-9f88-33c68bca2d59",
+      "id": "18178eff-9da0-4885-9e09-4101cb8294ab",
       "name": "Delete a product1",
       "credentials": {
         "keloolaApi": {
@@ -1720,10 +1625,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3392,
-        1152
+        -4400,
+        1488
       ],
-      "id": "2009bd38-0daa-48ef-90af-dbd17371165e",
+      "id": "ea08b322-8efe-4430-befa-4dcaffe1c967",
       "name": "Delete a unit1",
       "credentials": {
         "keloolaApi": {
@@ -1741,10 +1646,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3616,
-        1152
+        -4176,
+        1488
       ],
-      "id": "06714a7b-bbb3-49f9-b81b-006290f4f07b",
+      "id": "3e06ec17-cffe-4283-8478-dcd24dd0177c",
       "name": "Delete a category1",
       "credentials": {
         "keloolaApi": {
@@ -1763,10 +1668,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3840,
-        1152
+        -3952,
+        1488
       ],
-      "id": "44a3c792-b3ca-4e15-b122-688a3ba88db2",
+      "id": "ee2488a0-c5d6-4c19-9d0a-d466773cb8c7",
       "name": "Delete a contact1",
       "credentials": {
         "keloolaApi": {
@@ -1787,10 +1692,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        -192,
-        1568
+        -7984,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000001",
+      "id": "6f160b83-6c2c-4657-b005-3c7e39f8a48f",
       "name": "Create a contact2",
       "credentials": {
         "keloolaApi": {
@@ -1806,10 +1711,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        32,
-        1568
+        -7760,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000002",
+      "id": "f41b71fa-fc8d-48da-ad7d-9f66932ff9c4",
       "name": "Get All Products5",
       "credentials": {
         "keloolaApi": {
@@ -1825,10 +1730,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        256,
-        1568
+        -7536,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000003",
+      "id": "fcbf9809-a8be-4eed-860b-c51f8228ac75",
       "name": "Get All Categories3",
       "credentials": {
         "keloolaApi": {
@@ -1847,10 +1752,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        480,
-        1568
+        -7312,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000004",
+      "id": "c627739a-d0ca-4d57-83fa-a77c5150e59e",
       "name": "Create Test Category3",
       "credentials": {
         "keloolaApi": {
@@ -1866,10 +1771,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        704,
-        1568
+        -7088,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000005",
+      "id": "a77a18e3-dbfe-46d7-ad50-b2c9f9752ea9",
       "name": "Get All Units For Product3",
       "credentials": {
         "keloolaApi": {
@@ -1887,10 +1792,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        928,
-        1568
+        -6864,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000006",
+      "id": "3e1cb6f3-ca03-47cc-8056-6e8ff63c1cca",
       "name": "Create Test Unit3",
       "credentials": {
         "keloolaApi": {
@@ -1906,10 +1811,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1152,
-        1568
+        -6640,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000007",
+      "id": "7c9ffe71-04dd-4874-b647-d1bb136a28de",
       "name": "Get All COA For Product3",
       "credentials": {
         "keloolaApi": {
@@ -1935,10 +1840,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1376,
-        1568
+        -6416,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-00000000000f",
+      "id": "987272c4-c538-41f4-b48f-c5747b13a752",
       "name": "Edit Fields4"
     },
     {
@@ -1957,10 +1862,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1600,
-        1568
+        -6192,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000008",
+      "id": "00fa1188-71a1-47a6-bd7f-28b370d8ef25",
       "name": "Create Product3",
       "credentials": {
         "keloolaApi": {
@@ -1977,10 +1882,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        1824,
-        1568
+        -5968,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000009",
+      "id": "7d3172cd-f545-4725-9b7e-c25b4df26a3a",
       "name": "Get All Products6",
       "credentials": {
         "keloolaApi": {
@@ -1994,6 +1899,7 @@
         "resource": "purchaseInvoice",
         "operation": "create",
         "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
         "due_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
         "vendor": "={{ $('Create a contact2').item.json.data.id }}",
         "products": {
@@ -2010,10 +1916,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2048,
-        1568
+        -5744,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-00000000000a",
+      "id": "320e36f1-cb3a-4c34-837a-afabf154ca28",
       "name": "Create Purchase Invoice",
       "credentials": {
         "keloolaApi": {
@@ -2031,10 +1937,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2272,
-        1568
+        -5520,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-00000000000b",
+      "id": "469cf58f-d7fe-49d5-91a6-61018106dda8",
       "name": "Get Purchase Invoice",
       "credentials": {
         "keloolaApi": {
@@ -2049,6 +1955,7 @@
         "operation": "update",
         "id": "={{ $json.data.id }}",
         "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
         "due_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
         "vendor": "={{ $('Create a contact2').item.json.data.id }}",
         "products": {
@@ -2059,15 +1966,18 @@
             }
           ]
         },
-        "additionalFields": {}
+        "additionalFields": {
+          "currency": "",
+          "email": ""
+        }
       },
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2496,
-        1568
+        -5296,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-00000000000c",
+      "id": "5f6fe457-4961-45a8-95c7-369267cba53e",
       "name": "Update Purchase Invoice",
       "credentials": {
         "keloolaApi": {
@@ -2085,10 +1995,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2720,
-        1568
+        -5072,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-00000000000d",
+      "id": "1373cdab-cd5b-49ae-aa4c-c73153dceb5f",
       "name": "Print Purchase Invoice",
       "credentials": {
         "keloolaApi": {
@@ -2106,10 +2016,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        2944,
-        1568
+        -4848,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000010",
+      "id": "0371ee29-5ba2-46b9-99d7-c4c0a5b5f22f",
       "name": "Delete Purchase Invoice",
       "credentials": {
         "keloolaApi": {
@@ -2127,10 +2037,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3168,
-        1568
+        -4624,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000011",
+      "id": "b123833b-aafb-43d1-943d-7cba21b7877e",
       "name": "Delete a product2",
       "credentials": {
         "keloolaApi": {
@@ -2148,10 +2058,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3392,
-        1568
+        -4400,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000012",
+      "id": "76ff8987-2891-4b44-9322-2ae367b5b596",
       "name": "Delete a unit2",
       "credentials": {
         "keloolaApi": {
@@ -2169,10 +2079,10 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3616,
-        1568
+        -4176,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000013",
+      "id": "48438f23-6253-47a7-a91f-2d7c3917d0ea",
       "name": "Delete a category2",
       "credentials": {
         "keloolaApi": {
@@ -2191,11 +2101,2141 @@
       "type": "CUSTOM.keloolaAccounting",
       "typeVersion": 1,
       "position": [
-        3840,
-        1568
+        -3952,
+        1680
       ],
-      "id": "a1b2c3d4-0001-0001-0001-000000000014",
+      "id": "067fd775-57f5-4a68-8d37-67ac3f483a50",
       "name": "Delete a contact2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "create",
+        "name": "N8N Customer SQ",
+        "email": "n8n.customer.sq@keloola.com",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7984,
+        2064
+      ],
+      "id": "eee28140-2a85-41a9-8fd3-c58292f89366",
+      "name": "Create Customer SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7760,
+        2064
+      ],
+      "id": "88cb294d-00f5-44af-a348-c93a7271651d",
+      "name": "Get All Products SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7536,
+        2064
+      ],
+      "id": "ae6cdc37-b00b-4dfe-becb-5a0f6bd50021",
+      "name": "Get All Categories SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "color": "#00ff00"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7312,
+        2064
+      ],
+      "id": "a18f9c8c-292b-4b70-a66f-48838b5a0dd8",
+      "name": "Create Test Category SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7088,
+        2064
+      ],
+      "id": "a7b1ccbb-bf91-4585-9243-1088d4cb2d19",
+      "name": "Get All Units SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6864,
+        2064
+      ],
+      "id": "f1fea9e0-0a9d-46bf-83cd-7152d9ef24d9",
+      "name": "Create Test Unit SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        2064
+      ],
+      "id": "532f667e-87be-4c7d-b241-fcbaf2f0724e",
+      "name": "Get All COA SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1b2c3d4-0002-0001-0001-00000000000e",
+              "name": "sku",
+              "value": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -6416,
+        2064
+      ],
+      "id": "7ee8b960-429a-4198-bee9-45dcc96a6e99",
+      "name": "Edit Fields SQ"
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "={{ $json.sku }}",
+        "category_id": "={{ $('Create Test Category SQ').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit SQ').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA SQ').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA SQ').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6192,
+        2064
+      ],
+      "id": "5b56901e-7f3e-48da-adf3-f5117d8d1fa3",
+      "name": "Create Product SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "search": "={{ $('Edit Fields SQ').item.json.sku }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        2064
+      ],
+      "id": "ed8601a1-10ec-40c1-b839-4d63b4a0c7fc",
+      "name": "Get All Products SQ2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesQuote",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SQ').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 100,
+              "product_id": "={{ $json.data.result[0].id }}",
+              "tax_id": "={{ \"\" }}",
+              "unit_id": "={{ $('Create Test Unit SQ').item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5744,
+        2064
+      ],
+      "id": "e423a8d6-0733-4b9a-ac29-f9903b186478",
+      "name": "Create Sales Quote",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesQuote",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5520,
+        2064
+      ],
+      "id": "c3b9473f-9ac3-471c-a757-d795d693f5c0",
+      "name": "Get Sales Quote",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesQuote",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SQ').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 200,
+              "product_id": "={{ $('Get All Products SQ2').item.json.data.result[0].id }}",
+              "qty": 2,
+              "tax_id": "={{ \"\" }}",
+              "unit_id": "={{ $('Create Test Unit SQ').item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5296,
+        2064
+      ],
+      "id": "36390bb5-b941-41e9-9359-70e48d60850c",
+      "name": "Update Sales Quote",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesQuote",
+        "operation": "print",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        2064
+      ],
+      "id": "1796d58f-f7fc-42a5-bed6-4ea72dea0867",
+      "name": "Print Sales Quote",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesQuote",
+        "operation": "delete",
+        "id": "={{ $('Update Sales Quote').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4848,
+        2064
+      ],
+      "id": "635ab75b-1d09-4a63-aa4a-17377f6649e9",
+      "name": "Delete Sales Quote",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "delete",
+        "id": "={{ $('Get All Products SQ2').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4624,
+        2064
+      ],
+      "id": "3353eb88-0bf9-4f80-987e-2b38e7573f5b",
+      "name": "Delete Product SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "delete",
+        "id": "={{ $('Create Test Unit SQ').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4400,
+        2064
+      ],
+      "id": "50da43e7-4a93-45e6-814b-23c9b8acd27b",
+      "name": "Delete Unit SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "delete",
+        "id": "={{ $('Create Test Category SQ').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        2064
+      ],
+      "id": "cdd2311f-2936-439b-b2a1-e0a319dbe2b7",
+      "name": "Delete Category SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "delete",
+        "id": "={{ $('Create Customer SQ').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3952,
+        2064
+      ],
+      "id": "ea203686-7679-44a8-82ab-b3c176821fac",
+      "name": "Delete Customer SQ",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "create",
+        "name": "N8N Customer SO",
+        "email": "n8n.customer.so@keloola.com",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7984,
+        2256
+      ],
+      "id": "25e1fa14-9754-43b9-a863-68ee64714ee4",
+      "name": "Create Customer SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7760,
+        2256
+      ],
+      "id": "620bb159-691d-47d3-acaa-18ee6367f2a2",
+      "name": "Get All Products SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7536,
+        2256
+      ],
+      "id": "915d24ae-3da4-476a-ab2b-92743368799e",
+      "name": "Get All Categories SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "color": "#0000ff"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7312,
+        2256
+      ],
+      "id": "4e0e0369-ee1e-49fa-9761-12a40825926f",
+      "name": "Create Test Category SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7088,
+        2256
+      ],
+      "id": "3de1c970-b686-436b-b1b1-0d2749b5edaa",
+      "name": "Get All Units SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6864,
+        2256
+      ],
+      "id": "84a784c3-7cb8-4d19-b096-d3e4d214b33a",
+      "name": "Create Test Unit SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        2256
+      ],
+      "id": "1016bf58-f411-4c86-a54d-0d3ce07ee5a0",
+      "name": "Get All COA SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1b2c3d4-0003-0001-0001-00000000000e",
+              "name": "sku",
+              "value": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -6416,
+        2256
+      ],
+      "id": "41e80f0f-ec3a-4b6f-a66e-6d2c6d823a9b",
+      "name": "Edit Fields SO"
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "={{ $json.sku }}",
+        "category_id": "={{ $('Create Test Category SO').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit SO').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA SO').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA SO').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6192,
+        2256
+      ],
+      "id": "86551543-220d-45ee-a693-af8bebd9344f",
+      "name": "Create Product SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "search": "={{ $('Edit Fields SO').item.json.sku }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        2256
+      ],
+      "id": "05a64df3-989a-4f5f-8af1-68642c4adea5",
+      "name": "Get All Products SO2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SO').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 500,
+              "product_id": "={{ $json.data.result[0].id }}",
+              "unit_id": "={{ $('Create Test Unit SO').item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {
+          "currency": "a13bb923-87e3-4df8-a78c-c54dc6bcf08e"
+        }
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5744,
+        2256
+      ],
+      "id": "6e2d9eb0-9646-4799-a243-8e9016954da0",
+      "name": "Create Sales Order",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5520,
+        2256
+      ],
+      "id": "e1e2edb9-5db3-4787-a233-a360f60b3901",
+      "name": "Get Sales Order",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SO').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $('Get All Products SO2').item.json.data.result[0].id }}",
+              "unit_id": "={{ $('Get All Products SO2').item.json.data.result[0].unit.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5296,
+        2256
+      ],
+      "id": "2cfa7b75-3403-4677-8f30-caeff869682e",
+      "name": "Update Sales Order",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "print",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        2256
+      ],
+      "id": "0e76a73b-7fb5-43ec-be66-21ffe6673fc4",
+      "name": "Print Sales Order",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "delete",
+        "id": "={{ $('Update Sales Order').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4848,
+        2256
+      ],
+      "id": "db2b9c73-96ab-4b97-8c1d-2c758a80658f",
+      "name": "Delete Sales Order",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "delete",
+        "id": "={{ $('Get All Products SO2').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4624,
+        2256
+      ],
+      "id": "3bfe9b94-6432-4740-b4ad-36e5c02288e3",
+      "name": "Delete Product SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "delete",
+        "id": "={{ $('Create Test Unit SO').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4400,
+        2256
+      ],
+      "id": "25ea5aae-0754-4ea7-bff0-732667c896fd",
+      "name": "Delete Unit SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "delete",
+        "id": "={{ $('Create Test Category SO').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        2256
+      ],
+      "id": "bfb37736-b3f5-462c-ab57-095687cb63ad",
+      "name": "Delete Category SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "delete",
+        "id": "={{ $('Create Customer SO').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3952,
+        2256
+      ],
+      "id": "1edfd66d-7d18-484d-a0ac-34836567007c",
+      "name": "Delete Customer SO",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "create",
+        "name": "N8N Customer SD",
+        "email": "n8n.customer.sd@keloola.com",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7984,
+        2448
+      ],
+      "id": "90d4a53f-3a72-415f-8636-9d58db7f5558",
+      "name": "Create Customer SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7760,
+        2448
+      ],
+      "id": "fed9ddd9-26f0-4431-a639-b7b599ace967",
+      "name": "Get All Products SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7536,
+        2448
+      ],
+      "id": "097369dd-baef-4cec-ad3b-1c3ddc149d02",
+      "name": "Get All Categories SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "color": "#ff00ff"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7312,
+        2448
+      ],
+      "id": "123c17f4-e959-4790-ac34-17b5dbfb3f3b",
+      "name": "Create Test Category SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7088,
+        2448
+      ],
+      "id": "89676e90-ab64-4e15-87d3-74eeb15bf5dd",
+      "name": "Get All Units SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6864,
+        2448
+      ],
+      "id": "e36f4662-c050-4632-a955-3d71d8707b4e",
+      "name": "Create Test Unit SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        2448
+      ],
+      "id": "82d11505-cb8d-41cc-b879-a7ad7c31f3fe",
+      "name": "Get All COA SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1b2c3d4-0004-0001-0001-00000000000e",
+              "name": "sku",
+              "value": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -6416,
+        2448
+      ],
+      "id": "52c9da4a-6789-4f2c-83e9-a3c677032613",
+      "name": "Edit Fields SD"
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "={{ $json.sku }}",
+        "category_id": "={{ $('Create Test Category SD').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit SD').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA SD').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA SD').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6192,
+        2448
+      ],
+      "id": "00218ea1-ab66-412f-a184-42f80b29d2dd",
+      "name": "Create Product SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "search": "={{ $('Edit Fields SD').item.json.sku }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        2448
+      ],
+      "id": "e48f3282-0d19-41b8-84b7-be0b13e881d9",
+      "name": "Get All Products SD2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesDelivery",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "shipping_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
+        "order_id": "={{ $(\"Create SO for SD\").item.json.data.id }}",
+        "customer": "={{ $(\"Create Customer SD\").item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 500,
+              "product_id": "={{ $json.data.sale_items[0].product_id }}",
+              "sale_item_id": "={{ $json.data.sale_items[0].id }}",
+              "unit_id": "={{ $(\"Create Test Unit SD\").item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5296,
+        2448
+      ],
+      "id": "82fe1d63-095d-4fec-ae9e-7ca57cfd83a2",
+      "name": "Create Sales Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesDelivery",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        2448
+      ],
+      "id": "201c2b26-c21f-40d2-b87f-283a356e2cd0",
+      "name": "Get Sales Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesDelivery",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "shipping_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
+        "order_id": "={{ $(\"Create SO for SD\").item.json.data.id }}",
+        "customer": "={{ $(\"Create Customer SD\").item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $(\"Get SO for SD\").item.json.data.sale_items[0].product_id }}",
+              "sale_item_id": "={{ $(\"Get SO for SD\").item.json.data.sale_items[0].id }}",
+              "unit_id": "={{ $(\"Create Test Unit SD\").item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4848,
+        2448
+      ],
+      "id": "dc3e9af2-4d4d-4cad-b7a4-06b20a09c46e",
+      "name": "Update Sales Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesDelivery",
+        "operation": "delete",
+        "id": "={{ $('Update Sales Delivery').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4624,
+        2448
+      ],
+      "id": "eea87239-6f3a-438a-89bb-2f1ba5fe9d09",
+      "name": "Delete Sales Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "delete",
+        "id": "={{ $('Get All Products SD2').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        2448
+      ],
+      "id": "d0d8d1a4-e646-42dc-b9b0-95e12d0e8963",
+      "name": "Delete Product SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "delete",
+        "id": "={{ $('Create Test Unit SD').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3952,
+        2448
+      ],
+      "id": "461c8e6b-f8f5-4cb5-853c-3397df374f6f",
+      "name": "Delete Unit SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "delete",
+        "id": "={{ $('Create Test Category SD').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3728,
+        2448
+      ],
+      "id": "d7e1aaae-7f2b-4a5e-955c-e522e10ffd74",
+      "name": "Delete Category SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "delete",
+        "id": "={{ $('Create Customer SD').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3504,
+        2448
+      ],
+      "id": "69115399-ab6d-4fb1-8943-6c56ad0a060d",
+      "name": "Delete Customer SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "create",
+        "name": "N8N Customer SI",
+        "email": "n8n.customer.si@keloola.com",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7984,
+        2640
+      ],
+      "id": "cb04a0f0-d2e7-4438-a62d-6183c0a9df6e",
+      "name": "Create Customer SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7760,
+        2640
+      ],
+      "id": "3606a018-cf52-45c9-9ef4-b62205860b6f",
+      "name": "Get All Products SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7536,
+        2640
+      ],
+      "id": "eae85fef-5e24-4e7b-a6a6-8fff07834407",
+      "name": "Get All Categories SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "color": "#ffff00"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7312,
+        2640
+      ],
+      "id": "852a7af4-e3ca-4893-8b7c-bf18487cb028",
+      "name": "Create Test Category SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7088,
+        2640
+      ],
+      "id": "8e199ca4-e897-44d0-925b-a69e7bcafc9b",
+      "name": "Get All Units SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6864,
+        2640
+      ],
+      "id": "cba5ad39-5fd7-48d9-8e9d-dd2fa302ce99",
+      "name": "Create Test Unit SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6640,
+        2640
+      ],
+      "id": "e62c3489-fa94-4441-be98-9714d2fcaf64",
+      "name": "Get All COA SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1b2c3d4-0005-0001-0001-00000000000e",
+              "name": "sku",
+              "value": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -6416,
+        2640
+      ],
+      "id": "c239cda3-8470-4588-b337-a4b595123902",
+      "name": "Edit Fields SI"
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "={{ $json.sku }}",
+        "category_id": "={{ $('Create Test Category SI').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit SI').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA SI').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA SI').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6192,
+        2640
+      ],
+      "id": "07edb2b3-0538-4a64-a506-0a53988cb250",
+      "name": "Create Product SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "search": "={{ $('Edit Fields SI').item.json.sku }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        2640
+      ],
+      "id": "cf2f58f6-d844-4c86-9e33-c5f593cd7698",
+      "name": "Get All Products SI2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesInvoice",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
+        "due_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SI').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 500,
+              "product_id": "={{ $json.data.result[0].id }}",
+              "unit_id": "={{ $('Create Test Unit SI').item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5744,
+        2640
+      ],
+      "id": "6a7cba8b-fc61-4ed6-91ec-87df55b1f829",
+      "name": "Create Sales Invoice",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesInvoice",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5520,
+        2640
+      ],
+      "id": "60bbbb45-c719-49fb-9d3f-b6143ec8efc5",
+      "name": "Get Sales Invoice",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesInvoice",
+        "operation": "update",
+        "id": "={{ $json.data.id }}",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
+        "due_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "customer": "={{ $('Create Customer SI').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $('Get All Products SI2').item.json.data.result[0].id }}",
+              "unit_id": "={{ $('Get All Products SI2').item.json.data.result[0].unit.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5296,
+        2640
+      ],
+      "id": "3144ef24-37a7-4874-b8df-e86d0353e439",
+      "name": "Update Sales Invoice",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesInvoice",
+        "operation": "print",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        2640
+      ],
+      "id": "095b1fec-cbff-4e81-b651-1ad4aa2419e3",
+      "name": "Print Sales Invoice",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesInvoice",
+        "operation": "delete",
+        "id": "={{ $('Update Sales Invoice').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4848,
+        2640
+      ],
+      "id": "a11934ec-f3e7-4b27-a163-8ddd7758e87c",
+      "name": "Delete Sales Invoice",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "delete",
+        "id": "={{ $('Get All Products SI2').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4624,
+        2640
+      ],
+      "id": "277a887f-6117-4fcd-a913-aaecfcd89793",
+      "name": "Delete Product SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "delete",
+        "id": "={{ $('Create Test Unit SI').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4400,
+        2640
+      ],
+      "id": "ade98485-ae88-4832-9f13-a6307e40f47a",
+      "name": "Delete Unit SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "delete",
+        "id": "={{ $('Create Test Category SI').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4176,
+        2640
+      ],
+      "id": "6a103d72-65d3-454e-9515-70991482d70f",
+      "name": "Delete Category SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "delete",
+        "id": "={{ $('Create Customer SI').item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -3952,
+        2640
+      ],
+      "id": "877227d0-7561-442e-8b82-f1184da31c0c",
+      "name": "Delete Customer SI",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, \"days\").toISO().split(\"T\")[0] }}",
+        "customer": "={{ $(\"Create Customer SD\").item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 500,
+              "product_id": "={{ $json.data.result[0].id }}",
+              "unit_id": "={{ $(\"Create Test Unit SD\").item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5744,
+        2448
+      ],
+      "id": "101d576b-7adc-47f5-a847-4392291f7517",
+      "name": "Create SO for SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5520,
+        2448
+      ],
+      "id": "bbd31fed-1baa-46e7-b134-55aa4a908779",
+      "name": "Get SO for SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "salesOrder",
+        "operation": "delete",
+        "id": "={{ $(\"Create SO for SD\").item.json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4400,
+        2448
+      ],
+      "id": "577ea6da-97c3-4ec5-a47c-06719d9981e1",
+      "name": "Delete SO for SD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "create",
+        "contact_type": "vendor",
+        "name": "N8N Vendor PD",
+        "email": "n8n.vendor.pd@keloola.com",
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7984,
+        1872
+      ],
+      "id": "179f9f01-da8a-4e7d-a464-380aba7f8795",
+      "name": "Create Vendor PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7760,
+        1872
+      ],
+      "id": "31f2e12d-e74e-42b1-9df2-2176cfa62d8b",
+      "name": "Get All Categories PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "category",
+        "operation": "create",
+        "name": "=n8n-cat-{{Math.floor(Math.random() * 1000)}}",
+        "color": "#00ffff"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7536,
+        1872
+      ],
+      "id": "19f216e8-a130-4193-93ea-195040a7867f",
+      "name": "Create Test Category PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7312,
+        1872
+      ],
+      "id": "0f6db3a0-ad18-41f1-b234-2d3b2e22a550",
+      "name": "Get All Units PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "unit",
+        "operation": "create",
+        "name": "=U-{{Math.floor(Math.random() * 1000)}}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -7088,
+        1872
+      ],
+      "id": "d89c6e44-cddb-4a24-91a7-f2f57ccdd889",
+      "name": "Create Test Unit PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chartOfAccount"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6864,
+        1872
+      ],
+      "id": "079173d1-4e1c-4e52-8377-f685bfe45faa",
+      "name": "Get All COA PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c1c2c3d4-0006-0001-0001-00000000000e",
+              "name": "sku",
+              "value": "=SKU-{{ Math.floor(Math.random() * 100000) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -6640,
+        1872
+      ],
+      "id": "44db20bc-dfe0-4002-9ceb-e2cbde847762",
+      "name": "Edit Fields PD"
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "operation": "create",
+        "name": "=n8n-product-{{ Math.floor(Math.random() * 100000) }}",
+        "sku": "={{ $json.sku }}",
+        "category_id": "={{ $('Create Test Category PD').item.json.data.id }}",
+        "unit_id": "={{ $('Create Test Unit PD').item.json.data.id }}",
+        "sale_price": 1000,
+        "purchase_price": 500,
+        "purchase_account": "={{ $('Get All COA PD').item.json.data.result[0].id }}",
+        "sale_account": "={{ $('Get All COA PD').item.json.data.result[0].id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6416,
+        1872
+      ],
+      "id": "485cbbd1-5544-4757-ba2d-125f32ecb453",
+      "name": "Create Product PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "product",
+        "search": "={{ $('Edit Fields PD').item.json.sku }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -6192,
+        1872
+      ],
+      "id": "9eec1a62-4fd8-4efd-9788-34a1a2156d06",
+      "name": "Get All Products PD2",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "create",
+        "transaction_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "expiry_date": "={{ $now.plus(30, 'days').toISO().split(\"T\")[0] }}",
+        "vendor": "={{ $('Create Vendor PD').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "price": 500,
+              "product_id": "={{ $json.data.result[0].id }}",
+              "qty": 5,
+              "unit_id": "={{ $('Create Test Unit PD').item.json.data.id }}"
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5968,
+        1872
+      ],
+      "id": "96af4878-a36d-426e-a937-4c010df4c91f",
+      "name": "Create PO for PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseOrder",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5744,
+        1872
+      ],
+      "id": "ae5df1da-9903-4ec2-af2f-c5e95b863d3e",
+      "name": "Get PO for PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseDelivery",
+        "operation": "create",
+        "order_id": "={{ $json.data.id }}",
+        "vendor": "={{ $('Create Vendor PD').item.json.data.id }}",
+        "shipping_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "arrival_date": "={{ $now.plus(7, \"days\").toISO().split(\"T\")[0] }}",
+        "tracking_number": "=TRK-{{ Math.floor(Math.random() * 100000) }}",
+        "products": {
+          "item": [
+            {
+              "purchase_item_id": "={{ $json.data.purchase_items[0].id }}",
+              "product_id": "={{ $json.data.purchase_items[0].product_id }}",
+              "qty": 5
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5520,
+        1872
+      ],
+      "id": "5f31df2b-ca32-4aea-b434-6e134f1e05a7",
+      "name": "Create Purchase Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseDelivery",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5296,
+        1872
+      ],
+      "id": "547b4701-c4a9-44c3-b049-f7f010e4b6de",
+      "name": "Get Purchase Delivery",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseGoodReceiveNote",
+        "operation": "create",
+        "purchase_id": "={{ $json.data.id }}",
+        "received_date": "={{ $now.toISO().split(\"T\")[0] }}",
+        "stock_officer_id": "={{ $('Get user organizations').item.json.data.id }}",
+        "products": {
+          "item": [
+            {
+              "product_id": "={{ $json.data.purchase_items[0].product_id }}",
+              "received_qty": 5
+            }
+          ]
+        }
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -5072,
+        1872
+      ],
+      "id": "a8b47406-be50-4ceb-983b-85392ea7bc0a",
+      "name": "Create GRN from PD",
+      "credentials": {
+        "keloolaApi": {
+          "id": "coOAMn7jzue8fRQX",
+          "name": "Keloola Authentication account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "purchaseGoodReceiveNote",
+        "operation": "get",
+        "id": "={{ $json.data.id }}"
+      },
+      "type": "CUSTOM.keloolaAccounting",
+      "typeVersion": 1,
+      "position": [
+        -4848,
+        1872
+      ],
+      "id": "2aa9dbf3-f0cc-42e5-be76-e88901127e58",
+      "name": "Get Created GRN",
       "credentials": {
         "keloolaApi": {
           "id": "coOAMn7jzue8fRQX",
@@ -2247,6 +4287,31 @@
           },
           {
             "node": "Create a contact2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Customer SQ",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Customer SO",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Customer SD",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Customer SI",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Vendor PD",
             "type": "main",
             "index": 0
           }
@@ -2582,11 +4647,6 @@
         ]
       ]
     },
-    "Delete Journal": {
-      "main": [
-        []
-      ]
-    },
     "Create Purchase Quote": {
       "main": [
         [
@@ -2867,50 +4927,6 @@
         [
           {
             "node": "Create a purchase order",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "List Purchase Deliveries": {
-      "main": [
-        [
-          {
-            "node": "Create Manual GRN",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Manual GRN": {
-      "main": [
-        [
-          {
-            "node": "Create GRN from PO",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create GRN from PO": {
-      "main": [
-        [
-          {
-            "node": "Get Created GRN",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Created GRN": {
-      "main": [
-        [
-          {
-            "node": "Handle Discrepancy",
             "type": "main",
             "index": 0
           }
@@ -3235,19 +5251,994 @@
           }
         ]
       ]
+    },
+    "Create Customer SQ": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SQ": {
+      "main": [
+        [
+          {
+            "node": "Get All Categories SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories SQ": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category SQ": {
+      "main": [
+        [
+          {
+            "node": "Get All Units SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units SQ": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit SQ": {
+      "main": [
+        [
+          {
+            "node": "Get All COA SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA SQ": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields SQ": {
+      "main": [
+        [
+          {
+            "node": "Create Product SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product SQ": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SQ2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SQ2": {
+      "main": [
+        [
+          {
+            "node": "Create Sales Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sales Quote": {
+      "main": [
+        [
+          {
+            "node": "Get Sales Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Sales Quote": {
+      "main": [
+        [
+          {
+            "node": "Update Sales Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Sales Quote": {
+      "main": [
+        [
+          {
+            "node": "Print Sales Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Print Sales Quote": {
+      "main": [
+        [
+          {
+            "node": "Delete Sales Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Sales Quote": {
+      "main": [
+        [
+          {
+            "node": "Delete Product SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Product SQ": {
+      "main": [
+        [
+          {
+            "node": "Delete Unit SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Unit SQ": {
+      "main": [
+        [
+          {
+            "node": "Delete Category SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Category SQ": {
+      "main": [
+        [
+          {
+            "node": "Delete Customer SQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Customer SO": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SO": {
+      "main": [
+        [
+          {
+            "node": "Get All Categories SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories SO": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category SO": {
+      "main": [
+        [
+          {
+            "node": "Get All Units SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units SO": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit SO": {
+      "main": [
+        [
+          {
+            "node": "Get All COA SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA SO": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields SO": {
+      "main": [
+        [
+          {
+            "node": "Create Product SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product SO": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SO2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SO2": {
+      "main": [
+        [
+          {
+            "node": "Create Sales Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sales Order": {
+      "main": [
+        [
+          {
+            "node": "Get Sales Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Sales Order": {
+      "main": [
+        [
+          {
+            "node": "Update Sales Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Sales Order": {
+      "main": [
+        [
+          {
+            "node": "Print Sales Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Print Sales Order": {
+      "main": [
+        [
+          {
+            "node": "Delete Sales Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Sales Order": {
+      "main": [
+        [
+          {
+            "node": "Delete Product SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Product SO": {
+      "main": [
+        [
+          {
+            "node": "Delete Unit SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Unit SO": {
+      "main": [
+        [
+          {
+            "node": "Delete Category SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Category SO": {
+      "main": [
+        [
+          {
+            "node": "Delete Customer SO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Customer SD": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SD": {
+      "main": [
+        [
+          {
+            "node": "Get All Categories SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories SD": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category SD": {
+      "main": [
+        [
+          {
+            "node": "Get All Units SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units SD": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit SD": {
+      "main": [
+        [
+          {
+            "node": "Get All COA SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA SD": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields SD": {
+      "main": [
+        [
+          {
+            "node": "Create Product SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product SD": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SD2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SD2": {
+      "main": [
+        [
+          {
+            "node": "Create SO for SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sales Delivery": {
+      "main": [
+        [
+          {
+            "node": "Get Sales Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Sales Delivery": {
+      "main": [
+        [
+          {
+            "node": "Update Sales Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Sales Delivery": {
+      "main": [
+        [
+          {
+            "node": "Delete Sales Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Sales Delivery": {
+      "main": [
+        [
+          {
+            "node": "Delete SO for SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Product SD": {
+      "main": [
+        [
+          {
+            "node": "Delete Unit SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Unit SD": {
+      "main": [
+        [
+          {
+            "node": "Delete Category SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Category SD": {
+      "main": [
+        [
+          {
+            "node": "Delete Customer SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Customer SI": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SI": {
+      "main": [
+        [
+          {
+            "node": "Get All Categories SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories SI": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category SI": {
+      "main": [
+        [
+          {
+            "node": "Get All Units SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units SI": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit SI": {
+      "main": [
+        [
+          {
+            "node": "Get All COA SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA SI": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields SI": {
+      "main": [
+        [
+          {
+            "node": "Create Product SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product SI": {
+      "main": [
+        [
+          {
+            "node": "Get All Products SI2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products SI2": {
+      "main": [
+        [
+          {
+            "node": "Create Sales Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Sales Invoice": {
+      "main": [
+        [
+          {
+            "node": "Get Sales Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Sales Invoice": {
+      "main": [
+        [
+          {
+            "node": "Update Sales Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Sales Invoice": {
+      "main": [
+        [
+          {
+            "node": "Print Sales Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Print Sales Invoice": {
+      "main": [
+        [
+          {
+            "node": "Delete Sales Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Sales Invoice": {
+      "main": [
+        [
+          {
+            "node": "Delete Product SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Product SI": {
+      "main": [
+        [
+          {
+            "node": "Delete Unit SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Unit SI": {
+      "main": [
+        [
+          {
+            "node": "Delete Category SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Category SI": {
+      "main": [
+        [
+          {
+            "node": "Delete Customer SI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create SO for SD": {
+      "main": [
+        [
+          {
+            "node": "Get SO for SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get SO for SD": {
+      "main": [
+        [
+          {
+            "node": "Create Sales Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete SO for SD": {
+      "main": [
+        [
+          {
+            "node": "Delete Product SD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Vendor PD": {
+      "main": [
+        [
+          {
+            "node": "Get All Categories PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Categories PD": {
+      "main": [
+        [
+          {
+            "node": "Create Test Category PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Category PD": {
+      "main": [
+        [
+          {
+            "node": "Get All Units PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Units PD": {
+      "main": [
+        [
+          {
+            "node": "Create Test Unit PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Test Unit PD": {
+      "main": [
+        [
+          {
+            "node": "Get All COA PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All COA PD": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields PD": {
+      "main": [
+        [
+          {
+            "node": "Create Product PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Product PD": {
+      "main": [
+        [
+          {
+            "node": "Get All Products PD2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Products PD2": {
+      "main": [
+        [
+          {
+            "node": "Create PO for PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create PO for PD": {
+      "main": [
+        [
+          {
+            "node": "Get PO for PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get PO for PD": {
+      "main": [
+        [
+          {
+            "node": "Create Purchase Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Purchase Delivery": {
+      "main": [
+        [
+          {
+            "node": "Get Purchase Delivery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Purchase Delivery": {
+      "main": [
+        [
+          {
+            "node": "Create GRN from PD",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create GRN from PD": {
+      "main": [
+        [
+          {
+            "node": "Get Created GRN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Created GRN": {
+      "main": [
+        []
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate",
-    "availableInMCP": false
+    "availableInMCP": true,
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Jakarta",
+    "callerPolicy": "workflowsFromSameOwner"
   },
-  "versionId": "c27d99ea-adf8-4f6b-a2f2-267b5ce809a4",
+  "versionId": "179cae2d-97a7-4f13-acb4-209e4b166c44",
   "meta": {
-    "templateCredsSetupCompleted": true,
     "instanceId": "d0734ef49c6e31d3fe8e4f08b2f749b9a5f9bebb2abedda92821e4975833618c"
   },
-  "id": "tVjNvbG7E0estioyx1zVB",
+  "id": "TbAZXjD_7jppym2hteRWc",
   "tags": []
 }
