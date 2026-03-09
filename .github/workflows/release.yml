@@ -42,5 +42,5 @@ jobs:
           version: bun run version-packages
           publish: ${{ secrets.NPM_TOKEN && 'bun run release' || '' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
