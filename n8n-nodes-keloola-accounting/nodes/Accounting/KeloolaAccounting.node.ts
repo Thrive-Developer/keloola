@@ -98,6 +98,26 @@ import {
   resources as salesInvoiceResources,
   router as salesInvoiceRouter,
 } from './resources/salesInvoice';
+import {
+  bankIncomeNode,
+  resources as bankIncomeResources,
+  router as bankIncomeRouter,
+} from './resources/bankIncome';
+import {
+  bankExpenseNode,
+  resources as bankExpenseResources,
+  router as bankExpenseRouter,
+} from './resources/bankExpense';
+import {
+  bankTransferNode,
+  resources as bankTransferResources,
+  router as bankTransferRouter,
+} from './resources/bankTransfer';
+import {
+  bankAccountNode,
+  resources as bankAccountResources,
+  router as bankAccountRouter,
+} from './resources/bankAccount';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -124,6 +144,7 @@ export class KeloolaAccounting implements INodeType {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'Accept-Language': 'en',
       },
     },
     properties: [
@@ -153,6 +174,10 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(salesOrderResources),
           ...Object.values(salesDeliveryResources),
           ...Object.values(salesInvoiceResources),
+          ...Object.values(bankIncomeResources),
+          ...Object.values(bankExpenseResources),
+          ...Object.values(bankTransferResources),
+          ...Object.values(bankAccountResources),
         ],
         default: userResources.user.value,
       },
@@ -175,6 +200,10 @@ export class KeloolaAccounting implements INodeType {
       ...salesOrderNode,
       ...salesDeliveryNode,
       ...salesInvoiceNode,
+      ...bankIncomeNode,
+      ...bankExpenseNode,
+      ...bankTransferNode,
+      ...bankAccountNode,
     ],
   };
 
@@ -185,19 +214,103 @@ export class KeloolaAccounting implements INodeType {
 
         const response = await this.helpers.httpRequest({
           method: 'GET',
-          url: `${ENV.ACCOUNTING_BASE_URL}/exchange`,
-          headers: { Authorization: `Bearer ${token}` },
+          url: `${ENV.ACCOUNTING_BASE_URL}/exchange?page=1&search=false&per_page=10`,
+          headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
           json: true,
         });
 
-        if (!Array.isArray(response)) {
+        const result = (response.data?.result || response) as IDataObject[];
+        if (!Array.isArray(result)) {
           return [];
         }
 
-        // Assuming response has code, name, uuid
-        return response.map((currency: IDataObject) => ({
+        return result.map((currency: IDataObject) => ({
           name: `${currency.code} - ${currency.name}`,
           value: currency.uuid as string,
+        }));
+      },
+
+      async getBankAccounts(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+        const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
+
+        const response = await this.helpers.httpRequest({
+          method: 'GET',
+          url: `${ENV.ACCOUNTING_BASE_URL}/banks?per_page=1000`,
+          headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
+          json: true,
+        });
+
+        const result = (response.data?.result || response) as IDataObject[];
+        if (!Array.isArray(result)) {
+          return [];
+        }
+
+        return result.map((account: IDataObject) => ({
+          name: `${account.number} - ${account.name}`,
+          value: account.uuid as string,
+        }));
+      },
+
+      async getAccounts(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+        const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
+
+        const response = await this.helpers.httpRequest({
+          method: 'GET',
+          url: `${ENV.ACCOUNTING_BASE_URL}/banks/accounts`,
+          headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
+          json: true,
+        });
+
+        const result = (response.data?.result || response) as IDataObject[];
+        if (!Array.isArray(result)) {
+          return [];
+        }
+
+        return result.map((account: IDataObject) => ({
+          name: `${account.code} - ${account.name}`,
+          value: account.uuid as string,
+        }));
+      },
+
+      async getContacts(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+        const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
+
+        const response = await this.helpers.httpRequest({
+          method: 'GET',
+          url: `${ENV.ACCOUNTING_BASE_URL}/banks/contacts`,
+          headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
+          json: true,
+        });
+
+        const result = (response.data?.result || response) as IDataObject[];
+        if (!Array.isArray(result)) {
+          return [];
+        }
+
+        return result.map((contact: IDataObject) => ({
+          name: contact.name as string,
+          value: contact.uuid as string,
+        }));
+      },
+
+      async getTaxes(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+        const token = await getAccessToken(this, ENV.AUTH_BASE_URL);
+
+        const response = await this.helpers.httpRequest({
+          method: 'GET',
+          url: `${ENV.ACCOUNTING_BASE_URL}/banks/taxes`,
+          headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
+          json: true,
+        });
+
+        const result = (response.data?.result || response) as IDataObject[];
+        if (!Array.isArray(result)) {
+          return [];
+        }
+
+        return result.map((tax: IDataObject) => ({
+          name: tax.name as string,
+          value: tax.uuid as string,
         }));
       },
     },
@@ -360,6 +473,34 @@ export class KeloolaAccounting implements INodeType {
       body = routing.body;
     }
 
+    if (resource === bankIncomeResources.bankIncome.value) {
+      const routing = await bankIncomeRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === bankExpenseResources.bankExpense.value) {
+      const routing = await bankExpenseRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === bankTransferResources.bankTransfer.value) {
+      const routing = await bankTransferRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === bankAccountResources.bankAccount.value) {
+      const routing = await bankAccountRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
     if (url === '') {
       throw new NodeOperationError(this.getNode(), `No operation found for ${resource}`);
     }
@@ -369,7 +510,7 @@ export class KeloolaAccounting implements INodeType {
         method,
         url,
         body,
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token}`, 'Accept-Language': 'en' },
       });
 
       return [this.helpers.returnJsonArray(response)];

@@ -49,6 +49,28 @@ export const exchangeNode: INodeProperties[] = [
     },
     description: 'The number of items to retrieve per page',
   },
+  {
+    displayName: 'Additional Fields',
+    name: 'additionalFields',
+    type: 'collection',
+    placeholder: 'Add Field',
+    default: {},
+    displayOptions: {
+      show: {
+        resource: [resources.exchange.value],
+        operation: [operations.getAll.value],
+      },
+    },
+    options: [
+      {
+        displayName: 'Exclude Base',
+        name: 'exclude_base',
+        type: 'boolean',
+        default: false,
+        description: 'Whether to exclude the base currency from the list',
+      },
+    ],
+  },
 ];
 
 export { router } from './router';
