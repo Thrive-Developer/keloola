@@ -21,7 +21,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "bun run build && changeset publish",
-    "full-build": "bun run format && bun run lint && bun run build && bun run link:nodes && n8n"
+    "full-build": "bun run format && bun run lint && bun run build && bun run link:nodes",
+    "n8n": "bun run full-build && n8n"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
