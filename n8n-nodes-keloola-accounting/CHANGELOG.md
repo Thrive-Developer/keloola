@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-accounting
 
+## 0.1.0
+
+### Minor Changes
+
+- 45c8b05: added bank transactions node
+
 ## 0.0.3
 
 ### Patch Changes
