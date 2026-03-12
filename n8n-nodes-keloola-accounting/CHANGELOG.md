@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-accounting
 
+## 0.2.2
+
+### Patch Changes
+
+- 22288ff: fix: update invalid base url
+
 ## 0.2.1
 
 ### Patch Changes
