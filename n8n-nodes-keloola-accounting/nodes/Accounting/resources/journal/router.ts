@@ -35,6 +35,8 @@ export async function router(
       const detailsCollection = executeFunctions.getNodeParameter('details', 0) as IDataObject;
       const details = (detailsCollection.detail_item as IDataObject[]) || [];
 
+      const currency = executeFunctions.getNodeParameter('currency', 0, '') as string;
+
       body = {
         transaction_number: executeFunctions.getNodeParameter('transaction_number', 0) as string,
         date: executeFunctions.getNodeParameter('date', 0) as string,
@@ -43,6 +45,10 @@ export async function router(
         force_of_saving: executeFunctions.getNodeParameter('force_posting', 0) as boolean,
         details: details,
       };
+
+      if (currency) {
+        body.currency = currency;
+      }
       break;
     }
 
@@ -58,6 +64,8 @@ export async function router(
       const detailsCollection = executeFunctions.getNodeParameter('details', 0) as IDataObject;
       const details = (detailsCollection.detail_item as IDataObject[]) || [];
 
+      const currency = executeFunctions.getNodeParameter('currency', 0, '') as string;
+
       body = {
         transaction_number: executeFunctions.getNodeParameter('transaction_number', 0) as string,
         date: executeFunctions.getNodeParameter('date', 0) as string,
@@ -66,6 +74,10 @@ export async function router(
         force_of_saving: executeFunctions.getNodeParameter('force_posting', 0) as boolean,
         details: details,
       };
+
+      if (currency) {
+        body.currency = currency;
+      }
       break;
     }
 

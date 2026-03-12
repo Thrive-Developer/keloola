@@ -99,15 +99,19 @@ export const journalNode: INodeProperties[] = [
   {
     displayName: 'Sort',
     name: 'sort',
-    type: 'string',
-    default: '',
+    type: 'options',
+    default: 'desc',
+    options: [
+      { name: 'Ascending', value: 'asc' },
+      { name: 'Descending', value: 'desc' },
+    ],
     displayOptions: {
       show: {
         resource: [resources.journal.value],
         operation: [operations.getAll.value],
       },
     },
-    description: 'Sort field',
+    description: 'Sort order',
   },
   {
     displayName: 'ID',
@@ -131,9 +135,24 @@ export const journalNode: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: [resources.journal.value],
-        operation: [operations.create.value, operations.update.value],
+        operation: [operations.create.value],
       },
     },
+    description: 'Transaction number (optional for create)',
+  },
+  {
+    displayName: 'Transaction Number',
+    name: 'transaction_number',
+    type: 'string',
+    required: true,
+    default: '',
+    displayOptions: {
+      show: {
+        resource: [resources.journal.value],
+        operation: [operations.update.value],
+      },
+    },
+    description: 'Transaction number (required for update)',
   },
   {
     displayName: 'Date',
@@ -166,14 +185,31 @@ export const journalNode: INodeProperties[] = [
     displayName: 'Force Posting',
     name: 'force_posting',
     type: 'boolean',
-    default: false,
+    default: true,
     displayOptions: {
       show: {
         resource: [resources.journal.value],
         operation: [operations.create.value, operations.update.value],
       },
     },
-    description: 'Whether to force posting the journal entry',
+    description: 'Whether to force posting of the journal entry',
+  },
+  {
+    displayName: 'Currency Name or ID',
+    name: 'currency',
+    type: 'options',
+    default: '',
+    typeOptions: {
+      loadOptionsMethod: 'getCurrencies',
+    },
+    displayOptions: {
+      show: {
+        resource: [resources.journal.value],
+        operation: [operations.create.value, operations.update.value],
+      },
+    },
+    description:
+      'Currency for the journal entry. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
   },
   {
     displayName: 'Description',
