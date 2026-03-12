@@ -80,6 +80,43 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Update**: Update a tax.
 - **Delete**: Delete a tax.
 
+**Resource: Contact**
+
+- **Get Many**: Get all contacts.
+- **Get**: Get a contact by ID.
+- **Create**: Create a new contact.
+- **Update**: Update a contact.
+- **Delete**: Delete a contact.
+
+**Resource: Purchase**
+
+- **Purchase Quote**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Purchase Order**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Purchase Delivery**: Get, Get Many, Create, Update, Delete, Send, Print, Confirm.
+- **Goods Receive Note**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Purchase Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
+
+**Resource: Sales**
+
+- **Sales Quote**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Sales Order**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Sales Delivery**: Get, Get Many, Create, Update, Delete, Send, Print, Deliver, Mark Arrived.
+- **Sales Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
+
+**Resource: Banking**
+
+- **Bank Account**: Get, Get Many.
+- **Bank Income**: Get, Get Many, Create, Update, Delete.
+- **Bank Expense**: Get, Get Many, Create, Update, Delete.
+- **Bank Transfer**: Get, Get Many, Create, Update, Delete.
+
+**Resource: Settings**
+
+- **Company Setting**: Get, Update, Update Bank Details.
+- **System Setting**: Get, Update System Configuration.
+- **Sales Setting**: Get, Update Sales Defaults.
+- **Purchase Setting**: Get, Update Purchase Defaults.
+
 ## Credentials
 
 To use this node, you need to authenticate with the Keloola Authentication API.
