@@ -1,6 +1,6 @@
 # n8n-nodes-keloola-accounting
 
-This is an n8n community node. It lets you integrate [Keloola Accounting](https://keloola.xyz) services into your n8n workflows.
+This is an n8n community node. It lets you integrate [Keloola Accounting](https://keloola.com) services into your n8n workflows.
 
 Keloola Accounting is a comprehensive platform for managing business finances, and this node allows for programmatic access to its features.
 
@@ -142,4 +142,4 @@ This node simplifies interactions with the Keloola Accounting API. It handles au
 ## Resources
 
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-- [Keloola Website](https://keloola.xyz)
+- [Keloola Website](https://keloola.com)
