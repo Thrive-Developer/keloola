@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-accounting
 
+## 0.2.0
+
+### Minor Changes
+
+- 95c3f64: added settings
+
 ## 0.1.0
 
 ### Minor Changes
