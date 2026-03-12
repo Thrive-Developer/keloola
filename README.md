@@ -70,15 +70,31 @@ bun run link:nodes
 
 ## 📜 Scripts
 
-- `bun run prebuild`: Generate environment files for all workspaces.
-- `bun run build`: Build all packages.
-- `bun run dev`: Run build in watch mode.
-- `bun run lint`: Lint all packages.
-- `bun run format`: Format code with Prettier.
+- `bun run prebuild`: Generate environment files and copy shared resources.
+- `bun run build`: Build all packages using Turborepo.
+- `bun run dev`: Run build in watch mode across all packages.
+- `bun run lint`: Lint all packages (runs prebuild first).
+- `bun run lint:fix`: Automatically fix linting issues.
+- `bun run format`: Format all TypeScript files with Prettier.
+- `bun run check-types`: Run TypeScript type checking.
+- `bun run full-build`: One-stop command to format, lint, build, and link nodes.
+- `bun run n8n`: Run a full build and then start the local n8n instance.
+- `bun run link:nodes`: Link all built nodes to your local n8n installation.
 - `bun run clean`: Clean build artifacts.
-- `bun run clean:all`: Clean all build artifacts and node_modules (fresh start).
+- `bun run clean:all`: Clean all build artifacts and `node_modules`.
+
+## 🧪 Testing
+
+### Development Workflow
+We maintain a test workflow in `dev-workflow.json`. You can import this file directly into n8n to test all implemented resources (Journal, Product, Settings, etc.) in a real environment.
+
+1.  Open n8n.
+2.  Click on **Workflows** > **Import from File...**
+3.  Select `dev-workflow.json`.
+4.  Ensure your **Keloola Authentication** credentials are set up.
 
 ## 🤝 Contributing
 
-1. Adhere to the code style (Prettier & ESLint).
-2. See [AGENTS.md](./AGENTS.md) for detailed development guidelines and conventions.
+1.  **Code Style**: Adhere to Prettier and ESLint rules.
+2.  **Guidelines**: See [AGENTS.md](./AGENTS.md) for detailed development conventions.
+3.  **Versioning**: Use `bun run changeset` to document changes and `bun run version-packages` to update versions.
