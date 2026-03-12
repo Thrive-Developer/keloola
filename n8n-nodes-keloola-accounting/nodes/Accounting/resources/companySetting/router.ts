@@ -13,7 +13,7 @@ export async function router(
   switch (operation) {
     case operations.get.value:
       url = `${ENV.ACCOUNTING_BASE_URL}/company-setting/show`;
-      method = 'GET';
+      method = 'POST';
       break;
 
     case operations.update.value: {
