@@ -118,6 +118,26 @@ import {
   resources as bankAccountResources,
   router as bankAccountRouter,
 } from './resources/bankAccount';
+import {
+  companySettingNode,
+  resources as companySettingResources,
+  router as companySettingRouter,
+} from './resources/companySetting';
+import {
+  systemSettingNode,
+  resources as systemSettingResources,
+  router as systemSettingRouter,
+} from './resources/systemSetting';
+import {
+  salesSettingNode,
+  resources as salesSettingResources,
+  router as salesSettingRouter,
+} from './resources/salesSetting';
+import {
+  purchaseSettingNode,
+  resources as purchaseSettingResources,
+  router as purchaseSettingRouter,
+} from './resources/purchaseSetting';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -178,6 +198,10 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(bankExpenseResources),
           ...Object.values(bankTransferResources),
           ...Object.values(bankAccountResources),
+          ...Object.values(companySettingResources),
+          ...Object.values(systemSettingResources),
+          ...Object.values(salesSettingResources),
+          ...Object.values(purchaseSettingResources),
         ],
         default: userResources.user.value,
       },
@@ -204,6 +228,10 @@ export class KeloolaAccounting implements INodeType {
       ...bankExpenseNode,
       ...bankTransferNode,
       ...bankAccountNode,
+      ...companySettingNode,
+      ...systemSettingNode,
+      ...salesSettingNode,
+      ...purchaseSettingNode,
     ],
   };
 
@@ -496,6 +524,34 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === bankAccountResources.bankAccount.value) {
       const routing = await bankAccountRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === companySettingResources.companySetting.value) {
+      const routing = await companySettingRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === systemSettingResources.systemSetting.value) {
+      const routing = await systemSettingRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === salesSettingResources.salesSetting.value) {
+      const routing = await salesSettingRouter(this, operation);
+      url = routing.url;
+      method = routing.method;
+      body = routing.body;
+    }
+
+    if (resource === purchaseSettingResources.purchaseSetting.value) {
+      const routing = await purchaseSettingRouter(this, operation);
       url = routing.url;
       method = routing.method;
       body = routing.body;
