@@ -138,6 +138,26 @@ import {
   resources as purchaseSettingResources,
   router as purchaseSettingRouter,
 } from './resources/purchaseSetting';
+import {
+  salesReturnNode,
+  resources as salesReturnResources,
+  router as salesReturnRouter,
+} from './resources/salesReturn';
+import {
+  purchaseReturnNode,
+  resources as purchaseReturnResources,
+  router as purchaseReturnRouter,
+} from './resources/purchaseReturn';
+import {
+  salesPaymentNode,
+  resources as salesPaymentResources,
+  router as salesPaymentRouter,
+} from './resources/salesPayment';
+import {
+  purchasePaymentNode,
+  resources as purchasePaymentResources,
+  router as purchasePaymentRouter,
+} from './resources/purchasePayment';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -202,6 +222,10 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(systemSettingResources),
           ...Object.values(salesSettingResources),
           ...Object.values(purchaseSettingResources),
+          ...Object.values(salesReturnResources),
+          ...Object.values(purchaseReturnResources),
+          ...Object.values(salesPaymentResources),
+          ...Object.values(purchasePaymentResources),
         ],
         default: userResources.user.value,
       },
@@ -232,6 +256,10 @@ export class KeloolaAccounting implements INodeType {
       ...systemSettingNode,
       ...salesSettingNode,
       ...purchaseSettingNode,
+      ...salesReturnNode,
+      ...purchaseReturnNode,
+      ...salesPaymentNode,
+      ...purchasePaymentNode,
     ],
   };
 
@@ -555,6 +583,26 @@ export class KeloolaAccounting implements INodeType {
       url = routing.url;
       method = routing.method;
       body = routing.body;
+    }
+
+    if (resource === salesReturnResources.salesReturn.value) {
+      const responseData = await salesReturnRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    if (resource === purchaseReturnResources.purchaseReturn.value) {
+      const responseData = await purchaseReturnRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    if (resource === salesPaymentResources.salesPayment.value) {
+      const responseData = await salesPaymentRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    if (resource === purchasePaymentResources.purchasePayment.value) {
+      const responseData = await purchasePaymentRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
     }
 
     if (url === '') {

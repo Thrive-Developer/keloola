@@ -95,6 +95,8 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Purchase Delivery**: Get, Get Many, Create, Update, Delete, Send, Print, Confirm.
 - **Goods Receive Note**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Purchase Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Purchase Return**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Purchase Payment**: Get, Get Many, Create, Update, Delete, Print.
 
 **Resource: Sales**
 
@@ -102,6 +104,8 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Sales Order**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Sales Delivery**: Get, Get Many, Create, Update, Delete, Send, Print, Deliver, Mark Arrived.
 - **Sales Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Sales Return**: Get, Get Many, Create, Update, Delete, Send, Print.
+- **Sales Payment**: Get, Get Many, Create, Update, Delete, Print.
 
 **Resource: Banking**
 

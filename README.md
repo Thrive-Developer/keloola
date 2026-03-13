@@ -86,7 +86,7 @@ bun run link:nodes
 ## 🧪 Testing
 
 ### Development Workflow
-We maintain a test workflow in `dev-workflow.json`. You can import this file directly into n8n to test all implemented resources (Journal, Product, Settings, etc.) in a real environment.
+We maintain a test workflow in `dev-workflow.json`. You can import this file directly into n8n to test all implemented resources (Journal, Product, Settings, Payments, etc.) in a real environment.
 
 1.  Open n8n.
 2.  Click on **Workflows** > **Import from File...**
