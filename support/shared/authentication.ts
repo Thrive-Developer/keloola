@@ -30,8 +30,24 @@ function decodeJwtPayload(token: string): { exp?: number } | null {
 export async function getAccessToken(
   executeFunctions: IExecuteFunctions | ILoadOptionsFunctions,
   authBaseUrl: string,
+  credentialName: string = credentials.name,
 ): Promise<string> {
-  const creds = await executeFunctions.getCredentials(credentials.name);
+  let tokenOverride = '';
+  try {
+    tokenOverride = executeFunctions.getNodeParameter('token', 0, '') as string;
+  } catch {
+    try {
+      tokenOverride = executeFunctions.getNodeParameter('token', '') as string;
+    } catch {
+      // Ignore
+    }
+  }
+
+  if (tokenOverride) {
+    return tokenOverride;
+  }
+
+  const creds = await executeFunctions.getCredentials(credentialName);
   let staticData: IDataObject | undefined;
 
   if ('getWorkflowStaticData' in executeFunctions) {
