@@ -39,7 +39,7 @@ jobs:
           echo "AUTH_BASE_URL=https://accounts.keloola.co/api" >> .env
 
       - name: Build
-        run: bun run build
+        run: bun --bun run build
 
       - name: Create Release Pull Request or Publish
         uses: changesets/action@v1

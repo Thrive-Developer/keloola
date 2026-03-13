@@ -22,7 +22,7 @@
   },
   "scripts": {
     "prebuild": "bun run node_modules/@repo/support/generate-env.ts",
-    "build": "n8n-node build",
+    "build": "bunx --bun n8n-node build",
     "build:watch": "tsc --watch",
     "dev": "n8n-node dev",
     "lint": "n8n-node lint",
