@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-accounting
 
+## 0.2.4
+
+### Patch Changes
+
+- 0fdf0bc: added new mirrored version with dynamic token field
+
 ## 0.2.2
 
 ### Patch Changes
