@@ -158,6 +158,16 @@ import {
   resources as purchasePaymentResources,
   router as purchasePaymentRouter,
 } from './resources/purchasePayment';
+import {
+  salesDownPaymentNode,
+  resources as salesDownPaymentResources,
+  router as salesDownPaymentRouter,
+} from './resources/salesDownPayment';
+import {
+  purchaseDownPaymentNode,
+  resources as purchaseDownPaymentResources,
+  router as purchaseDownPaymentRouter,
+} from './resources/purchaseDownPayment';
 
 import { ENV } from '../../env';
 import { getAccessToken } from '../../shared/authentication';
@@ -226,6 +236,8 @@ export class KeloolaAccounting implements INodeType {
           ...Object.values(purchaseReturnResources),
           ...Object.values(salesPaymentResources),
           ...Object.values(purchasePaymentResources),
+          ...Object.values(salesDownPaymentResources),
+          ...Object.values(purchaseDownPaymentResources),
         ],
         default: userResources.user.value,
       },
@@ -260,6 +272,8 @@ export class KeloolaAccounting implements INodeType {
       ...purchaseReturnNode,
       ...salesPaymentNode,
       ...purchasePaymentNode,
+      ...salesDownPaymentNode,
+      ...purchaseDownPaymentNode,
     ],
   };
 
@@ -602,6 +616,16 @@ export class KeloolaAccounting implements INodeType {
 
     if (resource === purchasePaymentResources.purchasePayment.value) {
       const responseData = await purchasePaymentRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    if (resource === salesDownPaymentResources.salesDownPayment.value) {
+      const responseData = await salesDownPaymentRouter.call(this);
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    if (resource === purchaseDownPaymentResources.purchaseDownPayment.value) {
+      const responseData = await purchaseDownPaymentRouter.call(this);
       return [this.helpers.returnJsonArray(responseData)];
     }
 

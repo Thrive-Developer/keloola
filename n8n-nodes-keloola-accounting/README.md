@@ -97,6 +97,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Purchase Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Purchase Return**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Purchase Payment**: Get, Get Many, Create, Update, Delete, Print.
+- **Purchase Down Payment**: Get, Create, Send, Print.
 
 **Resource: Sales**
 
@@ -106,6 +107,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 - **Sales Invoice**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Sales Return**: Get, Get Many, Create, Update, Delete, Send, Print.
 - **Sales Payment**: Get, Get Many, Create, Update, Delete, Print.
+- **Sales Down Payment**: Get, Get Many, Create, Update, Delete, Record Payment, Send, Print.
 
 **Resource: Banking**
 
