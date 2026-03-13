@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-accounting
 
+## 0.2.3
+
+### Patch Changes
+
+- 66c02eb: added purchase & sales down payment
+
 ## 0.2.2
 
 ### Patch Changes
