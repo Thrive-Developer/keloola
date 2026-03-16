@@ -38,8 +38,5 @@
   "workspaces": [
     "n8n-nodes-*",
     "support"
-  ],
-  "overrides": {
-    "change-case": "^4.1.2"
-  }
+  ]
 }

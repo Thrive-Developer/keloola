@@ -24,13 +24,13 @@
     "prebuild": "bun run node_modules/@repo/support/generate-env.ts",
     "build": "bunx --bun n8n-node build",
     "build:watch": "tsc --watch",
-    "dev": "n8n-node dev",
-    "lint": "n8n-node lint",
-    "lint:fix": "n8n-node lint --fix",
+    "dev": "bun x --bun n8n-node dev",
+    "lint": "bun x --bun n8n-node lint",
+    "lint:fix": "bun x --bun n8n-node lint --fix",
     "format": "prettier --write \"**/*.ts\" --ignore-path ../.prettierignore",
     "format:check": "prettier --check \"**/*.ts\" --ignore-path ../.prettierignore",
     "check-types": "tsc --noEmit",
-    "release": "n8n-node release"
+    "release": "bun x --bun n8n-node release"
   },
   "files": [
     "dist"
