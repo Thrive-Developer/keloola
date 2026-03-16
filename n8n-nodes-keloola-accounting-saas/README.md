@@ -1,8 +1,8 @@
-# n8n-nodes-keloola-accounting
+# n8n-nodes-keloola-accounting-saas
 
-This is an n8n community node. It lets you integrate [Keloola Accounting](https://keloola.com) services into your n8n workflows.
+This is an n8n community node for **Keloola Accounting SaaS**. It lets you integrate Keloola Accounting SaaS services into your n8n workflows.
 
-Keloola Accounting is a comprehensive platform for managing business finances, and this node allows for programmatic access to its features.
+Keloola Accounting SaaS is a cloud platform for managing business finances, and this node allows for programmatic access to its features specifically for the SaaS environment.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 

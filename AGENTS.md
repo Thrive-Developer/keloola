@@ -40,6 +40,9 @@ Before running build or dev, ensure environment files are generated.
 
 The project uses ESLint (via `@n8n/node-cli`) and Prettier.
 
+> [!NOTE]
+> Due to ESM/CJS compatibility in `@n8n/node-cli`, always run `n8n-node` commands using the Bun runtime (e.g., `bun x --bun n8n-node lint`). This is already configured in the workspace `package.json` scripts.
+
 - **Lint**:
   ```bash
   bun run lint
@@ -48,7 +51,7 @@ The project uses ESLint (via `@n8n/node-cli`) and Prettier.
   ```bash
   bun run lint:fix
   # or within a workspace:
-  n8n-node lint --fix
+  bun x --bun n8n-node lint --fix
   ```
 - **Format Code**:
   ```bash
@@ -176,4 +179,4 @@ Enforced by Prettier. Run `bun run format` to apply.
 
 ---
 
-_Last updated by Antigravity on Feb 05 2026_
+_Last updated by Antigravity on Mar 16 2026_
