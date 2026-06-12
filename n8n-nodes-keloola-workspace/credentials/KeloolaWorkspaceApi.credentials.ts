@@ -1,4 +1,10 @@
-import type { Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type {
+  IAuthenticateGeneric,
+  ICredentialTestRequest,
+  Icon,
+  ICredentialType,
+  INodeProperties,
+} from 'n8n-workflow';
 
 export class KeloolaWorkspaceApi implements ICredentialType {
   name = 'keloolaWorkspaceApi';
@@ -27,4 +33,24 @@ export class KeloolaWorkspaceApi implements ICredentialType {
       description: 'Bearer token used to authenticate Keloola Workspace API requests',
     },
   ];
+
+  authenticate: IAuthenticateGeneric = {
+    type: 'generic',
+    properties: {
+      headers: {
+        Accept: 'application/json',
+        Authorization: '=Bearer {{$credentials.accessToken}}',
+      },
+    },
+  };
+
+  test: ICredentialTestRequest = {
+    request: {
+      method: 'GET',
+      url: '={{$credentials.baseUrl}}/workspaces',
+      headers: {
+        'Accept-Language': 'en',
+      },
+    },
+  };
 }

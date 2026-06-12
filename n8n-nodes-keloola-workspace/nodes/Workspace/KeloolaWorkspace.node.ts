@@ -146,7 +146,6 @@ export class KeloolaWorkspace implements INodeType {
       credentialName,
     )) as KeloolaWorkspaceCredentials;
     const baseUrl = String(credentials.baseUrl || '').replace(/\/+$/, '');
-    const accessToken = String(credentials.accessToken || '');
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
@@ -154,13 +153,6 @@ export class KeloolaWorkspace implements INodeType {
       throw new NodeOperationError(
         this.getNode(),
         'Keloola Workspace API Base URL is required',
-      );
-    }
-
-    if (!accessToken) {
-      throw new NodeOperationError(
-        this.getNode(),
-        'Keloola Workspace API Access Token is required',
       );
     }
 
@@ -191,16 +183,19 @@ export class KeloolaWorkspace implements INodeType {
     }
 
     try {
-      const response = await this.helpers.httpRequest({
-        method: 'GET',
-        url,
-        qs: query,
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Accept-Language': 'en',
+      const response = await this.helpers.httpRequestWithAuthentication.call(
+        this,
+        credentialName,
+        {
+          method: 'GET',
+          url,
+          qs: query,
+          headers: {
+            'Accept-Language': 'en',
+          },
+          json: true,
         },
-        json: true,
-      });
+      );
 
       return [this.helpers.returnJsonArray(response)];
     } catch (error) {
