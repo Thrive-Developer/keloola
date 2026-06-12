@@ -21,7 +21,7 @@
     "directory": "n8n-nodes-keloola-accounting"
   },
   "scripts": {
-    "prebuild": "bun run node_modules/@repo/support/generate-env.ts",
+    "prebuild": "bun run ../support/generate-env.ts",
     "build": "bunx --bun n8n-node build",
     "build:watch": "tsc --watch",
     "dev": "bun x --bun n8n-node dev",

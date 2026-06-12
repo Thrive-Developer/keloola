@@ -16,7 +16,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 for d in n8n-nodes-keloola-*; do
   if [ -d "$d" ]; then
     log_info "Processing $d..."
-    (cd "$d" && bun run node_modules/@repo/support/generate-env.ts)
-    (cd "$d" && bun run node_modules/@repo/support/distribute-shared.ts)
+    (cd "$d" && bun run ../support/generate-env.ts)
+    (cd "$d" && bun run ../support/distribute-shared.ts)
   fi
 done
