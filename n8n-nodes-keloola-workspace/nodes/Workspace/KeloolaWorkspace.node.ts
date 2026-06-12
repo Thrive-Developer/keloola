@@ -16,6 +16,27 @@ interface KeloolaWorkspaceCredentials {
 
 const credentialName = 'keloolaWorkspaceApi';
 
+function buildConnectorFields(connectorFields: IDataObject): IDataObject {
+  const connectorFieldsBody: IDataObject = {};
+
+  for (const key of ['daily_task_category_id', 'daily_task_type_id', 'objective_id']) {
+    const value = connectorFields[key] as string | undefined;
+    if (value) {
+      connectorFieldsBody[key] = value;
+    }
+  }
+
+  const keyResults = connectorFields.key_results as string | undefined;
+  if (keyResults) {
+    connectorFieldsBody.key_results = keyResults
+      .split(',')
+      .map((keyResult) => keyResult.trim())
+      .filter(Boolean);
+  }
+
+  return connectorFieldsBody;
+}
+
 export class KeloolaWorkspace implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Keloola Workspace',
@@ -106,6 +127,12 @@ export class KeloolaWorkspace implements INodeType {
             description: 'List tasks with pagination',
             action: 'List tasks',
           },
+          {
+            name: 'Update Task',
+            value: 'updateTask',
+            description: 'Update an existing task',
+            action: 'Update a task',
+          },
         ],
         default: 'listTasks',
       },
@@ -184,6 +211,20 @@ export class KeloolaWorkspace implements INodeType {
         description: 'Project UUID to list tasks from',
       },
       {
+        displayName: 'Task ID',
+        name: 'task_id',
+        type: 'string',
+        required: true,
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['updateTask'],
+          },
+        },
+        description: 'Task UUID to update',
+      },
+      {
         displayName: 'Title',
         name: 'title',
         type: 'string',
@@ -198,6 +239,19 @@ export class KeloolaWorkspace implements INodeType {
         description: 'Title of the task',
       },
       {
+        displayName: 'Title',
+        name: 'title',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['updateTask'],
+          },
+        },
+        description: 'New title for the task',
+      },
+      {
         displayName: 'Description',
         name: 'description',
         type: 'string',
@@ -208,7 +262,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         description: 'Description of the task',
@@ -293,6 +347,41 @@ export class KeloolaWorkspace implements INodeType {
         description: 'Filter by priority',
       },
       {
+        displayName: 'Priority',
+        name: 'priority',
+        type: 'options',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['updateTask'],
+          },
+        },
+        options: [
+          {
+            name: 'Any',
+            value: '',
+          },
+          {
+            name: 'High',
+            value: 'high',
+          },
+          {
+            name: 'Low',
+            value: 'low',
+          },
+          {
+            name: 'Medium',
+            value: 'medium',
+          },
+          {
+            name: 'Urgent',
+            value: 'urgent',
+          },
+        ],
+        description: 'New priority for the task',
+      },
+      {
         displayName: 'Type',
         name: 'type',
         type: 'options',
@@ -359,6 +448,41 @@ export class KeloolaWorkspace implements INodeType {
         description: 'Filter by task type',
       },
       {
+        displayName: 'Type',
+        name: 'type',
+        type: 'options',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['updateTask'],
+          },
+        },
+        options: [
+          {
+            name: 'Any',
+            value: '',
+          },
+          {
+            name: 'Bug',
+            value: 'bug',
+          },
+          {
+            name: 'Epic',
+            value: 'epic',
+          },
+          {
+            name: 'Story',
+            value: 'story',
+          },
+          {
+            name: 'Task',
+            value: 'task',
+          },
+        ],
+        description: 'New type for the task',
+      },
+      {
         displayName: 'Assignee ID',
         name: 'assignee_id',
         type: 'string',
@@ -366,10 +490,10 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask', 'listTasks'],
+            operation: ['createTask', 'listTasks', 'updateTask'],
           },
         },
-        description: 'Filter by assignee UUID',
+        description: 'Assignee UUID used for filtering or assignment',
       },
       {
         displayName: 'Column ID',
@@ -379,7 +503,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         description: 'Column UUID for the task',
@@ -392,7 +516,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         description: 'Sprint UUID for the task',
@@ -406,7 +530,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         description: 'Due date in YYYY-MM-DD format',
@@ -419,10 +543,37 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         description: 'Numeric story points for the task',
+      },
+      {
+        displayName: 'Is Completed',
+        name: 'is_completed',
+        type: 'options',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['updateTask'],
+          },
+        },
+        options: [
+          {
+            name: 'Any',
+            value: '',
+          },
+          {
+            name: 'False',
+            value: false,
+          },
+          {
+            name: 'True',
+            value: true,
+          },
+        ],
+        description: 'Whether the task is completed',
       },
       {
         displayName: 'Connector Fields',
@@ -433,7 +584,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createTask'],
+            operation: ['createTask', 'updateTask'],
           },
         },
         options: [
@@ -489,18 +640,13 @@ export class KeloolaWorkspace implements INodeType {
   };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-    const credentials = (await this.getCredentials(
-      credentialName,
-    )) as KeloolaWorkspaceCredentials;
+    const credentials = (await this.getCredentials(credentialName)) as KeloolaWorkspaceCredentials;
     const baseUrl = String(credentials.baseUrl || '').replace(/\/+$/, '');
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
     if (!baseUrl) {
-      throw new NodeOperationError(
-        this.getNode(),
-        'Keloola Workspace API Base URL is required',
-      );
+      throw new NodeOperationError(this.getNode(), 'Keloola Workspace API Base URL is required');
     }
 
     let url = '';
@@ -575,31 +721,8 @@ export class KeloolaWorkspace implements INodeType {
           body.points = Number(points);
         }
 
-        const connectorFields = this.getNodeParameter(
-          'connector_fields',
-          0,
-          {},
-        ) as IDataObject;
-        const connectorFieldsBody: IDataObject = {};
-
-        for (const key of [
-          'daily_task_category_id',
-          'daily_task_type_id',
-          'objective_id',
-        ]) {
-          const value = connectorFields[key] as string | undefined;
-          if (value) {
-            connectorFieldsBody[key] = value;
-          }
-        }
-
-        const keyResults = connectorFields.key_results as string | undefined;
-        if (keyResults) {
-          connectorFieldsBody.key_results = keyResults
-            .split(',')
-            .map((keyResult) => keyResult.trim())
-            .filter(Boolean);
-        }
+        const connectorFields = this.getNodeParameter('connector_fields', 0, {}) as IDataObject;
+        const connectorFieldsBody = buildConnectorFields(connectorFields);
 
         if (Object.keys(connectorFieldsBody).length) {
           body.connector_fields = connectorFieldsBody;
@@ -607,6 +730,81 @@ export class KeloolaWorkspace implements INodeType {
 
         method = 'POST';
         url = `${baseUrl}/tasks`;
+      }
+
+      if (operation === 'updateTask') {
+        const taskId = this.getNodeParameter('task_id', 0) as string;
+
+        if (!taskId) {
+          throw new NodeOperationError(this.getNode(), 'Task ID is required');
+        }
+
+        const title = this.getNodeParameter('title', 0, '') as string;
+        if (title) {
+          body.title = title;
+        }
+
+        const description = this.getNodeParameter('description', 0, '') as string;
+        if (description) {
+          body.description = description;
+        }
+
+        const priority = this.getNodeParameter('priority', 0, '') as string;
+        if (priority) {
+          body.priority = priority;
+        }
+
+        const type = this.getNodeParameter('type', 0, '') as string;
+        if (type) {
+          body.type = type;
+        }
+
+        const assigneeId = this.getNodeParameter('assignee_id', 0, '') as string;
+        if (assigneeId) {
+          body.assignee_id = assigneeId;
+        }
+
+        const columnId = this.getNodeParameter('column_id', 0, '') as string;
+        if (columnId) {
+          body.column_id = columnId;
+        }
+
+        const sprintId = this.getNodeParameter('sprint_id', 0, '') as string;
+        if (sprintId) {
+          body.sprint_id = sprintId;
+        }
+
+        const dueDate = this.getNodeParameter('due_date', 0, '') as string;
+        if (dueDate) {
+          body.due_date = dueDate;
+        }
+
+        const points = this.getNodeParameter('points', 0, '') as string;
+        if (points) {
+          body.points = Number(points);
+        }
+
+        const isCompleted = this.getNodeParameter('is_completed', 0, '') as boolean | string;
+        if (isCompleted !== '') {
+          body.is_completed = isCompleted === true || isCompleted === 'true';
+        }
+
+        const connectorFields = this.getNodeParameter('connector_fields', 0, {}) as IDataObject;
+        const connectorFieldsBody = buildConnectorFields(connectorFields);
+
+        if (Object.keys(connectorFieldsBody).length) {
+          body.connector_fields = connectorFieldsBody;
+        }
+
+        if (!Object.keys(body).length) {
+          throw new NodeOperationError(
+            this.getNode(),
+            'At least one field is required to update a task',
+          );
+        }
+
+        method = 'PUT';
+        url = `${baseUrl}/tasks/${encodeURIComponent(taskId)}`;
       }
 
       if (operation === 'listTasks') {
@@ -648,20 +846,16 @@ export class KeloolaWorkspace implements INodeType {
     }
 
     try {
-      const response = await this.helpers.httpRequestWithAuthentication.call(
-        this,
-        credentialName,
-        {
-          method,
-          url,
-          qs: query,
-          body: Object.keys(body).length ? body : undefined,
-          headers: {
-            'Accept-Language': 'en',
-          },
-          json: true,
+      const response = await this.helpers.httpRequestWithAuthentication.call(this, credentialName, {
+        method,
+        url,
+        qs: query,
+        body: Object.keys(body).length ? body : undefined,
+        headers: {
+          'Accept-Language': 'en',
         },
-      );
+        json: true,
+      });
 
       return [this.helpers.returnJsonArray(response)];
     } catch (error) {
