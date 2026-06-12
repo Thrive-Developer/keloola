@@ -22,6 +22,10 @@ Create a **Keloola Workspace API** credential in n8n with:
 - **Get Many**: Retrieve a paginated workspace list.
 - **Get**: Retrieve one workspace by ID.
 
+### Resource: Task
+
+- **List Tasks**: Retrieve paginated tasks for a project, with filters for search, priority, type, and assignee.
+
 ## Development
 
 From the monorepo root:

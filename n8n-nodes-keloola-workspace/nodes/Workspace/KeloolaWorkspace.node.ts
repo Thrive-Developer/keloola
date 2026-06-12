@@ -46,6 +46,10 @@ export class KeloolaWorkspace implements INodeType {
         noDataExpression: true,
         options: [
           {
+            name: 'Task',
+            value: 'task',
+          },
+          {
             name: 'Workspace',
             value: 'workspace',
           },
@@ -77,6 +81,26 @@ export class KeloolaWorkspace implements INodeType {
           },
         ],
         default: 'getAll',
+      },
+      {
+        displayName: 'Operation',
+        name: 'operation',
+        type: 'options',
+        noDataExpression: true,
+        displayOptions: {
+          show: {
+            resource: ['task'],
+          },
+        },
+        options: [
+          {
+            name: 'List Tasks',
+            value: 'listTasks',
+            description: 'List tasks with pagination',
+            action: 'List tasks',
+          },
+        ],
+        default: 'listTasks',
       },
       {
         displayName: 'Workspace ID',
@@ -138,6 +162,133 @@ export class KeloolaWorkspace implements INodeType {
         },
         description: 'Search term for filtering workspaces',
       },
+      {
+        displayName: 'Project ID',
+        name: 'project_id',
+        type: 'string',
+        required: true,
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        description: 'Project UUID to list tasks from',
+      },
+      {
+        displayName: 'Search',
+        name: 'search',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        description: 'Search tasks by title',
+      },
+      {
+        displayName: 'Priority',
+        name: 'priority',
+        type: 'options',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        options: [
+          {
+            name: 'Any',
+            value: '',
+          },
+          {
+            name: 'High',
+            value: 'high',
+          },
+          {
+            name: 'Low',
+            value: 'low',
+          },
+          {
+            name: 'Medium',
+            value: 'medium',
+          },
+          {
+            name: 'Urgent',
+            value: 'urgent',
+          },
+        ],
+        description: 'Filter by priority',
+      },
+      {
+        displayName: 'Type',
+        name: 'type',
+        type: 'options',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        options: [
+          {
+            name: 'Any',
+            value: '',
+          },
+          {
+            name: 'Bug',
+            value: 'bug',
+          },
+          {
+            name: 'Epic',
+            value: 'epic',
+          },
+          {
+            name: 'Story',
+            value: 'story',
+          },
+          {
+            name: 'Task',
+            value: 'task',
+          },
+        ],
+        description: 'Filter by task type',
+      },
+      {
+        displayName: 'Assignee ID',
+        name: 'assignee_id',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        description: 'Filter by assignee UUID',
+      },
+      {
+        displayName: 'Per Page',
+        name: 'per_page',
+        type: 'number',
+        default: 20,
+        typeOptions: {
+          minValue: 1,
+          maxValue: 100,
+        },
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['listTasks'],
+          },
+        },
+        description: 'Items per page',
+      },
     ],
   };
 
@@ -175,6 +326,41 @@ export class KeloolaWorkspace implements INodeType {
       if (operation === 'get') {
         const workspaceId = this.getNodeParameter('workspaceId', 0) as string;
         url = `${baseUrl}/workspaces/${encodeURIComponent(workspaceId)}`;
+      }
+    }
+
+    if (resource === 'task') {
+      if (operation === 'listTasks') {
+        const projectId = this.getNodeParameter('project_id', 0) as string;
+
+        if (!projectId) {
+          throw new NodeOperationError(this.getNode(), 'Project ID is required');
+        }
+
+        query.project_id = projectId;
+        query.per_page = this.getNodeParameter('per_page', 0);
+
+        const search = this.getNodeParameter('search', 0) as string;
+        if (search) {
+          query.search = search;
+        }
+
+        const priority = this.getNodeParameter('priority', 0) as string;
+        if (priority) {
+          query.priority = priority;
+        }
+
+        const type = this.getNodeParameter('type', 0) as string;
+        if (type) {
+          query.type = type;
+        }
+
+        const assigneeId = this.getNodeParameter('assignee_id', 0) as string;
+        if (assigneeId) {
+          query.assignee_id = assigneeId;
+        }
+
+        url = `${baseUrl}/tasks`;
       }
     }
 

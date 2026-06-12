@@ -19,8 +19,8 @@ export class KeloolaWorkspaceApi implements ICredentialType {
       name: 'baseUrl',
       type: 'string',
       required: true,
-      default: '',
-      placeholder: 'https://api.example.com',
+      default: 'https://api-pm.keloola.co/api/v1/external',
+      placeholder: 'https://api-pm.keloola.co/api/v1/external',
       description: 'Base URL for the Keloola Workspace API',
     },
     {
