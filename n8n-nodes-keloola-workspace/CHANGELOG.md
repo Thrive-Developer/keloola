@@ -1,5 +1,11 @@
 # n8n-nodes-keloola-workspace
 
+## 0.2.0
+
+### Minor Changes
+
+- 02c60bd: Scaffold initial Keloola Workspace n8n community node package.
+
 ## 0.1.0
 
 ### Initial Release
