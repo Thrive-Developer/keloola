@@ -11,3 +11,4 @@
 - Add Task Get Task Detail operation using task UUID.
 - Add Task Create Task operation with task fields and optional BOS connector fields.
 - Add Task Update Task operation with editable task fields and optional BOS connector fields.
+- Add Task Delete Task operation using task UUID.

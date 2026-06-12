@@ -122,6 +122,12 @@ export class KeloolaWorkspace implements INodeType {
             action: 'Create a task',
           },
           {
+            name: 'Delete Task',
+            value: 'deleteTask',
+            description: 'Delete a task permanently',
+            action: 'Delete a task',
+          },
+          {
             name: 'Get Task Detail',
             value: 'getTaskDetail',
             description: 'Get task detail by ID',
@@ -225,7 +231,7 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['getTaskDetail', 'updateTask'],
+            operation: ['deleteTask', 'getTaskDetail', 'updateTask'],
           },
         },
         description: 'Task UUID',
@@ -736,6 +742,17 @@ export class KeloolaWorkspace implements INodeType {
 
         method = 'POST';
         url = `${baseUrl}/tasks`;
+      }
+
+      if (operation === 'deleteTask') {
+        const taskId = this.getNodeParameter('task_id', 0) as string;
+
+        if (!taskId) {
+          throw new NodeOperationError(this.getNode(), 'Task ID is required');
+        }
+
+        method = 'DELETE';
+        url = `${baseUrl}/tasks/${encodeURIComponent(taskId)}`;
       }
 
       if (operation === 'getTaskDetail') {

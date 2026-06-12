@@ -28,6 +28,7 @@ Create a **Keloola Workspace API** credential in n8n with:
 - **Get Task Detail**: Retrieve one task by UUID.
 - **Create Task**: Create a new task with task fields and optional BOS connector fields.
 - **Update Task**: Update editable task fields and optional BOS connector fields.
+- **Delete Task**: Delete a task permanently by UUID.
 
 ## Development
 
