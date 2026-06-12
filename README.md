@@ -8,6 +8,7 @@ This monorepo contains a collection of custom n8n nodes for integrating with Kel
 | ----------------------------------- | ------------------------------------------- | ------- |
 | `n8n-nodes-keloola-accounting`      | Integration for Keloola Accounting API      | 0.2.4   |
 | `n8n-nodes-keloola-accounting-saas` | Integration for Keloola Accounting SaaS API | 0.2.3   |
+| `n8n-nodes-keloola-workspace`       | Integration for Keloola Workspace API       | 0.1.0   |
 | `@repo/support`                     | Shared utilities and build tools            | 0.0.0   |
 
 ## 🛠 Prerequisites
