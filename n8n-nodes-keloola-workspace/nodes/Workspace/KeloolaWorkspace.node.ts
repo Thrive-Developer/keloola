@@ -116,6 +116,12 @@ export class KeloolaWorkspace implements INodeType {
         },
         options: [
           {
+            name: 'Create Note',
+            value: 'createNote',
+            description: 'Create a note on a task',
+            action: 'Create a note',
+          },
+          {
             name: 'Create Task',
             value: 'createTask',
             description: 'Create a new task',
@@ -231,10 +237,27 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['deleteTask', 'getTaskDetail', 'updateTask'],
+            operation: ['createNote', 'deleteTask', 'getTaskDetail', 'updateTask'],
           },
         },
         description: 'Task UUID',
+      },
+      {
+        displayName: 'Content',
+        name: 'content',
+        type: 'string',
+        required: true,
+        default: '',
+        typeOptions: {
+          rows: 4,
+        },
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createNote'],
+          },
+        },
+        description: 'Content of the note',
       },
       {
         displayName: 'Title',
@@ -686,6 +709,24 @@ export class KeloolaWorkspace implements INodeType {
     }
 
     if (resource === 'task') {
+      if (operation === 'createNote') {
+        const taskId = this.getNodeParameter('task_id', 0) as string;
+        const content = this.getNodeParameter('content', 0) as string;
+
+        if (!taskId) {
+          throw new NodeOperationError(this.getNode(), 'Task ID is required');
+        }
+
+        if (!content) {
+          throw new NodeOperationError(this.getNode(), 'Content is required');
+        }
+
+        body.content = content;
+
+        method = 'POST';
+        url = `${baseUrl}/tasks/${encodeURIComponent(taskId)}/notes`;
+      }
+
       if (operation === 'createTask') {
         const projectId = this.getNodeParameter('project_id', 0) as string;
         const title = this.getNodeParameter('title', 0) as string;
