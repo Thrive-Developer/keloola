@@ -25,6 +25,7 @@ Create a **Keloola Workspace API** credential in n8n with:
 ### Resource: Task
 
 - **List Tasks**: Retrieve paginated tasks for a project, with filters for search, priority, type, and assignee.
+- **Create Task**: Create a new task with task fields and optional BOS connector fields.
 
 ## Development
 

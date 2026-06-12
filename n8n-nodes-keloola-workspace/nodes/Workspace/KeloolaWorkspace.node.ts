@@ -1,5 +1,6 @@
 import {
   IExecuteFunctions,
+  IHttpRequestMethods,
   INodeExecutionData,
   NodeConnectionTypes,
   NodeOperationError,
@@ -94,6 +95,12 @@ export class KeloolaWorkspace implements INodeType {
         },
         options: [
           {
+            name: 'Create Task',
+            value: 'createTask',
+            description: 'Create a new task',
+            action: 'Create a task',
+          },
+          {
             name: 'List Tasks',
             value: 'listTasks',
             description: 'List tasks with pagination',
@@ -171,10 +178,40 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['listTasks'],
+            operation: ['createTask', 'listTasks'],
           },
         },
         description: 'Project UUID to list tasks from',
+      },
+      {
+        displayName: 'Title',
+        name: 'title',
+        type: 'string',
+        required: true,
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Title of the task',
+      },
+      {
+        displayName: 'Description',
+        name: 'description',
+        type: 'string',
+        default: '',
+        typeOptions: {
+          rows: 4,
+        },
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Description of the task',
       },
       {
         displayName: 'Search',
@@ -188,6 +225,37 @@ export class KeloolaWorkspace implements INodeType {
           },
         },
         description: 'Search tasks by title',
+      },
+      {
+        displayName: 'Priority',
+        name: 'priority',
+        type: 'options',
+        default: 'medium',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        options: [
+          {
+            name: 'High',
+            value: 'high',
+          },
+          {
+            name: 'Low',
+            value: 'low',
+          },
+          {
+            name: 'Medium',
+            value: 'medium',
+          },
+          {
+            name: 'Urgent',
+            value: 'urgent',
+          },
+        ],
+        description: 'Priority of the task',
       },
       {
         displayName: 'Priority',
@@ -223,6 +291,37 @@ export class KeloolaWorkspace implements INodeType {
           },
         ],
         description: 'Filter by priority',
+      },
+      {
+        displayName: 'Type',
+        name: 'type',
+        type: 'options',
+        default: 'task',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        options: [
+          {
+            name: 'Bug',
+            value: 'bug',
+          },
+          {
+            name: 'Epic',
+            value: 'epic',
+          },
+          {
+            name: 'Story',
+            value: 'story',
+          },
+          {
+            name: 'Task',
+            value: 'task',
+          },
+        ],
+        description: 'Type of the task',
       },
       {
         displayName: 'Type',
@@ -267,10 +366,107 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['listTasks'],
+            operation: ['createTask', 'listTasks'],
           },
         },
         description: 'Filter by assignee UUID',
+      },
+      {
+        displayName: 'Column ID',
+        name: 'column_id',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Column UUID for the task',
+      },
+      {
+        displayName: 'Sprint ID',
+        name: 'sprint_id',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Sprint UUID for the task',
+      },
+      {
+        displayName: 'Due Date',
+        name: 'due_date',
+        type: 'string',
+        default: '',
+        placeholder: '2026-07-01',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Due date in YYYY-MM-DD format',
+      },
+      {
+        displayName: 'Points',
+        name: 'points',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        description: 'Numeric story points for the task',
+      },
+      {
+        displayName: 'Connector Fields',
+        name: 'connector_fields',
+        type: 'collection',
+        placeholder: 'Add Connector Field',
+        default: {},
+        displayOptions: {
+          show: {
+            resource: ['task'],
+            operation: ['createTask'],
+          },
+        },
+        options: [
+          {
+            displayName: 'BOS Category ID',
+            name: 'daily_task_category_id',
+            type: 'string',
+            default: '',
+            description: 'BOS daily task category remote ID',
+          },
+          {
+            displayName: 'BOS Type ID',
+            name: 'daily_task_type_id',
+            type: 'string',
+            default: '',
+            description: 'BOS daily task type remote ID',
+          },
+          {
+            displayName: 'Objective ID',
+            name: 'objective_id',
+            type: 'string',
+            default: '',
+            description: 'BOS objective remote ID',
+          },
+          {
+            displayName: 'Key Results',
+            name: 'key_results',
+            type: 'string',
+            default: '',
+            description: 'Comma-separated BOS key result remote IDs',
+          },
+        ],
+        description: 'BOS connector fields required when BOS is enabled',
       },
       {
         displayName: 'Per Page',
@@ -308,7 +504,9 @@ export class KeloolaWorkspace implements INodeType {
     }
 
     let url = '';
+    let method: IHttpRequestMethods = 'GET';
     const query: IDataObject = {};
+    const body: IDataObject = {};
 
     if (resource === 'workspace') {
       if (operation === 'getAll') {
@@ -330,6 +528,87 @@ export class KeloolaWorkspace implements INodeType {
     }
 
     if (resource === 'task') {
+      if (operation === 'createTask') {
+        const projectId = this.getNodeParameter('project_id', 0) as string;
+        const title = this.getNodeParameter('title', 0) as string;
+
+        if (!projectId) {
+          throw new NodeOperationError(this.getNode(), 'Project ID is required');
+        }
+
+        if (!title) {
+          throw new NodeOperationError(this.getNode(), 'Title is required');
+        }
+
+        body.project_id = projectId;
+        body.title = title;
+        body.priority = this.getNodeParameter('priority', 0) as string;
+        body.type = this.getNodeParameter('type', 0) as string;
+
+        const description = this.getNodeParameter('description', 0) as string;
+        if (description) {
+          body.description = description;
+        }
+
+        const assigneeId = this.getNodeParameter('assignee_id', 0) as string;
+        if (assigneeId) {
+          body.assignee_id = assigneeId;
+        }
+
+        const columnId = this.getNodeParameter('column_id', 0) as string;
+        if (columnId) {
+          body.column_id = columnId;
+        }
+
+        const sprintId = this.getNodeParameter('sprint_id', 0) as string;
+        if (sprintId) {
+          body.sprint_id = sprintId;
+        }
+
+        const dueDate = this.getNodeParameter('due_date', 0) as string;
+        if (dueDate) {
+          body.due_date = dueDate;
+        }
+
+        const points = this.getNodeParameter('points', 0) as string;
+        if (points) {
+          body.points = Number(points);
+        }
+
+        const connectorFields = this.getNodeParameter(
+          'connector_fields',
+          0,
+          {},
+        ) as IDataObject;
+        const connectorFieldsBody: IDataObject = {};
+
+        for (const key of [
+          'daily_task_category_id',
+          'daily_task_type_id',
+          'objective_id',
+        ]) {
+          const value = connectorFields[key] as string | undefined;
+          if (value) {
+            connectorFieldsBody[key] = value;
+          }
+        }
+
+        const keyResults = connectorFields.key_results as string | undefined;
+        if (keyResults) {
+          connectorFieldsBody.key_results = keyResults
+            .split(',')
+            .map((keyResult) => keyResult.trim())
+            .filter(Boolean);
+        }
+
+        if (Object.keys(connectorFieldsBody).length) {
+          body.connector_fields = connectorFieldsBody;
+        }
+
+        method = 'POST';
+        url = `${baseUrl}/tasks`;
+      }
+
       if (operation === 'listTasks') {
         const projectId = this.getNodeParameter('project_id', 0) as string;
 
@@ -373,9 +652,10 @@ export class KeloolaWorkspace implements INodeType {
         this,
         credentialName,
         {
-          method: 'GET',
+          method,
           url,
           qs: query,
+          body: Object.keys(body).length ? body : undefined,
           headers: {
             'Accept-Language': 'en',
           },
@@ -390,7 +670,7 @@ export class KeloolaWorkspace implements INodeType {
           this.getNode(),
           `${JSON.stringify(error.response.data || error.message)}`,
           {
-            description: `Status: ${error.response.status}\nURL: ${url}\nQuery: ${JSON.stringify(query, null, 2)}`,
+            description: `Status: ${error.response.status}\nMethod: ${method}\nURL: ${url}\nQuery: ${JSON.stringify(query, null, 2)}\nBody: ${JSON.stringify(body, null, 2)}`,
           },
         );
       }

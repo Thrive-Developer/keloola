@@ -8,3 +8,4 @@
 - Add Keloola Workspace API credential with base URL and bearer token fields.
 - Add initial Workspace resource operations for getting one or many workspaces.
 - Add Task List Tasks operation with project, search, priority, type, assignee, and pagination parameters.
+- Add Task Create Task operation with task fields and optional BOS connector fields.
