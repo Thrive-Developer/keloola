@@ -22,9 +22,12 @@ Create a **Keloola Workspace API** credential in n8n with:
 - **Get Many**: Retrieve a paginated workspace list.
 - **Get**: Retrieve one workspace by ID.
 
+### Resource: Note
+
+- **Create Note**: Create a note with title, content, and optional project UUID.
+
 ### Resource: Task
 
-- **Create Note**: Create a note on a task by task UUID.
 - **List Tasks**: Retrieve paginated tasks for a project, with filters for search, priority, type, and assignee.
 - **Get Task Detail**: Retrieve one task by UUID.
 - **Create Task**: Create a new task with task fields and optional BOS connector fields.

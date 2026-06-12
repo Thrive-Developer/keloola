@@ -68,6 +68,10 @@ export class KeloolaWorkspace implements INodeType {
         noDataExpression: true,
         options: [
           {
+            name: 'Note',
+            value: 'note',
+          },
+          {
             name: 'Task',
             value: 'task',
           },
@@ -111,16 +115,30 @@ export class KeloolaWorkspace implements INodeType {
         noDataExpression: true,
         displayOptions: {
           show: {
-            resource: ['task'],
+            resource: ['note'],
           },
         },
         options: [
           {
             name: 'Create Note',
             value: 'createNote',
-            description: 'Create a note on a task',
+            description: 'Create a new note',
             action: 'Create a note',
           },
+        ],
+        default: 'createNote',
+      },
+      {
+        displayName: 'Operation',
+        name: 'operation',
+        type: 'options',
+        noDataExpression: true,
+        displayOptions: {
+          show: {
+            resource: ['task'],
+          },
+        },
+        options: [
           {
             name: 'Create Task',
             value: 'createTask',
@@ -237,10 +255,37 @@ export class KeloolaWorkspace implements INodeType {
         displayOptions: {
           show: {
             resource: ['task'],
-            operation: ['createNote', 'deleteTask', 'getTaskDetail', 'updateTask'],
+            operation: ['deleteTask', 'getTaskDetail', 'updateTask'],
           },
         },
         description: 'Task UUID',
+      },
+      {
+        displayName: 'Project ID',
+        name: 'project_id',
+        type: 'string',
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['note'],
+            operation: ['createNote'],
+          },
+        },
+        description: 'Optional project UUID for the note',
+      },
+      {
+        displayName: 'Title',
+        name: 'title',
+        type: 'string',
+        required: true,
+        default: '',
+        displayOptions: {
+          show: {
+            resource: ['note'],
+            operation: ['createNote'],
+          },
+        },
+        description: 'Title of the note',
       },
       {
         displayName: 'Content',
@@ -253,7 +298,7 @@ export class KeloolaWorkspace implements INodeType {
         },
         displayOptions: {
           show: {
-            resource: ['task'],
+            resource: ['note'],
             operation: ['createNote'],
           },
         },
@@ -708,25 +753,33 @@ export class KeloolaWorkspace implements INodeType {
       }
     }
 
-    if (resource === 'task') {
+    if (resource === 'note') {
       if (operation === 'createNote') {
-        const taskId = this.getNodeParameter('task_id', 0) as string;
+        const title = this.getNodeParameter('title', 0) as string;
         const content = this.getNodeParameter('content', 0) as string;
 
-        if (!taskId) {
-          throw new NodeOperationError(this.getNode(), 'Task ID is required');
+        if (!title) {
+          throw new NodeOperationError(this.getNode(), 'Title is required');
         }
 
         if (!content) {
           throw new NodeOperationError(this.getNode(), 'Content is required');
         }
 
+        body.title = title;
         body.content = content;
 
-        method = 'POST';
-        url = `${baseUrl}/tasks/${encodeURIComponent(taskId)}/notes`;
-      }
+        const projectId = this.getNodeParameter('project_id', 0) as string;
+        if (projectId) {
+          body.project_id = projectId;
+        }
 
+        method = 'POST';
+        url = `${baseUrl}/notes`;
+      }
+    }
+
+    if (resource === 'task') {
       if (operation === 'createTask') {
         const projectId = this.getNodeParameter('project_id', 0) as string;
         const title = this.getNodeParameter('title', 0) as string;
